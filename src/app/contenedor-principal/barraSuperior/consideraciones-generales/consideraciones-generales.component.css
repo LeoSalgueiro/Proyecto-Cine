@@ -1,0 +1,18 @@
+.lista_estrella li{
+    list-style: disc url(../../../../assets/img/estrella_roja.png);
+    line-height: 18px;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+.block_inf {
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background: #fcfcfc;
+}
+:host  {
+    
+    display: block;
+    padding-bottom: 20px;
+}

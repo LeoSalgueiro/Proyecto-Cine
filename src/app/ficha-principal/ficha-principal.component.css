@@ -1,0 +1,19 @@
+#texto-rojo{
+    color: #d80b0b;
+    font-family: myriad-pro,"Arial black", Arial;
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+#texto-negro{
+    color:black;
+    font-size: 25px;
+    font-family: myriad-pro,"Arial black", Arial;
+    letter-spacing: -1px;
+}
+#texto-light{
+    font-family: MyriadProLight,"Arial",Arial;
+    font-size: 20px;
+    letter-spacing: -1px;
+    color: lightslategrey;
+
+}

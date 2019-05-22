@@ -1,0 +1,26 @@
+#titulo1{
+    color:black;
+    font-size: 24px;
+    font-family: myriad-pro,"Arial black", Arial;
+    letter-spacing: -1px;
+}
+#titulo2{
+    color:lightslategrey;
+    font-family: MyriadProLight,"Arial",Arial;
+    letter-spacing: -1px;
+    font-size: 20px;
+}
+
+li {
+    font-size: 13px;
+    font-family: Tahoma, sans-serif;
+}
+
+.texto-rojo{
+    color:red;
+    font-family: Tahoma, sans-serif;
+}
+
+a{
+    color:lightslategrey;
+}

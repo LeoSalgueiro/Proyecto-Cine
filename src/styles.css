@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: url(./assets/img/fondo.jpg) #000 no-repeat top center;
+}
+.container{
+    width: 1020px;
+}
+.navbar{
+    margin-bottom: 0px;
+    background: url(./assets/img/grad_barra.png)repeat-x top center;
+    border-radius: 4px;
+}
+.header_top {
+    background: url(./assets/img/header-bg.png) #000 no-repeat top center;
+    height: 143px;
+    border-top: 7px solid black;
+    border-bottom: 1px solid #000;
+}
+.navbar{
+    position: static;
+    right: 0;
+    left: 0;
+    border-top: 1px solid #343434;
+    border-bottom: 3px solid #e91820;
+}
+.navbar-inverse .brand, .navbar-inverse .nav > li > a{
+    color:#bdbdbd;
+    font-family: myriad-pro,"Arial black", Arial;
+    text-shadow: 2px 2px 4px #000;
+    letter-spacing: 0px;
+    font-size: 14px;     
+    padding: 10px;
+}
+
+
+.navbar-inverse .navbar-inner{
+    border-color: #d80b0b;
+}
+.logo{
+    position:absolute;
+    z-index:1;
+    top:-2px;
+}
+.shadow{
+    width: 100%;
+    background: url(./assets/img/shadow.png);
+    height: 8px;
+    position: relative;
+    bottom: 0px;
+}
+.footer_sup{
+    color: #adacac;
+    margin: 0px;
+    padding-top: 50px;
+    font-size: 12px;
+    height: 270px;
+    background: url(./assets/img/estrella.png) no-repeat bottom left;
+    background-color: #d80b0b;
+}
+.footer_inf{
+    height: 107px;
+}
+.barra_sup{
+    width: 670px;
+    height: 28px;
+}
+
+.barra_sup .nav > li > a{
+    color: #bdbdbd;
+    font-family:  Arial;
+    font-size: 10px;
+    letter-spacing: 0px; 
+    padding:10px;
+    display: inline;
+}
+.barra_sup{
+    border-bottom: 3px solid #212121;
+
+}
+.navbar-inverse .nav .active > a{
+    background-color: #d80b0b;
+}
+.fecha{
+    color: #c9c9c9;
+    font-family: arial;
+    font-size: 11px;
+    font-weight: normal;
+
+}
+.seguir{
+    text-align: right;
+    font-family: "Arial black", Arial;
+    font-size: 12px;
+    color: #c9c9c9;
+}
+.carousel-caption{
+    margin-right: 10px;
+}
+.footer_sup ul{
+    list-style: none;
+    float: right;
+    padding-left: 15px;
+    background: url(./assets/img/linea_vertical.png) no-repeat left center;
+}
+.footer_sup a{
+    color: #adacac;
+}
+.footer_sup h5{
+    color: #dce0e2;
+}
+.footer_sup .footer_logo{
+    position: relative;
+    top: -20px;
+    left: 35px;
+    bottom: 5px;
+
+}
+.footer_menu{
+    padding-top: 14px;
+}
+.footer_menu a ,.footer_btom p {
+    color: #737373;
+    font-size: 12px;
+}
