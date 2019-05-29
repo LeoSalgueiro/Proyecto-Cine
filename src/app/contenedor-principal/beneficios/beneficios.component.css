@@ -1,0 +1,46 @@
+div.tarjeta{
+    width:38rem;
+    background-color:white;
+    font-family: myriad-pro,"Arial", Arial;
+}
+
+div.imagen{
+    width:10rem;
+    float:left;
+    margin-right: 8px;
+}
+div.texto1{
+    width:26rem;
+    float:left;
+    font-family: Myriam-Pro-Light,"Arial", Arial;
+}
+div.texto2{
+    widows: 30rem;
+    font-family: Myriam-Pro-Light,"Arial", Arial;
+}
+
+.fechas{
+    margin-left: 20px;
+    font-size:12px;
+    font-family: Myriam-Pro-Light,"Arial", Arial;
+}
+.titulo{
+    font-family: Myriam-Pro,"Arial Black", Arial;
+    letter-spacing: 0px;
+}
+
+.rojo{
+    color:red;
+    font-family: Myriam-Pro-Light,"Arial", Arial;
+}
+
+.gris{
+    color:grey;
+    font-family: Myriam-Pro-Light,"Arial", Arial;
+    font-size:12px;
+}
+
+.contenido{
+    font-size:12px;
+    font-family: Myriam-Pro-Light,"Arial", Arial;
+}

@@ -14,6 +14,7 @@ import { SupercombosComponent } from './contenedor-principal/barraPrincipal/supe
 import { ContactoComponent } from './contenedor-principal/barraPrincipal/contacto/contacto.component';
 import { RecursosHumanosComponent } from './contenedor-principal/barraSuperior/recursos-humanos/recursos-humanos.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BeneficiosComponent } from './contenedor-principal/beneficios/beneficios.component';
 
 const routes: Routes = [
   {path:"inicio", component:InicioComponent},//barra de navegación pequeña
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:"precios", component:PreciosComponent},//barra de navegación principal
   {path:"supercombos", component:SupercombosComponent},//barra de navegación principal
   {path:"contacto", component:ContactoComponent},//barra de navegación principal
+  {path:"beneficios", component:BeneficiosComponent},//banner
   { path: '', redirectTo: 'inicio', pathMatch: 'full'},
   { path: '**', component:PageNotFoundComponent}
 ];

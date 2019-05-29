@@ -25,6 +25,8 @@ import { AnunciosComponent } from './contenedor-principal/anuncios/anuncios.comp
 import { FichaComponent } from './contenedor-principal/ficha/ficha.component';
 import { BarraLateralComponent } from './contenedor-principal/barra-lateral/barra-lateral.component';
 import { FichaPrincipalComponent } from './ficha-principal/ficha-principal.component';
+import { BeneficiosComponent } from './contenedor-principal/beneficios/beneficios.component';
+import { BDComponent } from './bd/bd.component';
 
 @NgModule({
   declarations: [
@@ -50,13 +52,14 @@ import { FichaPrincipalComponent } from './ficha-principal/ficha-principal.compo
     AnunciosComponent,
     FichaComponent,
     BarraLateralComponent,
-    FichaPrincipalComponent
+    FichaPrincipalComponent,
+    BeneficiosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [BDComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

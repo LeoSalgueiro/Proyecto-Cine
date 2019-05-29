@@ -8,6 +8,9 @@ import { Component, OnInit,Input } from '@angular/core';
 export class FichaComponent implements OnInit {
 @Input() titulo:string;
 @Input() contenido:string;
+@Input() imagen:string;
+@Input() subtitulo:string;
+@Input() pais:string;
   constructor() { }
 
   ngOnInit() {

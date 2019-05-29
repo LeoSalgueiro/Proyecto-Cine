@@ -122,3 +122,17 @@ body {
     color: #737373;
     font-size: 12px;
 }
+
+div#principal{
+    width: 40rem;
+    background-color: white; 
+    float:left;
+    margin-top:0px;
+    padding-right: 10px;
+}
+
+div#banner-d{
+    width: 310px;
+    float:left;
+}
+

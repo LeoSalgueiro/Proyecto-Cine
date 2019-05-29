@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pelicula, BDComponent } from 'src/app/bd/bd.component';
 
 @Component({
   selector: 'app-cartelera',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cartelera.component.css']
 })
 export class CarteleraComponent implements OnInit {
+  private peliculas:Array<Pelicula>;
 
-  constructor() { }
+  constructor(private bd: BDComponent) { }
 
   ngOnInit() {
+    this.obtenerPeliculas();
+  }
+
+  public obtenerPeliculas(){
+    this.peliculas=this.bd.getPeliculas();
   }
 
 }
