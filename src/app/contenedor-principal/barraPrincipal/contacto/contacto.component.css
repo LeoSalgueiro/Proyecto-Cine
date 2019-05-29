@@ -1,0 +1,142 @@
+.block_inf {
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background: white;
+}
+
+.fondo#contact{
+    background: #f3f3f3;
+    position: relative;
+    top: -20px;
+    left: -30px;
+    width: 1020px;
+    padding-top: 20px;
+    padding-bottom: 29px;
+    margin-bottom: -20px;
+}
+#contact .ficha{
+    margin-left: 35px;
+}
+#contact h6{
+    font-weight: lighter;
+    color:#787878;
+}
+
+.form_cinema input[type="checkbox"]{
+    height: 15px;
+    margin-left:-100px;
+}
+#r4Div{
+    margin-bottom: 0px;
+}
+.titulo .myriad{
+    font-size: 18px;
+}
+.titulo .lista_estrella{
+    margin-top:20px;
+}
+
+/*------------estilo para el mini menu--------------*/
+.mini_menu button{
+    width: 280px;
+    height: 46.8px;
+    border-radius: 5px !important;
+    color:black;
+    background: transparent;
+    border: solid 1px #000;
+    text-align: center;
+    font-weight: lighter;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: capitalize;
+    font-size: 17px;
+}
+.mini_menu button:hover{
+    background: #e91820;
+     font-size: 17px;
+    color:white;
+    border: none;
+    
+}
+.mini_menu ul{
+    list-style: none;
+    margin:0px;
+}
+.mini_menu li{
+        width: 50%;
+    float: left;
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+}
+/*--------listado con estrella roja-----------*/
+.lista_estrella li{
+    list-style: disc url(../../../../assets/img/estrella_roja.png);
+    line-height: 18px;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+/*-----------form cinema---------*/
+.form_cinema input,.form_cinema textarea,.form_cinema select{
+    border: 0;
+    line-height: 24px;
+    font-size: 11px;
+    width: 230px;
+    padding: 0 10px;
+    background: #989898;
+    margin: 1px 0;
+    outline: none;
+    text-align: right;
+    height: 30px;
+}
+.form_cinema input::-webkit-input-placeholder {
+    color: #f3f3f3 !important;
+}
+
+.form_cinema input:-moz-placeholder {
+    color: #f3f3f3  !important;
+}
+.form_cinema textarea{
+    height: 54px;
+}
+
+
+.form_cinema select{
+    border: 0;
+    line-height: 24px;
+    font-size: 11px;
+    color: #f3f3f3;
+    width: 250px;
+    padding: 0 10px;
+    margin: 1px 0;
+    outline: none;
+    text-align-last: right;
+}
+.form_cinema label{
+    color:#ee3824;
+}
+.form_cinema select option{
+    background: #575c60;
+    color: #fff;
+    font-size: 12px;
+}
+
+div.button.btn-cine button{
+    border: none;
+
+    font-family: myriad-pro,"Arial black", Arial;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    height: 30px;
+}
+.boton_rojo button{background: #e91820;}
+.botonSubmit button{width: 246px;}
+.rojo{color:#e91820;}
+.ocultar{
+    visibility: hidden;
+    display: none;
+} 
+.myriad{font-family: myriad-pro,"Arial black", Arial;}
