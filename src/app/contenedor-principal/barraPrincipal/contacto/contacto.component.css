@@ -1,3 +1,4 @@
+#anuncio {margin-left: 30px;}
 .block_inf {
     padding-left: 20px;
     padding-top: 30px;
@@ -13,11 +14,27 @@
     left: -30px;
     width: 1020px;
     padding-top: 20px;
-    padding-bottom: 29px;
+    padding-bottom: 1120px;
     margin-bottom: -20px;
+}
+#contact .banner{
+    position: absolute;
+    background: #f3f3f3;
+    bottom: -462px;
+}
+#contact .banner .block_inf{
+    width: 600px;
+}
+.cont{
+    margin-left:30px;
+}
+#principal{
+    background: #f3f3f3
 }
 #contact .ficha{
     margin-left: 35px;
+    margin-top:10px;
+    max-width: 40rem;
 }
 #contact h6{
     font-weight: lighter;
@@ -139,4 +156,6 @@ div.button.btn-cine button{
     visibility: hidden;
     display: none;
 } 
-.myriad{font-family: myriad-pro,"Arial black", Arial;}
+.myriad{
+    font-family: myriad-pro,"Arial black", Arial;
+}

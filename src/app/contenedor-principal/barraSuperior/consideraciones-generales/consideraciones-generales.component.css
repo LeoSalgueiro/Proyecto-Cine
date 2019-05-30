@@ -1,18 +1,49 @@
+#anuncio {margin-left: 30px;width:972px;}
+
+#consid .ficha{
+    margin-left: 35px;
+}
+/*--------listado con estrella roja-----------*/
 .lista_estrella li{
     list-style: disc url(../../../../assets/img/estrella_roja.png);
     line-height: 18px;
     font-size: 12px;
     padding-bottom: 10px;
 }
+
 .block_inf {
     padding-left: 20px;
     padding-top: 30px;
     padding-right: 20px;
     padding-bottom: 20px;
-    background: #fcfcfc;
+    background: white;
 }
-:host  {
-    
-    display: block;
-    padding-bottom: 20px;
+
+.fondo#consid{
+    background: #f3f3f3;
+    position: relative;
+    top: -20px;
+    left: -30px;
+    width: 1020px;
+    padding-top: 20px;
+    padding-bottom: 732px;
+    margin-bottom: -20px;
+}
+#consid .banner{
+    position: absolute;
+    background: #f3f3f3;
+    bottom: -462px;
+}
+#consid .banner .block_inf{
+    width: 600px;
+}
+#consid .ficha{
+    margin-top:10px;
+    max-width: 40rem;
+}
+.cont{
+    margin-left:30px;
+}
+#principal{
+    background: #f3f3f3
 }
