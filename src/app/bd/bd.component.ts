@@ -37,6 +37,8 @@ new Director("Rob","Letterman","107"),
 new Director("Anthony","Russo","108"),
 new Director("Joe","Russo","109")]
   
+private carteleras:Array<Cartelera>=[new Cartelera(this.peliculas,new Date("2019-5-30"),new Date("2019-6-5"))];
+
 constructor() { }
 
   ngOnInit() {
@@ -55,9 +57,22 @@ constructor() { }
       if (d.getId()==id){
         return d;
       }
+    }
+
   }
 
-}
+  public obtenerCartelera(fecha:Date):Cartelera{
+    
+    for (let c of this.carteleras){
+      //si igualan en día mes y año
+      if (c.getFechaFin().toDateString()===fecha.toDateString()){
+          return c;
+      }
+    }
+    
+  }
+
+
 }
 
 export class Beneficio {
@@ -203,4 +218,22 @@ export class Director{
   public getNombre(){return this.nombre;}
   public getApellido(){return this.apellido;}
   public getId(){return this.id;}
+}
+
+export class Cartelera {
+  private peliculas:Array<Pelicula>;
+  private fechaInicio:Date;
+  private fechaFin:Date;
+
+  constructor(peliculas:Array<Pelicula>,fechaInicio:Date,fechaFin:Date){
+    this.peliculas=peliculas;
+    this.fechaInicio=fechaInicio;
+    this.fechaFin=fechaFin;
+  }
+
+  public getPeliculas(){return this.peliculas;}
+  public getFechaInicio(){return this.fechaInicio;}
+  public getFechaFin(){return this.fechaFin;}
+  
+
 }

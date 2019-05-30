@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pelicula, BDComponent } from 'src/app/bd/bd.component';
+import { Cartelera, BDComponent } from 'src/app/bd/bd.component';
 
 @Component({
   selector: 'app-cartelera',
@@ -7,16 +7,33 @@ import { Pelicula, BDComponent } from 'src/app/bd/bd.component';
   styleUrls: ['./cartelera.component.css']
 })
 export class CarteleraComponent implements OnInit {
-  private peliculas:Array<Pelicula>;
-
-  constructor(private bd: BDComponent) { }
-
-  ngOnInit() {
-    this.obtenerPeliculas();
+  private carteleraActual:Cartelera;
+  private hoy:Date;
+  
+  constructor(private bd: BDComponent) {
+    this.hoy=new Date();
+    console.log(this.hoy.toDateString());
   }
 
-  public obtenerPeliculas(){
-    this.peliculas=this.bd.getPeliculas();
+  ngOnInit() {
+    this.carteleraActual=this.bd.obtenerCartelera(this.calcularPeriodo(this.hoy));
+  }
+
+  calcularPeriodo(hoy:Date):Date{
+    let diaSemana:number=hoy.getDay();
+    let diasRestantes:number;
+    let fechaFin:Date=new Date();
+    if (diaSemana<=3){
+      diasRestantes=3-diaSemana;
+      //console.log(diaSemana + "restante: "+diasRestantes);
+    }
+    else{
+      diasRestantes=10-diaSemana;
+      //console.log(diaSemana + "restante: "+diasRestantes);
+    }
+    fechaFin.setDate(hoy.getDate()+diasRestantes);
+    
+    return fechaFin;
   }
 
 }
