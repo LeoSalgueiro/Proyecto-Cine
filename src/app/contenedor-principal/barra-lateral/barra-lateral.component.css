@@ -1,6 +1,9 @@
-img {
-    width:310px;
-    height:170px;
+#myCarousel2 img{
+    padding-bottom: 40px;
+    width: 300px;
+}
+#myCarousel2{
+    margin-bottom: 0px !important;
 }
 b{
     color:white;
@@ -13,4 +16,15 @@ span{
 #masInfo{
     color:#285BD7;
     font-size: 14px;
+}
+.block_item {
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    background: white;
+}
+.item_sidebar{
+    margin-bottom: 10px;
+    margin-top:10px;
 }

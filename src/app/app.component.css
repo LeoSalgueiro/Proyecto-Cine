@@ -2,3 +2,24 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+#banner2 .block_inf {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background: white;
+}
+#banner2 .banner{
+    position: absolute;
+    background: #f3f3f3;
+    bottom: -462px;
+}
+#banner2 .banner .block_inf{
+    width: 600px;
+}
+#banner2 .ficha{
+    margin-left: 35px;
+    margin-top:10px;
+    max-width: 40rem;
+}
+#container_princ{
+    background: white;
+}

@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy  } from '@angular/core';
 
 @Component({
   selector: 'app-consideraciones-generales',
   templateUrl: './consideraciones-generales.component.html',
   styleUrls: ['./consideraciones-generales.component.css']
 })
-export class ConsideracionesGeneralesComponent implements OnInit {
+export class ConsideracionesGeneralesComponent implements OnDestroy  {
 
-  constructor() { }
+  constructor() {
+    document.getElementById("container_princ").style.background="#f3f3f3";
+  }
 
-  ngOnInit() {
+ngOnDestroy(){
+    document.getElementById("container_princ").style.background="white";
   }
 
 }

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, AfterViewInit } from '@angular/core';
+declare var $: any;
 @Component({
   selector: 'app-anuncios',
   templateUrl: './anuncios.component.html',
   styleUrls: ['./anuncios.component.css']
 })
-export class AnunciosComponent implements OnInit {
-
+export class AnunciosComponent implements AfterViewInit  {
+  
   constructor() { }
 
-  ngOnInit() {
-  }
+   ngAfterViewInit() {
+      $('#myCarousel').carousel({  cycle: true });
+    }
 
 }

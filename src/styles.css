@@ -134,7 +134,7 @@ div#principal{
     width: 40rem;
     background-color: white; 
     float:left;
-    margin-top:0px;
+    margin-top:10px;
     padding-right: 10px;
 }
 
@@ -144,15 +144,15 @@ div#banner-d{
 }
 
 /*--------listado con estrella roja-----------*/
-/*.lista_estrella li{
+.lista_estrella li{
     list-style: disc url(./assets/img/estrella_roja.png);
     line-height: 18px;
     font-size: 12px;
     padding-bottom: 10px;
-}*/
+}
 /*----estilo formularios--------------------------*/
 
-/*
+
 .form_cinema input,.form_cinema textarea,.form_cinema select{
     border: 0;
     line-height: 24px;
@@ -212,4 +212,4 @@ div.button.btn-cine button {
     visibility: hidden;
     display: none;
 } 
-.myriad{font-family: myriad-pro,"Arial black", Arial;}*/
+.myriad{font-family: myriad-pro,"Arial black", Arial;}

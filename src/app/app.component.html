@@ -1,13 +1,19 @@
 <div class="container-fluid" id="header_sticky">
-<app-header></app-header>
+    <app-header></app-header>
 </div>
-<div class="container" style="background: white;">
-  <div class="span10" style="margin-top: 20px;">
-      <router-outlet></router-outlet>
-  </div>
-  <div class="banner2" >
-      <a href="#"><img src="assets/img/banner-cumple.png"></a>
-      <a href="#"><img src="assets/img/banner-homemiboleteria.jpg" style="margin-top:25px;"></a>
-  </div>
-  </div>
+<div class="container" id="container_princ">
+    <div class="span10" style="margin-top: 20px;">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="row-fluid" id="banner2">
+        <div class="ficha">
+            <div class="block_inf">
+                <a href="#"><img alt="cumpleaños" src="./assets/img/banner-cumple.png"></a>
+                <a href="#"><img alt="comprar entrada" style="margin-top:25px;" src="./assets/img/banner-homemiboleteria.jpg"></a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <app-footer></app-footer>
