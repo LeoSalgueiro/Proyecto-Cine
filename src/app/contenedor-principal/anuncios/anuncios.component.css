@@ -1,0 +1,35 @@
+#myCarousel{
+   height: 400px;
+   
+}
+#myCarousel .carousel-indicators{
+    top:-30px;
+    right: 30px;
+}
+#myCarousel .carousel-control.right{
+    right: 30px;
+}
+#myCarousel .carousel-inner{
+    width:953px;
+}
+#myCarousel .carousel-caption{
+    width: 953px;
+}
+#form_corrou .form_cinema{
+    margin:0px;
+}
+#form_corrou .form_cinema select{
+    margin-left: 10px;
+    font-weight: bold;
+    background: #575c60;
+}
+#form_corrou .form_cinema select option{
+    background: #575c60;
+}
+#form_corrou{
+     margin-top: 13px;
+    background: #010e17;
+    padding-top: 10px;
+    width:953px;
+
+}

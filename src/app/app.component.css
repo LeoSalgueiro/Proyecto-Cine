@@ -2,24 +2,22 @@
     padding-left: 0px;
     padding-right: 0px;
 }
-#banner2 .block_inf {
-    padding-top: 30px;
-    padding-bottom: 20px;
-    background: white;
-}
-#banner2 .banner{
-    position: absolute;
+
+#cont_princ{
     background: #f3f3f3;
-    bottom: -462px;
 }
-#banner2 .banner .block_inf{
-    width: 600px;
+.span10#cont_princ2{
+    margin-top: 20px;
+    margin-left:34px;
 }
-#banner2 .ficha{
-    margin-left: 35px;
-    margin-top:10px;
-    max-width: 40rem;
-}
-#container_princ{
+
+.block_inf {
     background: white;
+    padding: 10px;
+}
+div#cont_img{
+    width: 40rem;
+    float:left;
+    margin-top:10px;
+    margin-bottom: 10px;
 }

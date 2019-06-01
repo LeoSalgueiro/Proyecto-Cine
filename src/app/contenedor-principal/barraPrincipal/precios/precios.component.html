@@ -1,79 +1,76 @@
 <div id="principal">
-<div style="max-width: 40rem;">
-    <app-ficha-principal [texto_rojo]="'PRECIOS '" [texto_negro]="' CINEMACENTER  '" [texto_light]=" '   ·   ARGENTINA'"></app-ficha-principal>
-<br>
-<!--tabla de precios-->
-<table class="table" style="margin-bottom: 5px;">
-        <thead>
-          <tr >
-              <th class="primer-fila">SAN LUIS</th>
-          </tr>
-        </thead>
-</table>
-<table>
-        <thead>
-            <tr>
-            <th scope="col" class="complejos">COMPLEJOS</th>
-            <th scope="col" class="precios">PRECIOS VIGENTES</th>
-          </tr>
-        
-        <tbody>
-          <tr>
-            <th scope="row">
-                <p class="entrada">Entrada 2D:</p>
-                <p class="sub-entrada">Cinemacenter San Luis</p>
-                </th>
-            <td class="texto">
-                <p><b>Entrada General:</b> $ 220</p>
-                <p><b>Lunes a Miércoles (excepto feriados y días no laborables):</b> $ 120</p>
-                <p><b>Estudiantes Universitarios y/o terciarios (con credencial/carnet):</b> Todos los Viernes (excepto feriados y dias no laborables) $ 120</p>
-                <p><b>Jubilados y Docentes (con credencial/carnet):</b> Todos los Jueves (excepto feriados y dias no laborables) $ 120</p>
-            </td>
-          </tr>
-          <tr>
-                <th scope="row">
-                    <p class="entrada">Entrada 3D:</p>
-                    <p class="sub-entrada">Cinemacenter San Luis</p>
-                </th>
-            <td class="texto">
-                <p><b>Entrada General:</b> $ 230</p>
-                <p><b>Lunes a Miércoles (excepto feriados y días no laborables):</b> $ 130</p>
-                <p><b>Estudiantes Universitarios y/o terciarios (con credencial/carnet):</b> Todos los Viernes (excepto feriados y dias no laborables) $ 130</p>
-                <p><b>Jubilados y Docentes (con credencial/carnet):</b> Todos los Jueves (excepto feriados y dias no laborables) $ 130</p>
+    <div style="max-width: 40rem;">
+        <app-ficha-principal [texto_rojo]="'PRECIOS '" [texto_negro]="' CINEMACENTER  '" [texto_light]=" '   ·   ARGENTINA'"></app-ficha-principal>
+        <div class="block_inf">
+            <br>
+            <!--tabla de precios-->
+            <table class="table" style="margin-bottom: 5px;">
+                <thead>
+                    <tr >
+                        <th class="primer-fila">SAN LUIS</th>
+                    </tr>
+                </thead>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col" class="complejos">COMPLEJOS</th>
+                        <th scope="col" class="precios">PRECIOS VIGENTES</th>
+                    </tr>
 
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">
-                <p class="entrada">Formas de pago:</p>
-                <p class="sub-entrada">Cinemacenter San Luis</p>
-            </th>
-            <td colspan="2" class="texto">
-                <p><b>-Cinemacenter San Luis:</b> Efectivo - Visa - Visa Electron - American Express - Tarjeta Nevada - Tarjeta Platino - Tarjeta Naranja - Cabal- Mastercard - Tarjeta Plena </p>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <p class="entrada">Entrada 2D:</p>
+                            <p class="sub-entrada">Cinemacenter San Luis</p>
+                        </th>
+                        <td class="texto">
+                            <p><b>Entrada General:</b> $ 220</p>
+                            <p><b>Lunes a Miércoles (excepto feriados y días no laborables):</b> $ 120</p>
+                            <p><b>Estudiantes Universitarios y/o terciarios (con credencial/carnet):</b> Todos los Viernes (excepto feriados y dias no laborables) $ 120</p>
+                            <p><b>Jubilados y Docentes (con credencial/carnet):</b> Todos los Jueves (excepto feriados y dias no laborables) $ 120</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p class="entrada">Entrada 3D:</p>
+                            <p class="sub-entrada">Cinemacenter San Luis</p>
+                        </th>
+                        <td class="texto">
+                            <p><b>Entrada General:</b> $ 230</p>
+                            <p><b>Lunes a Miércoles (excepto feriados y días no laborables):</b> $ 130</p>
+                            <p><b>Estudiantes Universitarios y/o terciarios (con credencial/carnet):</b> Todos los Viernes (excepto feriados y dias no laborables) $ 130</p>
+                            <p><b>Jubilados y Docentes (con credencial/carnet):</b> Todos los Jueves (excepto feriados y dias no laborables) $ 130</p>
 
-            </td>
-          </tr>
-          <tr>
-                <th scope="row">
-                    <p class="entrada">Horarios de apertura:</p></th>
-                <td colspan="2" class="texto">
-                    <p><b>- Cinemacenter San Luis:</b> Todos los dias: 16.00 hs </p>
-                </td>
-              </tr>
-              <tr>
-                    <th scope="row">
-                        <p class="entrada">Información General:</p></th>
-                    <td colspan="2" class="texto">
-                        <p>Los menores abonan entrada desde los 3 años cumplidos.</p>
-        
-                    </td>
-                  </tr>
-        </tbody>
-      </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p class="entrada">Formas de pago:</p>
+                            <p class="sub-entrada">Cinemacenter San Luis</p>
+                        </th>
+                        <td colspan="2" class="texto">
+                            <p><b>-Cinemacenter San Luis:</b> Efectivo - Visa - Visa Electron - American Express - Tarjeta Nevada - Tarjeta Platino - Tarjeta Naranja - Cabal- Mastercard - Tarjeta Plena </p>
 
-</div>
-</div>
-<div id="banner-d">
-    <app-barra-lateral></app-barra-lateral>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p class="entrada">Horarios de apertura:</p></th>
+                        <td colspan="2" class="texto">
+                            <p><b>- Cinemacenter San Luis:</b> Todos los dias: 16.00 hs </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p class="entrada">Información General:</p></th>
+                        <td colspan="2" class="texto">
+                            <p>Los menores abonan entrada desde los 3 años cumplidos.</p>
 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

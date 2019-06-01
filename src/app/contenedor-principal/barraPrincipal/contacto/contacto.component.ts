@@ -1,18 +1,13 @@
-import { Component, OnDestroy  } from '@angular/core';
+import { Component  } from '@angular/core';
 
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css']
 })
-export class ContactoComponent implements OnDestroy  {
+export class ContactoComponent {
   
    constructor() {
-    document.getElementById("container_princ").style.background="#f3f3f3";
-  }
-
-ngOnDestroy(){
-    document.getElementById("container_princ").style.background="white";
   }
 
 }

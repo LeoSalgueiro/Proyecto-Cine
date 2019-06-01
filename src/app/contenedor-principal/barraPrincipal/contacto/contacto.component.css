@@ -1,4 +1,8 @@
-#anuncio {margin-left: 30px;}
+.lista_estrella li{
+   line-height: 18px;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
 .block_inf {
     padding-left: 20px;
     padding-top: 30px;
@@ -7,25 +11,8 @@
     background: white;
 }
 
-.fondo#contact{
-    background: #f3f3f3;
-    position: relative;
-    top: -20px;
-    left: -30px;
-    width: 1020px;
-    padding-top: 20px;
-    padding-bottom: 1120px;
-    margin-bottom: -20px;
-}
 
-.cont{
-    margin-left:34px;
-}
-#principal{
-    background: #f3f3f3
-}
-
-#contact h6{
+#principal h6{
     font-weight: lighter;
     color:#787878;
 }

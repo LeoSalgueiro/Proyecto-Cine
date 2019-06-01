@@ -132,23 +132,26 @@ body {
 
 div#principal{
     width: 40rem;
-    background-color: white; 
     float:left;
+    padding-right: 3px;
     margin-top:10px;
-    padding-right: 10px;
+}
+.block_inf {
+    padding:16px;
+    background: white;
 }
 
 div#banner-d{
+    margin-top:10px;
     width: 310px;
-    float:left;
+    float:right;
+    margin-right: 16px;
 }
 
 /*--------listado con estrella roja-----------*/
 .lista_estrella li{
     list-style: disc url(./assets/img/estrella_roja.png);
-    line-height: 18px;
-    font-size: 12px;
-    padding-bottom: 10px;
+ 
 }
 /*----estilo formularios--------------------------*/
 

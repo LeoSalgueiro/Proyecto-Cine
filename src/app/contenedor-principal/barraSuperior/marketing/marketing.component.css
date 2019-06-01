@@ -1,3 +1,10 @@
+ ul.lista_estrella li {
+    margin-bottom: 20px;
+}
+.lista_estrella li{
+    line-height: 20px;
+    text-align: justify;
+}
 .titulo1{
     color: #d80b0b;
     background-color:#F8F8F8;

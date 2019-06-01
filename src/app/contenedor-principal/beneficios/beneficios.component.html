@@ -1,35 +1,30 @@
 <div id="principal">
     <div style="max-width: 40rem;">
-    <app-ficha [titulo]="'BENEFICIOS '" [imagen]="'icon-promos.png'" [subtitulo]="' · PROMOCIONES '"></app-ficha>
-    
-    <div class="tarjeta" *ngFor="let b of beneficios">
-        <div class="imagen">
-            <img src="../../../assets/img/beneficios/{{b.getId()}}.jpg">
+        <app-ficha [titulo]="'BENEFICIOS '" [imagen]="'icon-promos.png'" [subtitulo]="' · PROMOCIONES '"></app-ficha>
+        <div class="block_inf">
+            <div class="tarjeta" *ngFor="let b of beneficios">
+                 <div class="imagen">
+                    <img src="../../../assets/img/beneficios/{{b.getId()}}.jpg">
+                </div>
+                <div class="texto1">
+                    <b class="titulo">{{b.getNombre()}}</b>
+                    <div class="contenido">
+                        <span class="fechas">Válida desde {{b.getValidez()[0].getDate()}}/{{b.getValidez()[0].getMonth()}}/{{b.getValidez()[0].getFullYear()}} hasta <span class="rojo">{{b.getValidez()[1].getDate()}}/{{b.getValidez()[1].getMonth()}}/{{b.getValidez()[1].getFullYear()}}</span></span>
+                        <br>
+                        <img src="../../../assets/img/estrella_roja.png">Tipo de beneficio: <span class="gris">{{b.getTipo()}}</span>
+                        <br><br>
+                    </div>
+                </div>
+                <div class="texto2">
+                    <p class="contenido">Plazas en la que es válido:
+                        <span class="gris" *ngFor="let plaza of b.getPlazas()">{{plaza}} - </span></p>
+                    <p class="contenido">Condiciones Generales:
+                        <span class="gris">{{b.getCondicionesGenerales()}}</span>
+                    </p>
+                    <p class="contenido">{{b.getDetalleSalas()}}</p>
+                </div>
+                <br><br>
+            </div><!--cierre tarjeta-->
         </div>
-        <div class="texto1">
-            <b class="titulo">{{b.getNombre()}}</b>
-            <div class="contenido">
-            <span class="fechas">Válida desde {{b.getValidez()[0].getDate()}}/{{b.getValidez()[0].getMonth()}}/{{b.getValidez()[0].getFullYear()}} hasta <span class="rojo">{{b.getValidez()[1].getDate()}}/{{b.getValidez()[1].getMonth()}}/{{b.getValidez()[1].getFullYear()}}</span></span>
-            <br>
-            <img src="../../../assets/img/estrella_roja.png">Tipo de beneficio: <span class="gris">{{b.getTipo()}}</span>
-            <br><br>
-            </div>
-        </div>
-            <div class="texto2">
-                <p class="contenido">Plazas en la que es válido:
-                    <span class="gris" *ngFor="let plaza of b.getPlazas()">{{plaza}} - </span></p>
-                <p class="contenido">Condiciones Generales:
-                    <span class="gris">{{b.getCondicionesGenerales()}}</span>
-                </p>
-                <p class="contenido">{{b.getDetalleSalas()}}</p>
-            </div>
-    <br><br>
-    </div><!--cierre tarjeta-->
-    
+    </div>
 </div>
-</div>
-
-    <div id="banner-d">
-            <app-barra-lateral></app-barra-lateral>
-        
-        </div>
