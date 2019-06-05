@@ -32,7 +32,6 @@ export class CarteleraComponent implements OnInit {
       //console.log(diaSemana + "restante: "+diasRestantes);
     }
     fechaFin.setDate(hoy.getDate()+diasRestantes);
-    
     return fechaFin;
   }
 

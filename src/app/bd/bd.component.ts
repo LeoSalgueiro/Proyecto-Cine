@@ -64,7 +64,6 @@ constructor() { }
   public obtenerCartelera(fecha:Date):Cartelera{
     
     for (let c of this.carteleras){
-      //si igualan en día mes y año
       if (c.getFechaFin().toDateString()===fecha.toDateString()){
           return c;
       }

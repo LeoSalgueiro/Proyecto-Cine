@@ -27,6 +27,7 @@ import { BarraLateralComponent } from './contenedor-principal/barra-lateral/barr
 import { FichaPrincipalComponent } from './ficha-principal/ficha-principal.component';
 import { BeneficiosComponent } from './contenedor-principal/beneficios/beneficios.component';
 import { BDComponent } from './bd/bd.component';
+import { NoticiasComponent } from './contenedor-principal/noticias/noticias.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { BDComponent } from './bd/bd.component';
     FichaComponent,
     BarraLateralComponent,
     FichaPrincipalComponent,
-    BeneficiosComponent
+    BeneficiosComponent,
+    NoticiasComponent
   ],
   imports: [
     BrowserModule,
