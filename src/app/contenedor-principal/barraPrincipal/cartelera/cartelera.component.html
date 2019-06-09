@@ -2,7 +2,13 @@
 <div id="principal">
     <div style="max-width: 40rem;">
         <app-ficha-principal [texto_rojo]="'PELICULAS '" [texto_negro]="'EN CARTEL'" [imagen]="'icon-movies.png'"></app-ficha-principal>
-        <div class="block_inf">
+        
+        <tr *ngFor="let valor_actual of arreglo; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{valor_actual.NOMBRE}}</td>
+          </tr>
+        
+        <!--<div class="block_inf">
             <br>
             <div class="tarjeta-pelicula" *ngFor="let p of this.carteleraActual.getPeliculas()">
                  <div class="imagen-p">
@@ -23,7 +29,7 @@
                 </div>
 
 
-            </div><!--cierre tarjeta-pelicula-->
-        </div>
+            </div>cierre tarjeta-pelicula
+        </div>-->
     </div>
 </div>
