@@ -12,16 +12,14 @@ import { APIControllersService } from '../../../APIControllers/apicontrollers.se
 export class CarteleraComponent implements OnInit {
   private carteleraActual:Cartelera;
   private hoy:Date;
-  arreglo:any[];
+  peliculas:any[];
   constructor(private conector:APIControllersService) {
     this.hoy=new Date();
     
   }
 
   ngOnInit() {
-    console.log(this.calcularPeriodo(this.hoy));
-    this.conector.ObtenerCartelera(this.calcularPeriodo(this.hoy)).subscribe(res => {this.arreglo = res; });
-    console.log(this.arreglo==null);
+    this.conector.ObtenerCartelera(this.calcularPeriodo(this.hoy)).subscribe(res => {this.peliculas = res; });
   }
 
   calcularPeriodo(hoy:Date):String{
