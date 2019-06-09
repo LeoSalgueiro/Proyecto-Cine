@@ -1,0 +1,65 @@
+.lista_estrella li{
+   line-height: 18px;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+.block_inf {
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background: white;
+}
+
+
+#principal h6{
+    font-weight: lighter;
+    color:#787878;
+}
+
+.form_cinema input[type="checkbox"]{
+    height: 15px;
+    margin-left:-100px;
+}
+#r4Div{
+    margin-bottom: 0px;
+}
+.titulo .myriad{
+    font-size: 18px;
+}
+.titulo .lista_estrella{
+    margin-top:20px;
+}
+
+/*------------estilo para el mini menu--------------*/
+.mini_menu button{
+    width: 280px;
+    height: 46.8px;
+    border-radius: 5px !important;
+    color:black;
+    background: transparent;
+    border: solid 1px #000;
+    text-align: center;
+    font-weight: lighter;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: capitalize;
+    font-size: 17px;
+}
+.mini_menu button:hover{
+    background: #e91820;
+     font-size: 17px;
+    color:white;
+    border: none;
+    
+}
+.mini_menu ul{
+    list-style: none;
+    margin:0px;
+}
+.mini_menu li{
+        width: 50%;
+    float: left;
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+}

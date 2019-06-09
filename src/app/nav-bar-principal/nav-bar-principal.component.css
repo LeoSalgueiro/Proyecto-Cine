@@ -1,0 +1,11 @@
+.enlace_logo {
+    /* padding-left: 135px; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 300px;
+    top: 20px;
+}
+.imgLogo{
+    padding-left:135px; 
+}

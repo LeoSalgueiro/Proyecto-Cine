@@ -1,5 +1,35 @@
 <app-anuncios></app-anuncios>
-<div style="max-width: 40rem;">
-<app-ficha-principal [texto_rojo]="'PELICULAS '" [texto_negro]="'EN CARTEL'"></app-ficha-principal>
-<p>Contendido aquí</p>
+<div id="principal">
+    <div style="max-width: 40rem;">
+        <app-ficha-principal [texto_rojo]="'PELICULAS '" [texto_negro]="'EN CARTEL'" [imagen]="'icon-movies.png'"></app-ficha-principal>
+        
+        <!--<tr *ngFor="let valor_actual of arreglo; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{valor_actual.NOMBRE}}</td>
+          </tr>-->
+        
+        <div class="block_inf">
+            <br>
+            <div class="tarjeta-pelicula" *ngFor="let pelicula of peliculas">
+                 <div class="imagen-p">
+                    <img src="../../../../assets/img/peliculas/{{pelicula.ID_PELICULA}}.jpg" alt="hola">
+                </div>
+ 
+                <div class="descripcion-p">
+                    <img src="../../../../assets/img/estrella_roja.png">
+                    <b class="titulo-pelicula">{{pelicula.NOMBRE}}</b>
+                    <br>
+                    <span class="texto-gris">{{pelicula.NOMBRE}}...</span>
+                    <br>
+                    <span class="atributo">Género: </span><span class="texto-gris">{{pelicula.GENERO}}</span><br>
+                   <!-- <span class="atributo">Director: </span><span class="texto-gris" *ngFor="let dirId of p.getDirectores()">{{pelicula.ID_PELICULA}}</span><br>-->
+                <!--<span class="atributo">Protagonistas: </span><span class="texto-gris" *ngFor="let protagonista of p.getProtagonistas()">{{protagonista}}, </span><br>-->
+                    <span class="atributo">Calificación: </span><span class="texto-gris">{{pelicula.CLASIFICACION}}</span><br>
+                    <br>
+                </div>
+
+
+            </div>cierre tarjeta-pelicula
+        </div>
+    </div>
 </div>

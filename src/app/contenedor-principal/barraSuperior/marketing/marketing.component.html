@@ -1,4 +1,136 @@
-<div style="max-width: 40rem;">
-    <app-ficha [titulo]="'MARKETING'"></app-ficha>
-    <p>Colocar contenido aqui</p>
+<div id="principal">
+    <div style="max-width: 40rem;">
+        <app-ficha [titulo]="'MARKETING'" [subtitulo]="' · CINEMACENTER'" [pais]="' · ARGENTINA'" [imagen]="'icon-cca.png'"></app-ficha>
+
+        <div class="block_inf">
+            <article style="max-width: 40rem;">
+
+                <section class="seccion1">
+                    <p>
+                        <span class ="titulo1">CINEMACENTER</span>  es el lugar ideal donde enfocar acciones promocionales y publicitarias. A través de los cines puede impulsar su producto o servicio en medio de infinidad de alternativas.<br>
+
+                        Algunas opciones son:<br><br></p>
+                    <ul class="lista_estrella"> 
+                        <li>Su marca puede ser protagonista: Colocando su marca en nuestros envases de Pop Corn estará a mano de todos a nivel nacional.<br></li>
+                        <li> Destinar nuestras instalaciones para organizar sus propios eventos: Premieres - lanzamientos - Funciones privadas - Degustaciones - Muestras - Módulos de Información - Convenciones<br></li>
+                        <li> Entradas corporativas: Cinemacenter tiene precios especiales en las entradas para su Empresa. Puede destinarlas para generar valor agregado en su producto o entregarlas a sus empleados como incentivo.<br></li>
+                        <li> Publicitar en nuestras pantallas de cine, pagina web, programas, estáticas colocadas en lobby y salas.<br></li>
+                        <li> Generar acciones donde sus clientes o empleados obtengan beneficios y descuentos al concurrir a nuestras salas.<br></li>
+                        <li> Coordinar sampling de su producto entre nuestros clientes.<br></li>
+                    </ul>
+                   <p> ... y muchas alternativas mas donde el único limite es la imaginación!!!<br><br>
+
+                    <b>Estas son algunas de las empresas que ya trabajan con nosotros:</b>
+                    </p>
+                    <table cellpadding="10">
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>American Express</li> 
+                                    <li> Arcor</li> 
+                                    <li>Bodegas Balbo</li>
+                                    <li>Banco Francés</li>
+                                    <li>Banco Santander Río</li> 
+                                    <li>Banelco</li> 
+                                    <li>Centrocard</li>
+                                    <li>Confina</li> 
+                                    <li>Club La Nación</li>
+                                    <li>Coca Cola</li>
+                                    <li>Corefin</li>
+                                    <li>Megatone</li>
+                                    <li>Musimundo</li>
+                                    <li>Flechabus</li>
+                                    <li>Chevallier – Bus Paq</li>
+                                    <li>Empresa Urquiza</li>
+                                    <li>AVH</li> 
+
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Vía Bariloche</li>
+                                    <li>DirecTV</li>
+                                    <li>Groupon </li>  
+                                    <li>Hotel Guerrero</li>
+                                    <li>Mc Donalds</li>
+                                    <li>Nextel</li>
+                                    <li>Pepsi</li>
+                                    <li>Rapipago</li>
+                                    <li>Supercanal</li>
+                                    <li>Tarjeta Mira</li>
+                                    <li>Tarjeta Naranja</li> 
+                                    <li>Tarjeta Nevada</li> 
+                                    <li>Telefónica de Argentina</li>
+                                    <li>Telecom</li> 
+                                    <li>Diario Huarpe</li> 
+                                    <li>Unilever</li>
+                                    <li>Colorin</li>
+
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Hotel Baloo</li>
+                                    <li>Slots Machines</li> 
+                                    <li>>GetsC></li> 
+                                    <li>Cicop</li>
+                                    <li> Open Sports</li>
+                                    <li>Banco Galicia</li>
+                                    <li>Swiss Medical</li>
+                                    <li>Fundación Médica de Mar del Plata</li>
+                                    <li>Supermercados Makro</li>
+                                    <li>Monteverde</li>
+                                    <li>Claro</li>
+                                    <li>Nec Argentina</li>
+                                    <li>Falabella</li>
+                                    <li>Aluflex</li>
+
+
+                                </ul>
+                            </td>
+                        </tr>             
+
+
+                    </table>
+
+                </section>
+                <section class ="seccion2">
+                      <ul class="lista_estrella"> 
+                        <li><b>Para comunicarte con nuestro departamento de Marketing, llena nuestro formulario. Gracias.</b></li>
+                      </ul>
+                    <br><br>
+
+                    <form method = "POST" action ="#" class="form1">
+                        <table >
+                            <tr>
+                                <td>    <span class = "datos1">Nombre:</span></td>  <td><input type="text" placeholder="Nombre" name="nombre" size = "30" class="campos" required/></td>
+                            </tr>
+                            <tr>
+                                <td> <span class = "datos1">Email:</span></td>      <td><input type="email" placeholder="ejemplo@email.com" name="email" size = "30" class="campos" required/></td>
+                            </tr>
+                            <tr>
+                                <td>  <span class = "datos1">Empresa:</span></td>   <td><input type="text" placeholder="Empresa" name="empresa" size = "30"  class="campos" required/></td>
+                            </tr>
+                            <tr>
+                                <td><span class = "datos1">Telefono:</span></td>    <td><input type="text" placeholder="Telefono" name="telefono" size = "30" class="campos"  required/></td>
+                            </tr>
+                            <tr>
+                                <td><span class = "datos1">Ciudad:</span></td><td><input type="text" placeholder="Ciudad" name="ciudad" size = "30" class="campos" required/></td>
+                            </tr>
+                            <tr>
+                                <td><span class = "datos1">Consulta:</span></td><td> <textarea  name="consulta" class="textarea1" ></textarea></td>
+                            </tr>
+                            <tr>
+                                <td></td><td><button class ="submit" type ="submit" name = "enviar_marketing">ENVIAR A DPTO DE MARKETING</button></td>
+                            </tr>
+
+                        </table> 
+                    </form>
+
+
+                </section>
+
+            </article>
+        </div>
     </div>
+</div>

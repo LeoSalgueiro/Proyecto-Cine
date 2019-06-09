@@ -26,6 +26,12 @@ import { AnunciosComponent } from './contenedor-principal/anuncios/anuncios.comp
 import { FichaComponent } from './contenedor-principal/ficha/ficha.component';
 import { BarraLateralComponent } from './contenedor-principal/barra-lateral/barra-lateral.component';
 import { FichaPrincipalComponent } from './ficha-principal/ficha-principal.component';
+import { BeneficiosComponent } from './contenedor-principal/beneficios/beneficios.component';
+import { NoticiasComponent } from './contenedor-principal/noticias/noticias.component';
+
+import { ControllerApiComponent } from './controller-api/controller-api.component';
+import { APIControllersService } from './APIControllers/apicontrollers.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,14 +57,22 @@ import { FichaPrincipalComponent } from './ficha-principal/ficha-principal.compo
     AnunciosComponent,
     FichaComponent,
     BarraLateralComponent,
-    FichaPrincipalComponent
+    FichaPrincipalComponent,
+    BeneficiosComponent,
+    NoticiasComponent,
+    ControllerApiComponent
   ],
   imports: [
     BrowserModule,
+<<<<<<< HEAD
     AppRoutingModule, 
     FormsModule
+=======
+    AppRoutingModule,
+    HttpClientModule
+>>>>>>> origin/vale
   ],
-  providers: [],
+  providers: [APIControllersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

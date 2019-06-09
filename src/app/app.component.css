@@ -1,0 +1,23 @@
+#header_sticky{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#cont_princ{
+    background: #f3f3f3;
+}
+.span10#cont_princ2{
+    margin-top: 20px;
+    margin-left:34px;
+}
+
+.block_inf {
+    background: white;
+    padding: 10px;
+}
+div#cont_img{
+    width: 40rem;
+    float:left;
+    margin-top:10px;
+    margin-bottom: 10px;
+}

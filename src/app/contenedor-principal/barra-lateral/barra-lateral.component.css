@@ -1,0 +1,29 @@
+#myCarousel2 img{
+    padding-bottom: 40px;
+    width: 300px;
+}
+#myCarousel2{
+    margin-bottom: 0px !important;
+}
+b{
+    color:white;
+    font-size: 12px;
+}
+span{
+    color: white;
+}
+
+#masInfo{
+    color:#285BD7;
+    font-size: 14px;
+}
+.block_item {
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    background: white;
+}
+.item_sidebar{
+    margin-bottom: 5px;
+}

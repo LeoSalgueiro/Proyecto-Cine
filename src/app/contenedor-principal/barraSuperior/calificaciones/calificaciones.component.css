@@ -7,6 +7,9 @@
     color:#464646;
 
 }
+.seccion1{
+    text-align: justify;
+}
 .seccion2{
     color:#999393;
 
@@ -17,4 +20,7 @@
     color:#665E5C;
     font-family: Georgia, 'Times New Roman', serif;
 
+}
+.block_inf{
+    padding-right: 20px;
 }
