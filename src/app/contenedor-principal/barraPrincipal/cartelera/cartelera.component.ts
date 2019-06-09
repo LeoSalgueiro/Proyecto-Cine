@@ -19,7 +19,9 @@ export class CarteleraComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.calcularPeriodo(this.hoy));
     this.conector.ObtenerCartelera(this.calcularPeriodo(this.hoy)).subscribe(res => {this.arreglo = res; });
+    console.log(this.arreglo==null);
   }
 
   calcularPeriodo(hoy:Date):String{
@@ -37,7 +39,6 @@ export class CarteleraComponent implements OnInit {
     }
     fechaFin.setDate(hoy.getDate()+diasRestantes);
     fecha=fechaFin.getFullYear()+"-"+(fechaFin.getMonth()+1)+"-"+fechaFin.getDate();
-    console.log(fecha);
     return fecha;
   }
 
