@@ -13,15 +13,13 @@ export class BeneficiosComponent implements OnInit {
   constructor(private conector:APIControllersService) { }
 
   ngOnInit() {
-    //this.obtenerBeneficios();
-    this.conector.BuscarBeneficiosDisponibles().subscribe(res => {this.beneficios = res; });
-    
-
+    this.obtenerBeneficios();
 
     
   }
 
   obtenerBeneficios(){
+    this.conector.BuscarBeneficiosDisponibles().subscribe(res => {this.beneficios = res; });
     
   }
 

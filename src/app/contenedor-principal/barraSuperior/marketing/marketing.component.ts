@@ -54,12 +54,12 @@ export class MarketingComponent implements OnInit {
     consulta.setMotivo("marketing");
     consulta.setEmail(this.formulario.email);
 
-    if(this.conector.existePersona(persona.getEmail())){
+    /*if(this.conector.existePersona(persona.getEmail())){
          this.conector.guardarConsulta(consulta);
     }
     else{
         this.conector.guardarPersona(persona);
         this.conector.guardarConsulta(consulta);
-    }
+    }*/
   }
 }

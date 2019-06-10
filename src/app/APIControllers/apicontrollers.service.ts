@@ -33,14 +33,4 @@ export class APIControllersService {
     return this.conector.get<any[]>(`http://localhost:3000/API/Beneficios/`);
   }
 
-  existePersona(email:String):Boolean{
-    return false;
-  }
-
-  guardarConsulta(consulta:Consulta){
-
-  }
-  guardarPersona(persona:Persona){
-
-  }
 }
