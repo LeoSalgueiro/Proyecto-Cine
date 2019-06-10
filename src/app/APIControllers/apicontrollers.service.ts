@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-<<<<<<< HEAD
 import {Pelicula} from '../bd/bd.component';
 import { Observable } from 'rxjs';
-=======
 
 import {Persona, Consulta } from 'src/app/bd/bd.component';
 
->>>>>>> 31109d2cc8d954387606d643870e4b0659bc9ea7
 @Injectable({
   providedIn: 'root'
 })
@@ -36,14 +33,14 @@ export class APIControllersService {
     return this.conector.get<any[]>(`http://localhost:3000/API/Beneficios/`);
   }
 
-  /// metodos necesarios para comunicarse con el Dpto de Marketing
-  existePersona(email: String): Boolean{
-    
+  existePersona(email:String):Boolean{
+    return false;
   }
-  guardarPersona(persona: Persona){
+
+  guardarConsulta(consulta:Consulta){
 
   }
-  guardarConsulta(consulta: Consulta){
+  guardarPersona(persona:Persona){
 
   }
 }
