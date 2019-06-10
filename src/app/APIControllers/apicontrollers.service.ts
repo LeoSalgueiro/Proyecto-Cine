@@ -23,7 +23,7 @@ export class APIControllersService {
   BuscarProximosEstrenos(fecha: String){    
     return this.conector.get<any[]>(`http://localhost:3000/API/ProximosEstrenos/${fecha}`);
   }
-  ObetenerCombosDisponibles(ciudad: String){    
+  ObtenerCombosDisponibles(ciudad: String){//PASAR PARÁMETRO s:string= "San Luis"
     return this.conector.get<any[]>(`http://localhost:3000/API/Combos/${ciudad}`);
   }
   ObtenerPersona(email: String){    
