@@ -4,6 +4,44 @@
         <app-ficha-principal [texto_rojo]="'PRÓXIMOS '" [texto_negro]="' ESTRENOS'" [imagen]="'icon-movies.png'"></app-ficha-principal>
         <div class="block_inf">
 
+
+
+                <br>
+                <div class="tarjeta-pelicula" *ngFor="let p of peliculas">
+                     <div class="imagen-p">
+                        <img src="../../../../assets/img/peliculas/{{pelicula.ID_PELICULA}}.jpg" alt="PELICULA">
+                    </div>
+     
+                    <div class="descripcion-p">
+                        <img src="../../../../assets/img/estrella_roja.png">
+                        <b class="titulo-pelicula">{{p.NOMBRE}}</b>
+                        <br>
+                        <span class="texto-gris">{{p.NOMBRE}}...</span>
+                        <br>
+                        <span class="atributo">Género: </span><span class="texto-gris">{{p.GENERO}}</span><br>
+
+                        <span class="atributo">Director: </span><span class="texto-gris">{{p.DIRECTOR}}</span><br>
+                        <span class="atributo">Protagonistas: </span><span class="texto-gris">*ngFor="let protagonista of p.getProtagonistas()">{{protagonista}}, </span><br><!---Funciona asi esto?-->
+                        <span class="atributo">Calificación: </span><span class="texto-gris">{{p.CALIFICACION}}</span><br>
+                        <br>
+                    </div>
+    
+    
+                </div>cierre tarjeta-pelicula
+
+
+            
+        
+
+
+
+
+
+
+
+
+
+            <!---
             <div class="Fechas" style="text-align: right; margin-top: 60px;">  Desde: <time>Jueves 30 de Mayo de 2019</time> </div>
             <article>
                 <hr>
@@ -250,7 +288,7 @@
 
                 </ul>
             </article>
-
+--->
 
         </div>
 
