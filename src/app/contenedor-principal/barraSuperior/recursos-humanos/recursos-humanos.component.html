@@ -1,6 +1,8 @@
-<div style="max-width: 40rem;">
-    <app-ficha [titulo]="'RECURSOS HUMANOS'" ></app-ficha>
-    
+<div id="principal">
+    <div style="max-width: 40rem;">
+        <app-ficha [titulo]="'RECURSOS HUMANOS'" [imagen]="'icon-cca.png'"></app-ficha>
+
+<div class="block_inf"> 
 <div><p class="detalles">
     Informamos a las personas que envíen su currículum por correo electrónico que sus datos serán incorporados a una base de datos y que serán tratados con la finalidad de gestionar el proceso de selección de candidatos a ocupar puestos en salas de cine bajo la marca CINEMACENTER.
 </p></div>
@@ -15,7 +17,7 @@
                 
                     <label class="control-label color" for="nombre"><p> Nombre:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
-                        <input 
+                        <input class="campos"
                             
                             type="text"
                             name="nombre"
@@ -34,7 +36,7 @@
                 <div class="control-group" style="margin-top: 1px;" >
                     <label class="control-label color" for="apellido"><p> Apellido:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
-                        <input 
+                        <input class="campos"
                             type="text"
                             name="apellido"
                             maxlength="20"
@@ -50,7 +52,7 @@
                 <div class="control-group" style="margin-top: 1px;" >
                     <label class="control-label color" for="genero"><p> Género:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
-                        <select id="genero" name="genero" [(ngModel)]="model.genero"  required>
+                        <select id="genero" class="campos" name="genero" [(ngModel)]="model.genero"  required>
                             <option value="">Ingrese su género</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
@@ -64,7 +66,7 @@
                 <div class="control-group" style="margin-top: 1px;" >
                     <label class="control-label color" for="email"><p> E-mail:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
-                        <input 
+                        <input class="campos"
                             type="email"
                             name="email"
                             maxlength="30"
@@ -81,7 +83,7 @@
                 <div class="control-group" style="margin-top: 1px;" >
                     <label class="control-label color" for="dni"><p> DNI:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
-                        <input 
+                        <input class="campos"
                             type="text"
                             name="dni"
                             maxlength="8"
@@ -98,7 +100,7 @@
                 <div class="control-group" style="margin-top: 1px;" >
                         <label class="control-label color" for="fecha_nac"><p> Fecha:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
-                        <input 
+                        <input class="campos"
                             type="date"
                             name="fecha_nac"
                 
@@ -112,7 +114,7 @@
                 <div class="control-group" style="margin-top: 1px;" >
                     <label class="control-label color" for="ciudad"><p> Ciudad:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
-                        <select id="ciudad" name="ciudad" aria-placeholder="Ingrese su ciudad" [(ngModel)]="model.ciudad"  required>
+                        <select id="ciudad" class="campos" name="ciudad" aria-placeholder="Ingrese su ciudad" [(ngModel)]="model.ciudad"  required>
                             <option value="">Ingrese su ciudad</option>
                             <option value="San Luis">San Luis</option>
                             <option value="Mendoza">Mendoza</option>
@@ -125,7 +127,7 @@
                 <div class="control-group" style="margin-top: 1px;" >
                     <label class="control-label color" for="telefono"><p> Telefono:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
-                        <input 
+                        <input class="campos"
                             type="tel"
                             name="telefono"
                             maxlength="15"
@@ -140,7 +142,7 @@
                 <div class="control-group" style="margin-top: 1px;" >
                     <label class="control-label color" for="estudios"><p> Estudios/Cursos realizados:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
-                        <input 
+                        <input class="campos"
                             type="text"
                             name="estudios"
                             maxlength="100"
@@ -157,14 +159,14 @@
                     <label class="control-label color" for="ref_laborales"><p> Referencias laborales:  </p></label>
                     <div class="controls">
 
-                        <textarea required  id="ref_laborales" name="ref_laborales"   class="input_bg" [(ngModel)]="model.ref_laborales"  ></textarea> 
+                        <textarea class="campos" required  id="ref_laborales" name="ref_laborales"   class="input_bg" [(ngModel)]="model.ref_laborales"  ></textarea> 
                     </div>
                 </div>
 
                 <div class="control-group" style="margin-top: 1px;" >
                     <label class="control-label color" for="ref_personales"><p> Referencias personales:  </p></label>
                     <div class="controls">
-                        <textarea required  id="ref_personales" name="ref_personales"   class="input_bg" [(ngModel)]="model.ref_personales"  ></textarea>
+                        <textarea class="campos" required  id="ref_personales" name="ref_personales"   class="input_bg" [(ngModel)]="model.ref_personales"  ></textarea>
                         
                     </div>
                 </div>
@@ -205,3 +207,5 @@
 
     
     </div>
+</div>
+</div>
