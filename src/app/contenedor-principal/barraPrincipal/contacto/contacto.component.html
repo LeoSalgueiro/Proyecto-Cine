@@ -42,59 +42,54 @@
                 <h6>MEDIANTE ESTE FORMULARIO NO SE RECIBEN RESERVAS</h6>
                 <ul  class="lista_estrella"><li>Su opini&oacute;n es importante para nosotros, por lo que puede usar este formulario para realizar consultas y/o comentarios sobre nuestro servicio.</li></ul>
 
-                <form action="#" class="form-horizontal form_cinema ">
+                <form ngNativeValidate class="form-horizontal form_cinema" #consultaForm="ngForm" (ngSubmit)=(registrarConsulta(consultaForm))>
                     <fieldset>
                         <legend></legend>
-                        <div class="control-group" id="r1Div">
-                            <label class="control-label" for="r1"><strong>Nombre:</strong></label>
+                        <div class="control-group" >
+                            <label class="control-label" for="nombre"><strong>Nombre:</strong></label>
 
                             <div class="controls">
-                                <input type="text"  maxlength="100"  id="r1" name="r1"  placeholder="Nombre Completo" required />
+                                <input type="text"  maxlength="100"  id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Nombre Completo" required />
                             </div>
                         </div>
-                        <div class="control-group" id="r2Div">
-                            <label class="control-label" for="r2"><strong>Email:</strong></label>
+                        <div class="control-group" >
+                            <label class="control-label" for="apellido"><strong>Apellido</strong></label>
+
                             <div class="controls">
-                                <input type="email"  maxlength="100"  id="r2" name="r2" placeholder="ejemplo@email.com"  required />
+                                <input type="text"  maxlength="100"  id="apellido" name="apellido" [(ngModel)]="apellido" placeholder="Apellido" required />
                             </div>
                         </div>
-                        <div class="control-group" id="r3Div">
-                            <label class="control-label" for="r3"><strong>Tel&eacute;fono:</strong></label>
+                        <div class="control-group" >
+                            <label class="control-label" for="email"><strong>Email:</strong></label>
                             <div class="controls">
-                                <input type="text" pattern="\d*"  maxlength="100"  id="r3" name="r3" placeholder="Tel&eacute;fono" required />
+                                <input type="email"  maxlength="100"  id="email" name="email" [(ngModel)]="email"  placeholder="ejemplo@email.com"  required />
                             </div>
                         </div>
-                        <div class="control-group" id="r4Div">
-                            <label class="control-label" for="r4"><strong>Ciudad:</strong></label>
+                        <div class="control-group">
+                            <label class="control-label" for="telefono"><strong>Tel&eacute;fono:</strong></label>
                             <div class="controls">
-                                <select id="r1" name="r4"  required>
+                                <input type="text" pattern="\d*"  maxlength="100"  id="telefono" name="telefono" [(ngModel)]="telefono" placeholder="Tel&eacute;fono" required />
+                            </div>
+                        </div>
+                        <div class="control-group" id="ciudadDiv" >
+                            <label class="control-label" for="ciudad"><strong>Ciudad:</strong></label>
+                            <div class="controls">
+                                <select id="ciudad" name="ciudad"  [(ngModel)]="ciudad"  required>
                                     <option value="">(Elija su ciudad)</option>
-                                    <option value="1">Alta Gracia</option>
-                                    <option value="2">Bahía Blanca</option>
-                                    <option value="3">Catamarca</option>
-                                    <option value="4">Corrientes</option>
-                                    <option value="5">Florencio Varela</option>
-                                    <option value="6">La Rioja</option>
-                                    <option value="7">Mar del Plata</option>
-                                    <option value="8">Mendoza</option>
-                                    <option value="9">Resistencia</option>
-                                    <option value="10">Rio Cuarto</option>
-                                    <option value="11">San Juan</option>
-                                    <option value="12">San Luis</option>
-                                    <option value="13">Santiago del Estero</option>
-                                    <option value="14">Tandil</option>
-                                    <option value="15">Tucuman</option> 
+                                     <option *ngFor="let ciudad of ciudades" [value]="ciudad.getId()">
+                                        {{ciudad.getNombre()}}
+                                     </option>
                                 </select>
                                 <div id="inputCiudad" class="ocultar" >
-                                    <input type="text" maxlength="100"  id="otra_ciudad" name="otra_ciudad"  placeholder="Ciudad" required />
+                                    <input type="text" maxlength="100"  id="otra_ciudad" name="otra_ciudad"  placeholder="Ciudad" />
                                 </div>
-                                <label for="otra_ciudad">Otra<input type="checkbox" id="otra_ciudad" name="otra_ciudad"></label>
+                                <label >Otra<input type="checkbox" id="otra" name="otra"></label>
                             </div>
                         </div>
-                        <div class="control-group" id="r5Div">
-                            <label class="control-label" for="r5"><strong>Motivo</strong></label>
+                        <div class="control-group">
+                            <label class="control-label" for="motivo"><strong>Motivo</strong></label>
                             <div class="controls">
-                                <select id="r1" name="r5"  required>
+                                <select id="motivo" name="motivo"  [(ngModel)]="motivo"  required>
                                     <option value="">(Elija un motivo)</option>
                                     <option value="1">Por publicidad en los cines</option>
                                     <option value="2">consulta general</option>
@@ -105,10 +100,10 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="control-group" id="r6Div">
-                            <label class="control-label" for="r6"><strong>Consulta</strong></label>
+                        <div class="control-group">
+                            <label class="control-label" for="consulta"><strong>Consulta</strong></label>
                             <div class="controls">
-                                <textarea  id="r6" name="r6" class="input_bg"  required ></textarea>
+                                <textarea required  id="consulta" name="consulta"  [(ngModel)]="consulta" class="input_bg"   ></textarea>
                             </div>
                         </div>
                         <div class="controls button btn-cine boton_rojo botonSubmit">
@@ -117,9 +112,11 @@
                     </fieldset>
 
                 </form>
+                <!--{{consultaForm.value | json }}-->
                 <ul  class="lista_estrella"><li>Le recordamos que el procesamiento de su consulta puede demorar hasta 48hs, sepa disculpar las molestias. <span class="rojo">Muchas gracias.</span></li></ul>
 
             </div>
+            <!--legend es la barra horizontal que delimita el form , pero solo se lo puede usar dentro de la etiqueta fieldset-->
             <fieldset>
                 <legend></legend>
             </fieldset>
