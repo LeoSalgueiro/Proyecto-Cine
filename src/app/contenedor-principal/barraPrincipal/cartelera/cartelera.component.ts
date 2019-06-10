@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Cartelera } from 'src/app/bd/bd.component';
+import { Cartelera, Pelicula } from 'src/app/bd/bd.component';
 import { APIControllersService } from '../../../APIControllers/apicontrollers.service';
+import { Subscription, Observable } from 'rxjs';
 
 
 
@@ -12,15 +13,22 @@ import { APIControllersService } from '../../../APIControllers/apicontrollers.se
 export class CarteleraComponent implements OnInit {
   private carteleraActual:Cartelera;
   private hoy:Date;
-  peliculas:any[];
-  constructor(private conector:APIControllersService) {
+  private peliculas:any[];
+
+    constructor(private conector:APIControllersService) {
     this.hoy=new Date();
     
   }
 
   ngOnInit() {
-    this.conector.ObtenerCartelera(this.calcularPeriodo(this.hoy)).subscribe(res => {this.peliculas = res; });
+    this.obtenerCartelera();
+    
   }
+
+  obtenerCartelera(){
+    this.conector.ObtenerCartelera(this.calcularPeriodo(this.hoy)).subscribe(res => {this.peliculas=res;});
+  }
+
 
   calcularPeriodo(hoy:Date):String{
     let diaSemana:number=hoy.getDay();

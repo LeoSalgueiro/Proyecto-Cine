@@ -64,13 +64,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-<<<<<<< HEAD
     AppRoutingModule, 
-    FormsModule
-=======
-    AppRoutingModule,
+    FormsModule,
     HttpClientModule
->>>>>>> origin/vale
   ],
   providers: [APIControllersService],
   bootstrap: [AppComponent]
