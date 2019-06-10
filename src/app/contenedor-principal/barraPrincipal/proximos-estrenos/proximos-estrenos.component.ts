@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIControllersService } from '../../../APIControllers/apicontrollers.service';
 
 @Component({
   selector: 'app-proximos-estrenos',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProximosEstrenosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private conector:APIControllersService) { }
 
   ngOnInit() {
   }

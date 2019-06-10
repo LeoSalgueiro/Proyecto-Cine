@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIControllersService } from '../../../APIControllers/apicontrollers.service';
 
 @Component({
   selector: 'app-supercombos',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupercombosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private conector:APIControllersService) { }
 
   ngOnInit() {
+    
   }
 
 }

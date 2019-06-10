@@ -15,6 +15,7 @@ import { ContactoComponent } from './contenedor-principal/barraPrincipal/contact
 import { RecursosHumanosComponent } from './contenedor-principal/barraSuperior/recursos-humanos/recursos-humanos.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BeneficiosComponent } from './contenedor-principal/beneficios/beneficios.component';
+import { NoticiasComponent } from './contenedor-principal/noticias/noticias.component';
 
 const routes: Routes = [
   {path:"inicio", component:InicioComponent},//barra de navegación pequeña
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:"supercombos", component:SupercombosComponent},//barra de navegación principal
   {path:"contacto", component:ContactoComponent},//barra de navegación principal
   {path:"beneficios", component:BeneficiosComponent},//banner
+  {path:"noticias", component:NoticiasComponent},//banner
   { path: '', redirectTo: 'inicio', pathMatch: 'full'},
   { path: '**', component:PageNotFoundComponent}
 ];

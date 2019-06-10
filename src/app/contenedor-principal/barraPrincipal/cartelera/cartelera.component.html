@@ -1,24 +1,34 @@
 <app-anuncios></app-anuncios>
 <div id="principal">
     <div style="max-width: 40rem;">
-        <app-ficha-principal [texto_rojo]="'PELICULAS '" [texto_negro]="'EN CARTEL'"></app-ficha-principal>
+        <app-ficha-principal [texto_rojo]="'PELICULAS '" [texto_negro]="'EN CARTEL'" [imagen]="'icon-movies.png'"></app-ficha-principal>
+        
+        
+        <!--<tr *ngFor="let valor_actual of arreglo; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{valor_actual.NOMBRE}}</td>
+          </tr>-->
+        
         <div class="block_inf">
+                <!--<p>{{this.peliculas | json}}</p>-->
             <br>
-            <div class="tarjeta-pelicula" *ngFor="let p of this.carteleraActual.getPeliculas()">
+            <div class="tarjeta-pelicula" *ngFor="let pelicula of peliculas">
                  <div class="imagen-p">
-                    <img src="../../../../assets/img/peliculas/{{p.getId()}}.jpg" alt="hola">
+                    <img src="../../../../assets/img/peliculas/{{pelicula.ID_PELICULA}}.jpg" alt="hola">
                 </div>
-
+ 
                 <div class="descripcion-p">
                     <img src="../../../../assets/img/estrella_roja.png">
-                    <b class="titulo-pelicula">{{p.getNombre()}}</b>
+                    <b class="titulo-pelicula">{{pelicula.NOMBRE}}</b>
                     <br>
-                    <span class="texto-gris">{{p.getResenia().slice(0,320)}}...</span>
+                    <!--<span class="texto-gris">{{pelicula.DESCRIPCION}}</span>-->
                     <br>
-                    <span class="atributo">Género: </span><span class="texto-gris">{{p.getGenero()}}</span><br>
-                    <span class="atributo">Director: </span><span class="texto-gris" *ngFor="let dirId of p.getDirectores()">{{this.bd.getDirectorPorId(dirId).getNombre()}} {{this.bd.getDirectorPorId(dirId).getApellido()}}</span><br>
-                    <span class="atributo">Protagonistas: </span><span class="texto-gris" *ngFor="let protagonista of p.getProtagonistas()">{{protagonista}}, </span><br>
-                    <span class="atributo">Calificación: </span><span class="texto-gris">{{p.getClasificacion()}}</span><br>
+                    <span class="atributo">Género: </span><span class="texto-gris">{{pelicula.GENERO}}</span><br>
+                    
+                   <!--<span class="atributo">Director: </span><span class="texto-gris" *ngFor="let dirId of p.getDirectores()">{{pelicula.ID_PELICULA}}</span><br>-->
+                <!--<span class="atributo">Protagonistas: </span><span class="texto-gris" *ngFor="let protagonista of p.getProtagonistas()">{{protagonista}}, </span><br>-->
+                    <span class="atributo">Calificación: </span><span class="texto-gris">{{pelicula.CLASIFICACION}}</span><br>
+                    <span class="atributo">Duración: </span><span class="texto-gris">{{pelicula.DURACION}} min.</span><br>
                     <br>
                 </div>
 
