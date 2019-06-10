@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BDComponent, Beneficio } from 'src/app/bd/bd.component';
+import { Beneficio } from 'src/app/bd/bd.component';
+import { APIControllersService } from '../../APIControllers/apicontrollers.service';
 
 @Component({
   selector: 'app-beneficios',
@@ -7,15 +8,21 @@ import { BDComponent, Beneficio } from 'src/app/bd/bd.component';
   styleUrls: ['./beneficios.component.css']
 })
 export class BeneficiosComponent implements OnInit {
-  private beneficios:Array<Beneficio>;
-  constructor(private bd:BDComponent) { }
+  private beneficios:any[]=[];
+  
+  constructor(private conector:APIControllersService) { }
 
   ngOnInit() {
-    this.obtenerBeneficios();
+    //this.obtenerBeneficios();
+    this.conector.BuscarBeneficiosDisponibles().subscribe(res => {this.beneficios = res; });
+    
+
+
+    
   }
 
   obtenerBeneficios(){
-    this.beneficios=this.bd.getBeneficios();
+    
   }
 
 }

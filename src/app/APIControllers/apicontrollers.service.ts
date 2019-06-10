@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Pelicula} from '../bd/bd.component';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,8 +11,8 @@ export class APIControllersService {
       
 
   }
-  ObtenerCartelera(fecha: String){    
-    return this.conector.get<any[]>(`http://localhost:3000/API/Cartelera/${fecha}`);
+  ObtenerCartelera(fecha: String):Observable<Pelicula[]>{    
+    return this.conector.get<Pelicula[]>(`http://localhost:3000/API/Cartelera/${fecha}`);
   }
   BuscarSolicitante(email: String){    
     return this.conector.get<any[]>(`http://localhost:3000/API/Solicitante/${email}`);

@@ -2,26 +2,27 @@
     <div style="max-width: 40rem;">
         <app-ficha [titulo]="'BENEFICIOS '" [imagen]="'icon-promos.png'" [subtitulo]="' · PROMOCIONES '"></app-ficha>
         <div class="block_inf">
+                <!--<p>{{this.beneficios | json}}</p>-->
             <div class="tarjeta" *ngFor="let b of beneficios">
                  <div class="imagen">
-                    <img src="../../../assets/img/beneficios/{{b.getId()}}.jpg">
+                    <img src="../../../assets/img/beneficios/{{b.ID_BENEFICIO}}.jpg">
                 </div>
                 <div class="texto1">
-                    <b class="titulo">{{b.getNombre()}}</b>
+                    <b class="titulo">{{b.NOMBRE}}</b>
+                    <span class="fechas">Válida desde {{b.DESDE.slice(8,10)}}/{{b.DESDE.slice(1,3)}}/{{b.DESDE.slice(0,4)}} al <span class="rojo"> {{b.HASTA.slice(8,10)}}/{{b.HASTA.slice(1,3)}}/{{b.HASTA.slice(0,4)}}</span></span>
                     <div class="contenido">
-                        <span class="fechas">Válida desde {{b.getValidez()[0].getDate()}}/{{b.getValidez()[0].getMonth()}}/{{b.getValidez()[0].getFullYear()}} hasta <span class="rojo">{{b.getValidez()[1].getDate()}}/{{b.getValidez()[1].getMonth()}}/{{b.getValidez()[1].getFullYear()}}</span></span>
                         <br>
-                        <img src="../../../assets/img/estrella_roja.png">Tipo de beneficio: <span class="gris">{{b.getTipo()}}</span>
+                        <img src="../../../assets/img/estrella_roja.png">Tipo de beneficio: <span class="gris">Abonando tus entradas con {{b.NOMBRE}} podes disfrutar de un 2x1 en entradas {{b.TIPO}} todos los días.</span>
                         <br><br>
                     </div>
                 </div>
                 <div class="texto2">
-                    <p class="contenido">Plazas en la que es válido:
-                        <span class="gris" *ngFor="let plaza of b.getPlazas()">{{plaza}} - </span></p>
+                    <!--<p class="contenido">Plazas en la que es válido:-->
+                        <!--<span class="gris" *ngFor="let plaza of b.getPlazas()">{{plaza}} - </span></p>-->
                     <p class="contenido">Condiciones Generales:
-                        <span class="gris">{{b.getCondicionesGenerales()}}</span>
+                        <span class="gris">{{b.CONDGENERALES}}</span>
                     </p>
-                    <p class="contenido">{{b.getDetalleSalas()}}</p>
+                    <!--<p class="contenido">{{b.getDetalleSalas()}}</p>-->
                 </div>
                 <br><br>
             </div><!--cierre tarjeta-->
