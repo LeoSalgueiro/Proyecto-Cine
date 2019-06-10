@@ -6,6 +6,33 @@
     </div>
     <div class="block_inf">
 
+
+            <div class="tarjeta" *ngFor="let c of combos">
+                    <div class="imagen">
+                       <img src="../../../assets/img/beneficios/{{c.ID_COMBO}}.jpg">
+                   </div>
+                   <div class="texto1">
+                       <b class="titulo">{{c.NOMBRE}}</b>
+                       <span class="incluye">Incluye: {{c.INCLUYE.split('#').[0]}}  <span class="gris"> {{c.INCLUYE.split('#').[1]}}</span></span>
+                       <div class="contenido">
+                           <br>
+                           <img src="../../../assets/img/estrella_roja.png">
+                           <br><br>
+                       </div>
+                   </div>
+                   
+                   <br>
+               </div><!--cierre tarjeta-->
+
+
+
+
+
+
+
+
+
+        <!--
         <div style="max-width: 40rem;">
             <article>
 
@@ -156,6 +183,8 @@
                 </ul>
                 <br>                  
             </article>
+
+            -->
         </div>
 
     </div>

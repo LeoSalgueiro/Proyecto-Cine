@@ -8,10 +8,13 @@ import { APIControllersService } from '../../../APIControllers/apicontrollers.se
 })
 export class SupercombosComponent implements OnInit {
 
+  private combos:any[];
+
+
   constructor(private conector:APIControllersService) { }
 
   ngOnInit() {
-    
+    this.conector.ObtenerCombosDisponibles("San Luis").subscribe(res => {this.combos=res})
   }
 
 }
