@@ -34,3 +34,14 @@ p{
 .block_inf{
     padding: 0px;
 }
+
+.texto.gris{
+    color:grey;
+    font-size: 12px;
+
+}
+
+.titulo{
+    font-size: 18px;
+
+}

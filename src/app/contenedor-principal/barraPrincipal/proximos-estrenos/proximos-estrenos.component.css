@@ -6,9 +6,6 @@
 /*padding: 10px;
 }*/
 
-img{
-    width: 20%;
-}
 h4{
     color: red;
     stroke: black;
@@ -55,4 +52,38 @@ article{
 
 time{
     color: red
+}
+.titulo-pelicula{
+    font-family: myriam-pro,"Arial", Helvetica, sans-serif;
+    font-size: 16px;
+    color:red;
+}
+.texto.gris{
+    color:grey;
+    font-size: 12px;
+
+}
+.atributo{
+    color:black;
+    font-size: 12px;
+
+}
+
+.imagen-p{
+    float:left;
+    width:122px;
+}
+
+.descripcion-p{
+    margin-left: 10px;
+    color:grey;
+    font-family: Myriam-Pro-Light,"Arial", Arial;
+    font-size: 12px;
+    float:left;
+    width:30rem;
+}
+
+.tarjeta-pelicula{
+    width:638px;
+    height:239px;
 }
