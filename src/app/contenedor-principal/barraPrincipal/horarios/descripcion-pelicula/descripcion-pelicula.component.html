@@ -1,0 +1,23 @@
+<div class="tarjeta-pelicula" >
+    <div class="imagen-p">
+       <img src="../../../../assets/img/peliculas/{{pelicula.ID_PELICULA}}.jpg" alt="IMAGEN PELICULA">
+   </div>
+
+   <div class="descripcion-p">
+       <img src="../../../../assets/img/estrella_roja.png">
+       <b class="titulo-pelicula">{{pelicula.NOMBRE}}</b>
+       <br>
+       <!--<span class="texto-gris">{{pelicula.DESCRIPCION}}</span>-->
+       <br>
+       <span class="atributo">Género: </span><span class="texto-gris">{{pelicula.GENERO}}</span><br>
+       
+      <!--<span class="atributo">Director: </span><span class="texto-gris" *ngFor="let dirId of p.getDirectores()">{{pelicula.ID_PELICULA}}</span><br>-->
+   <!--<span class="atributo">Protagonistas: </span><span class="texto-gris" *ngFor="let protagonista of p.getProtagonistas()">{{protagonista}}, </span><br>-->
+       <span class="atributo">Calificación: </span><span class="texto-gris">{{pelicula.CLASIFICACION}}</span><br>
+       <span class="atributo">Duración: </span><span class="texto-gris">{{pelicula.DURACION}} min.</span><br>
+       <span class="atributo">Reseña: </span><span class="texto-gris">{{pelicula.RESENIA.slice(0,200)}}...</span><br>
+       <br>
+   </div>
+
+
+</div><!--cierre tarjeta-pelicula-->

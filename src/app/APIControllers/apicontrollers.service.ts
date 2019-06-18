@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Pelicula} from '../bd/bd.component';
+import {Pelicula, FormEmpresa, Transmiten} from '../bd/bd.component';
 import { Observable } from 'rxjs';
 
 import {Persona, Consulta } from 'src/app/bd/bd.component';
@@ -9,6 +9,8 @@ import {Persona, Consulta } from 'src/app/bd/bd.component';
   providedIn: 'root'
 })
 export class APIControllersService {
+
+  private url = (`http://localhost:3000/API`);
   
   constructor(private conector: HttpClient) { 
       
@@ -32,5 +34,23 @@ export class APIControllersService {
   BuscarBeneficiosDisponibles(){    
     return this.conector.get<any[]>(`http://localhost:3000/API/Beneficios/`);
   }
+
+ 
+ // METODO QUE GUARDA UNA CONSULTA DE UNA EMPRESA AL DEPARTAMENTO DE MARKETING
+ guardarEmpresa(empresa: FormEmpresa): Observable<any>{
+  //  let json = JSON.stringify(empresa);
+   //let empresaJSON = "json="+json;
+
+    return this.conector.post(this.url+'/Empresas/', empresa );
+
+}
+
+// PARA VER UNA TRANSMISION PARTICULAR, PELICULA MAS SU HORARIO Y SALA
+getTransmision(id_pelicula: Number):Observable<Transmiten>{    
+  return this.conector.get<Transmiten>(`http://localhost:3000/API/Transmiten/${id_pelicula}`);
+}
+
+
+
 
 }

@@ -100,33 +100,35 @@
                       </ul>
                     <br><br>
 
-                    <form ngNativeValidate  class="form1" name = "formMarketing">
+                    <form ngNativeValidate  #formMarketing ="ngForm" class="form1" name = "formMarketing" (ngSubmit)="enviarFormulario(ForMarketing)">
                         <table >
                             <tr>
-                                <td>    <span class = "datos1">Nombre:</span></td>  <td><input type="text" placeholder="Nombre" name="nombre" size = "30" class="campos" [(ngModel)] ="formulario.nombre" required></td>
+                                <td>    <span class = "datos1">Nombre:</span></td>  <td><input type="text" maxlength="25" placeholder="Nombre" name="nombre" size = "30" class="campos" [(ngModel)] ="formulario.nombre" required></td>
                             </tr>
                             <tr>
-                                <td> <span class = "datos1">Email:</span></td>      <td><input type="email" placeholder="ejemplo@email.com" name="email" size = "30" class="campos" [(ngModel)] ="formulario.email"  required></td>
+                                <td> <span class = "datos1">Email:</span></td>      <td><input type="email" maxlength="50" placeholder="ejemplo@email.com" name="email" size = "30" class="campos" [(ngModel)] ="formulario.email"  required></td>
                             </tr>
                             <tr>
-                                <td>  <span class = "datos1">Empresa:</span></td>   <td><input type="text" placeholder="Empresa" name="empresa" size = "30"  class="campos" [(ngModel)] ="formulario.empresa"  required/></td>
+                                <td>  <span class = "datos1">Empresa:</span></td>   <td><input type="text" maxlength="20" placeholder="Empresa" name="empresa" size = "30"  class="campos" [(ngModel)] ="formulario.empresa"  required/></td>
                             </tr>
                             <tr>
-                                <td><span class = "datos1">Telefono:</span></td>    <td><input type="text" placeholder="Telefono" name="telefono" size = "30" class="campos" [(ngModel)] ="formulario.telefono"  required/></td>
+                                <td><span class = "datos1">Telefono:</span></td>    <td><input type="text" maxlength="40" placeholder="Telefono" name="telefono" size = "30" class="campos" [(ngModel)] ="formulario.telefono"  required/></td>
                             </tr>
                             <tr>
-                                <td><span class = "datos1">Ciudad:</span></td><td><input type="text" placeholder="Ciudad" name="ciudad" size = "30" class="campos" [(ngModel)] ="formulario.ciudad"  required/></td>
+                                <td><span class = "datos1">Ciudad:</span></td><td><input type="text" maxlength="50" placeholder="Ciudad" name="ciudad" size = "30" class="campos" [(ngModel)] ="formulario.ciudad"  required/></td>
                             </tr>
                             <tr>
-                                <td><span class = "datos1">Consulta:</span></td><td> <textarea  name="consulta" [(ngModel)] ="formulario.consulta"  class="textarea1" ></textarea></td>
+                                <td><span class = "datos1">Consulta:</span></td><td> <textarea  name="consulta" maxlength="500" [(ngModel)] ="formulario.consulta"  class="textarea1" required></textarea></td>
                             </tr>
                             <tr>
-                                <td></td><td><button class="submit" type ="submit" name = "enviar_marketing" onclick="">ENVIAR A DPTO DE MARKETING</button></td>
+                                <td></td><td><button class="submit" type ="submit" name = "enviar_marketing"  >ENVIAR A DPTO DE MARKETING</button></td>
                                 
                             </tr>
 
                         </table> 
                     </form>
+
+                
 
 
                 </section>
