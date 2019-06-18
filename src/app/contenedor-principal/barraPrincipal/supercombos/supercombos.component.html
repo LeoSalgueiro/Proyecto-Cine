@@ -9,50 +9,26 @@
 
             <div class="tarjeta" *ngFor="let c of combos">
                     <div class="imagen">
-                       <img src="../../../assets/img/beneficios/{{c.ID_COMBO}}.jpg">
+                       <img src="../../../assets/img/supercombos/{{c.ID_COMBO}}.jpg">
                    </div>
+                   <br>
                    <div class="texto1">
                        <b class="titulo">{{c.NOMBRE}}</b>
-                       <span class="incluye">Incluye: {{c.INCLUYE.split('#').[0]}}  <span class="gris"> {{c.INCLUYE.split('#').[1]}}</span></span>
-                       <div class="contenido">
-                           <br>
-                           <img src="../../../assets/img/estrella_roja.png">
-                           <br><br>
-                       </div>
+                       <br>
+                       <img src="../../../assets/img/estrella_roja.png">
+                       <span class="texto gris">{{c.INCLUYE.split('#')[0]}} </span>
+                       <br> 
+                       <img src="../../../assets/img/estrella_roja.png">
+                       <span class="texto gris"> {{c.INCLUYE.split('#')[1]}}</span>
                    </div>
                    
                    <br>
+                   <br>
                </div><!--cierre tarjeta-->
 
-
-
-
-
-
-
-
-
-        <!--
-        <div style="max-width: 40rem;">
-            <article>
-
-
-                <img src="assets/img/supercombos/litroaladdin.jpg">
-                <br>
-                <h4> <strong>COMBO LITRO ALADDIN </strong> </h4>
-
-                <ul>
-                    <li class="detalles"><span class="remarca">Incluye: 1 Pop Mediano + 1 Vaso Película CON GASEOSA + 1 recarga pop</span></li>
-                    <li class="detalles">1 Pop Mediano + 1 Vaso Película CON GASEOSA + 1 recarga pop $240</li>
-                    <br>
-                    <li class="detalles"><span class="remarca">Plazas en la que es válido:</span> Bahía Blanca-San Luis-La Rioja</li>
-
-                </ul>
-
-            </article>
-            <hr>
         </div>
 
+<<<<<<< HEAD
         <div style="max-width: 40rem;">
             <article>
 
@@ -192,3 +168,6 @@
 
 
 </div>
+=======
+    </div>
+>>>>>>> origin/vale

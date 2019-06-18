@@ -24,6 +24,7 @@ export class ProximosEstrenosComponent implements OnInit {
     let fecha:String;
     
     fecha=hoy.getFullYear()+"-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
+    console.log(fecha);
     return fecha;
   }
 
