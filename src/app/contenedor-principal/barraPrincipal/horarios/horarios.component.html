@@ -3,7 +3,99 @@
     <div style="max-width: 40rem;">
         <app-ficha-principal [texto_rojo]="'HORARIOS '" [texto_negro]="' · San Luis'" [imagen]="'icon-movies.png'"></app-ficha-principal>
         <div class="block_inf">
-            <p>Texto aquí</p>
+             <div class="row-fluid" style="margin-top: 10px;">
+                <h6 style="font-weight: lighter;color:#787878;">MEDIANTE ESTE FORMULARIO NO SE RECIBEN RESERVAS</h6>
+                <ul  class="lista_estrella" style="line-height: 18px;font-size: 12px;padding-bottom: 10px;">
+                    <li>Su opini&oacute;n es importante para nosotros, por lo que puede usar este formulario para realizar consultas y/o comentarios sobre nuestro servicio.</li>
+                </ul>
+
+                <form ngNativeValidate class="form-horizontal form_cinema">
+                    <fieldset>
+                        <legend></legend>
+                        <div class="control-group" >
+                            <label class="control-label" for="nombre"><strong>Nombre:</strong></label>
+
+                            <div class="controls">
+                                <input type="text"  maxlength="100"  id="nombre" name="nombre" placeholder="Nombre Completo" required />
+                            </div>
+                        </div>
+                        <div class="control-group" >
+                            <label class="control-label" for="apellido"><strong>Apellido</strong></label>
+
+                            <div class="controls">
+                                <input type="text"  maxlength="100"  id="apellido" name="apellido" placeholder="Apellido" required />
+                            </div>
+                        </div>
+                        <div class="control-group" >
+                            <label class="control-label" for="email"><strong>Email:</strong></label>
+                            <div class="controls">
+                                <input type="email"  maxlength="100"  id="email" name="email"  placeholder="ejemplo@email.com"  required />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="telefono"><strong>Tel&eacute;fono:</strong></label>
+                            <div class="controls">
+                                <input type="text" pattern="\d*"  maxlength="100"  id="telefono" name="telefono"  placeholder="Tel&eacute;fono" required />
+                            </div>
+                        </div>
+                        <div class="control-group" id="ciudadDiv" >
+                            <label class="control-label" for="ciudad"><strong>Ciudad:</strong></label>
+                            <div class="controls">
+                                <select id="ciudad" name="ciudad"  required>
+                                    <option value="">(Elija su ciudad)</option>
+                                    <option value="1">San Luis</option>
+                                    <option value="2">Mendoza</option>
+                                </select>
+                               
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="motivo"><strong>Motivo</strong></label>
+                            <div class="controls">
+                                <select id="motivo" name="motivo"  required>
+                                    <option value="">(Elija un motivo)</option>
+                                    <option value="1">Por publicidad en los cines</option>
+                                    <option value="2">consulta general</option>
+                                    <option value="3">Para hacer una cr&iacute;tica</option>
+                                    <option value="4">Por una ple&iacute;cula en proyecci&oacute;n</option>
+                                    <option value="5">Por un pr&oacute;ximo estreno</option>
+                                    <option value="6">Otro motivo diferente...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="consulta"><strong>Consulta</strong></label>
+                            <div class="controls">
+                                <textarea required  id="consulta" name="consulta"   class="input_bg"   ></textarea>
+                            </div>
+                        </div>
+                        <div class="controls button btn-cine boton_rojo botonSubmit">
+                            <button type="submit"><span>ENVIAR CONSULTA</span></button>
+                        </div>
+                    </fieldset>
+
+                </form>
+                <ul  class="lista_estrella" style="line-height: 18px;font-size: 12px;padding-bottom: 10px;"><li>Le recordamos que el procesamiento de su consulta puede demorar hasta 48hs, sepa disculpar las molestias. <span class="rojo">Muchas gracias.</span></li></ul>
+
+            </div>
+            <fieldset>
+                <legend></legend>
+            </fieldset>
+<div class="row-fluid">
+     <div class="controls button btn-cine boton_rojo ">
+                            <button type="submit"><span>ENVIAR CONSULTA</span></button>
+                        </div>
+                <div style="font-size: 18px;">
+                    <strong class="myriad rojo">RRHH </strong><strong class="myriad">·   CINEMACENTER  ·  </strong><span>ARGENTINA</span>
+                    <ul  class="lista_estrella" style="line-height: 18px;font-size: 12px;padding-bottom: 10px;margin-top: 10px;">
+                        <li>Para formar parte de nuestro Staff de Cinemacenter, por favor envianos un mail haciendo click <a routerLink="/recursos-humanos"><span class="rojo">aquí.</span></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+            </div>
         </div>
     </div>
 </div>
