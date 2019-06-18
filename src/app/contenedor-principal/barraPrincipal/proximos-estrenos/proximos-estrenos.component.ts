@@ -8,9 +8,24 @@ import { APIControllersService } from '../../../APIControllers/apicontrollers.se
 })
 export class ProximosEstrenosComponent implements OnInit {
 
-  constructor(private conector:APIControllersService) { }
+  private hoy:Date;
+  private proxEstrenos: any[];
+
+
+  constructor(private conector:APIControllersService) { 
+    this.hoy=new Date();
+  }
 
   ngOnInit() {
+    this.conector.BuscarProximosEstrenos(this.FechaHoy(this.hoy)).subscribe(res =>{this.proxEstrenos = res; });
+  }
+
+  FechaHoy(hoy:Date):String{
+    let fecha:String;
+    
+    fecha=hoy.getFullYear()+"-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
+    console.log(fecha);
+    return fecha;
   }
 
 }
