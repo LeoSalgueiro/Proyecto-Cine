@@ -16,6 +16,7 @@ export class APIControllersService {
   }
   ObtenerCartelera(fecha: String):Observable<Pelicula[]>{    
     return this.conector.get<Pelicula[]>(`http://localhost:3000/API/Cartelera/${fecha}`);
+    
   }
   BuscarSolicitante(email: String){    
     return this.conector.get<any[]>(`http://localhost:3000/API/Solicitante/${email}`);

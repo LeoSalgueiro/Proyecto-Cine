@@ -1,10 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-<<<<<<< HEAD
-import { FormsModule } from '@angular/forms';
-=======
 import {FormsModule} from '@angular/forms'
->>>>>>> origin/vale
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -68,14 +64,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-<<<<<<< HEAD
-    AppRoutingModule,
-    FormsModule
-=======
     AppRoutingModule, 
     FormsModule,
     HttpClientModule
->>>>>>> origin/vale
   ],
   providers: [APIControllersService],
   bootstrap: [AppComponent]

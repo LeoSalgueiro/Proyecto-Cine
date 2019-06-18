@@ -9,7 +9,7 @@ import { APIControllersService } from '../../APIControllers/apicontrollers.servi
 })
 export class BeneficiosComponent implements OnInit {
   private beneficios:any[]=[];
-  
+
   constructor(private conector:APIControllersService) { }
 
   ngOnInit() {
