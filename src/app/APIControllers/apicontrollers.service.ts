@@ -46,8 +46,9 @@ export class APIControllersService {
 }
 
 // PARA VER UNA TRANSMISION PARTICULAR, PELICULA MAS SU HORARIO Y SALA
-getTransmision(id_pelicula: Number):Observable<Transmiten>{    
-  return this.conector.get<Transmiten>(`http://localhost:3000/API/Transmiten/${id_pelicula}`);
+getTransmision(id_pelicula: string){    
+  let id:String="4";
+  return this.conector.get<any>(`http://localhost:3000/API/Transmiten/${id}`);
 }
 
 

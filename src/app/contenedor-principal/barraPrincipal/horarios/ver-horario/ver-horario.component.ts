@@ -10,7 +10,7 @@ import { APIControllersService } from '../../../../APIControllers/apicontrollers
 })
 export class VerHorarioComponent implements OnInit {
 
-  @Input() pelicula: Pelicula; // A PARTIR DE SU IDE BUSCO EN LA TABLA TRANSMITEN SU HORARIO
+  @Input() horarios: string; // A PARTIR DE SU IDE BUSCO EN LA TABLA TRANSMITEN SU HORARIO
 
   transmiten: Transmiten;
   constructor(private conector:APIControllersService) {

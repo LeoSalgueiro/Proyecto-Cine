@@ -15,7 +15,8 @@ export class HorariosComponent implements OnInit {
   private peliculas:any[];
   pelicula: Pelicula;
  nombre : string;
- transmiten: Transmiten;
+ //transmiten: Transmiten;
+ private transmiten:any;
 
     constructor(private conector:APIControllersService) {
     this.hoy=new Date();
@@ -27,23 +28,17 @@ export class HorariosComponent implements OnInit {
   ngOnInit() {
     this.obtenerCartelera();
 
-   
- 
-   
-    
   }
 
   obtenerCartelera(){
     this.conector.ObtenerCartelera(this.calcularPeriodo(this.hoy)).subscribe(res => {this.peliculas=res;});
-    //this.conector.getTransmision(4).subscribe(res => {this.transmiten=res;});
+    this.conector.getTransmision("4").subscribe(res => {this.transmiten=res;});
    // console.log(this.transmiten.HORARIOS);
 
  
    
   }
 
-
- 
 
 
   seleccionar(peli){
