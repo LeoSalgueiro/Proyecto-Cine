@@ -27,18 +27,18 @@ export class HorariosComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerCartelera();
+  
 
   }
 
   obtenerCartelera(){
     this.conector.ObtenerCartelera(this.calcularPeriodo(this.hoy)).subscribe(res => {this.peliculas=res;});
-    this.conector.getTransmision("4").subscribe(res => {this.transmiten=res;});
+    this.conector.getTransmision(4).subscribe(res =>{this.transmiten = res});
    // console.log(this.transmiten.HORARIOS);
-
- 
    
   }
 
+ 
 
 
   seleccionar(peli){
@@ -66,6 +66,18 @@ this.pelicula = {
 seHizoClick(){
   if(this.pelicula === undefined)return false;
   else{
+
+   // this.conector.getTransmision(this.pelicula.ID_PELICULA).subscribe(res => {this.transmiten=res;});
+  
+    return true;
+  }
+}
+
+seHizoClick2(){
+  if(this.pelicula=== undefined)return false;
+  else{
+
+   // this.conector.getTransmision(this.pelicula.ID_PELICULA).subscribe(res => {this.transmiten=res;});
   
     return true;
   }

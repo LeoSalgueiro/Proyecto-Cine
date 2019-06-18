@@ -49,8 +49,8 @@
                             <span class ="titulo_parte1">HORARIOS</span><span class ="titulo_parte2"> DESDE:</span>
                            
                            <section  >
-                               <p>estos son los horarios</p>
-                               <app-ver-horario [pelicula]="pelicula"></app-ver-horario>
+                              
+                               <app-ver-horario *ngIf="seHizoClick()"  [pelicula]="pelicula"></app-ver-horario>
                            </section>
                            
 
