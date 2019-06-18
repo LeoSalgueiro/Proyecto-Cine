@@ -42,11 +42,7 @@
                 <h6>MEDIANTE ESTE FORMULARIO NO SE RECIBEN RESERVAS</h6>
                 <ul  class="lista_estrella"><li>Su opini&oacute;n es importante para nosotros, por lo que puede usar este formulario para realizar consultas y/o comentarios sobre nuestro servicio.</li></ul>
 
-<<<<<<< HEAD
                 <form ngNativeValidate class="form-horizontal form_cinema" #consultaForm="ngForm" (ngSubmit)=(registrarConsulta(consultaForm))>
-=======
-                <form ngNativeValidate class="form-horizontal form_cinema ">
->>>>>>> origin/vale
                     <fieldset>
                         <legend></legend>
                         <div class="control-group" >
@@ -80,7 +76,7 @@
                             <div class="controls">
                                 <select id="ciudad" name="ciudad"  [(ngModel)]="ciudad"  required>
                                     <option value="">(Elija su ciudad)</option>
-                                     <option *ngFor="let ciudad of ciudades" [value]="ciudad.getId()">
+                                     <option  *ngFor="let ciudad of ciudades" [value]="ciudad.getNombre()">
                                         {{ciudad.getNombre()}}
                                      </option>
                                 </select>
@@ -135,7 +131,7 @@
 
                 </div>
 
-
+                
             </div>
         </div>
 

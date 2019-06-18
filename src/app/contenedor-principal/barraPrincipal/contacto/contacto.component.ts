@@ -3,6 +3,10 @@ import { GestorConsultaService } from './../../../modelo/gestor-consulta.service
 import { GestorPersonaService } from './../../../modelo/gestor-persona.service';
 import { GestorCiudadService } from './../../../modelo/gestor-ciudad.service';
 import { Ciudad } from './../../../modelo/ciudad';//pongo que voy a usar esas clases del modelo
+import { Consulta } from './../../../modelo/consulta';//pongo que voy a usar esas clases del modelo
+import { map } from 'rxjs/operators';
+
+
 import{NgForm}from'@angular/forms';
 
 @Component({
@@ -11,13 +15,14 @@ import{NgForm}from'@angular/forms';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
-   private ciudades:Array<Ciudad>;
+   private ciudades:any[]=[];
    constructor(private gestorConsulta: GestorConsultaService,private gestorPersona:GestorPersonaService,private gestorCiudad:GestorCiudadService) {
   }
    ngOnInit() {
-       this.ciudades=this.gestorCiudad.getCiudades();
+       this.gestorCiudad.getCiudades().subscribe(res => {this.ciudades = res;});;
   }
    public registrarConsulta(consultaForm:NgForm): void {//USO EL GESTOR
+     
         let value=consultaForm.value;
         if(!this.gestorPersona.existe(value.email)){
             this.gestorPersona.crearPersona(value.ciudad,value.nombre,value.apellido,value.email,"","","",value.telefono,"consulta");
