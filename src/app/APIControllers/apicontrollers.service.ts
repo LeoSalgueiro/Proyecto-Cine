@@ -12,6 +12,7 @@ export class APIControllersService {
 
   private url = (`http://localhost:3000/API`);
   
+ 
   constructor(private conector: HttpClient) { 
       
 
@@ -26,7 +27,7 @@ export class APIControllersService {
   BuscarProximosEstrenos(fecha: String){    
     return this.conector.get<any[]>(`http://localhost:3000/API/ProximosEstrenos/${fecha}`);
   }
-  ObtenerCombosDisponibles(ciudad: String){//PASAR PARÁMETRO s:string= "San Luis"
+  ObtenerCombosDisponibles(ciudad: String){//PASAR PARÝMETRO s:string= "San Luis"
     return this.conector.get<any[]>(`http://localhost:3000/API/Combos/${ciudad}`);
   }
   ObtenerPersona(email: String){    
@@ -34,6 +35,25 @@ export class APIControllersService {
   }
   BuscarBeneficiosDisponibles(){    
     return this.conector.get<any[]>(`http://localhost:3000/API/Beneficios/`);
+  }
+  ObtenerCiudades(){  
+
+  // this.conector.get(`http://localhost:3000/API/Ciudades/`).subscribe(data =>{ this.profile = data});
+    return this.conector.get(`http://localhost:3000/API/Ciudades/`);
+  }
+  crearConsulta(){
+      /*return this.conector.put('http://localhost:3000/API/Consultas/', {
+        "DETALLE":  "trantando guardar",
+        "MOTIVO":  "1",
+        "MAIL":""
+        }, httpOptions)
+    .pipe(
+      catchError(this.handleError('update', {
+        "DETALLE":  "trantando guardar",
+        "MOTIVO":  "1",
+        "MAIL":"inaleng25@gmail.com"
+        }))
+    )¨*/
   }
 
  

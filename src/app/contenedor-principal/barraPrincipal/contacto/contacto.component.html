@@ -76,7 +76,7 @@
                             <div class="controls">
                                 <select id="ciudad" name="ciudad"  [(ngModel)]="ciudad"  required>
                                     <option value="">(Elija su ciudad)</option>
-                                     <option *ngFor="let ciudad of ciudades" [value]="ciudad.getId()">
+                                     <option  *ngFor="let ciudad of ciudades" [value]="ciudad.getNombre()">
                                         {{ciudad.getNombre()}}
                                      </option>
                                 </select>
@@ -131,7 +131,7 @@
 
                 </div>
 
-
+                
             </div>
         </div>
 

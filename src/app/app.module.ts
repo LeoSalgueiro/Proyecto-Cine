@@ -71,7 +71,7 @@ import { VerHorarioComponent } from './contenedor-principal/barraPrincipal/horar
     AppRoutingModule, 
     FormsModule,
     HttpClientModule
-  ],
+],
   providers: [APIControllersService],
   bootstrap: [AppComponent]
 })

@@ -1,11 +1,11 @@
 
 export class Consulta{
     private id:number;
-    private email:string;
+    private _email:string;
     private motivo: number;
     private detalle: string;
     private nombreCiudad: string;
-    constructor(id: number,email: string,motivo: number,detalle: string){
+    constructor(id: number=0,email: string='',motivo: number=0,detalle: string=''){
         this.id=id;
         this.email=email;
         this.motivo=motivo;
@@ -14,8 +14,11 @@ export class Consulta{
     public setId(id:number){
       this.id=id;
     }
-    public setEmail(email:string){
-      this.email=email;
+    set email(email:string){
+      this._email=email;
+      if(email=='ina@h.h'){
+      alert("lo setie: ");
+      }
     }
     public setMotivo(motivo:number){
       this.motivo=motivo;
@@ -26,8 +29,8 @@ export class Consulta{
     public getId():number{
         return this.id;
     }
-    public getEmail():string{
-        return this.email;
+    get email():string{
+        return this._email;
     }
     public getDetalle():string{
         return this.detalle;
