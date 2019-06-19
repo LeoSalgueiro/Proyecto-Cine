@@ -32,6 +32,8 @@ import { NoticiasComponent } from './contenedor-principal/noticias/noticias.comp
 import { ControllerApiComponent } from './controller-api/controller-api.component';
 import { APIControllersService } from './APIControllers/apicontrollers.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DescripcionPeliculaComponent } from './contenedor-principal/barraPrincipal/horarios/descripcion-pelicula/descripcion-pelicula.component';
+import { VerHorarioComponent } from './contenedor-principal/barraPrincipal/horarios/ver-horario/ver-horario.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { HttpClientModule } from '@angular/common/http';
     FichaPrincipalComponent,
     BeneficiosComponent,
     NoticiasComponent,
-    ControllerApiComponent
+    ControllerApiComponent,
+    DescripcionPeliculaComponent,
+    VerHorarioComponent
   ],
   imports: [
     BrowserModule,

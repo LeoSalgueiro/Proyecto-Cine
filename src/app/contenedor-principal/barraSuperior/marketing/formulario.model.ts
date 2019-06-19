@@ -1,12 +1,13 @@
-export class Formulario{
-    constructor(
-        public nombre: string,
-        public email:string,
-        public empresa:string,
-        public telefono: string,
-        public ciudad:string,
-        public consulta: string
 
-    ){}
+export interface FormEmpresa{
+    
+         nombre: string;
+         email:string;
+         empresa:string;
+         telefono: string;
+         ciudad:string;
+         consulta: string;
+
+    
 
 }

@@ -34,14 +34,14 @@ export interface Pelicula{
     ID_PELICULA:number;
     NOMBRE:string;
     FECHAESTRENO:Date;
-    CLASIFICACION:string;
-    GENERO: string;
-    DURACION:number;
-    DISPONIBLE: number;
-    ID_DIR1:number;
-    ID_DIR2:number;
-    ID_DISTRIBUIDORA:number;
+    CLASIFICACION:String;
+    DURACION:Number;
+    DISPONIBLE:{type:String, data:[]};
+    ID_DIR1:Number;
+    ID_DIR2:Number;
+    ID_DISTRIBUIDORA:Number;
     RESENIA: string;
+    GENERO: string;
 }
 
 
@@ -167,4 +167,108 @@ public setTipoPersona(tipo: String){ this.tipo_persona = tipo;}
 
 
 
+}
+
+export class Empresa{
+
+  private nombre: string;
+  private email:string;
+  private empresa:string;
+  private telefono: string;
+  private ciudad:string;
+  private consulta: string;
+
+
+    constructor( nombre: string,email:string, empresa:string, telefono: string,ciudad:string, consulta: string ){
+
+      this.nombre = nombre;
+      this.email = email;
+      this.empresa = empresa;
+      this.telefono = telefono;
+      this.ciudad = ciudad;
+      this.consulta = consulta;
+    }
+    public getNombre(){
+      return this.nombre;
+    }
+    public getEmail(){
+      return this.email;
+    }
+    public getTelefono(){
+      return this.telefono;
+
+    }
+    public getCiudad(){
+      return this.ciudad;
+    }
+    public getConsulta(){
+      return this.consulta;
+    }
+    public getEmpresa(){
+      return this.empresa;
+    }
+
+    // SETS
+
+    public setNombre(nombre: string){
+      this.nombre = nombre;
+    }
+    public setEmail(email:string){
+       this.email = email;
+    }
+    public setTelefono(telefono: string){
+       this.telefono = telefono;
+
+    }
+    public setCiudad(ciudad: string){
+      this.ciudad= ciudad;
+    }
+    public setConsulta(consulta: string){
+       this.consulta = consulta;
+    }
+    public setEmpresa(empresa: string){
+       this.empresa = empresa;
+    }
+
+
+
+}
+export interface FormEmpresa{
+
+  nombre: string;
+  email:string;
+  empresa:string;
+   telefono: string;
+   ciudad:string;
+    consulta: string;
+ 
+}
+
+export class Pelicula_class{
+  
+  id:Number;
+  nombre:String;
+  fecha_estreno:Date;
+  clasificacion:String;
+  duracion:Number;
+  disponible:{type:String, data:[]};
+  id_dir1:Number;
+  id_dir2:Number;
+  id_distribuidora:Number;
+
+
+  public setNombre(nombre: string){
+       this.nombre = nombre;
+  }
+  public getNombre(){
+    return this.nombre ;
+}
+
+
+}
+
+export interface Transmiten{
+  ID_SALA: Number;
+  ID_PELICULA: Number;
+  HORARIOS: string;
 }
