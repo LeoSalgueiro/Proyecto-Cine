@@ -14,7 +14,7 @@
             <br>
             <div class="tarjeta-pelicula" *ngFor="let pelicula of peliculas">
                  <div class="imagen-p">
-                    <img src="../../../../assets/img/peliculas/{{pelicula.ID_PELICULA}}.jpg" alt="hola">
+                    <button class="imagenPeli" (click)="peliculaSeleccionada(pelicula)"><img src="../../../../assets/img/peliculas/{{pelicula.ID_PELICULA}}.jpg" alt="img película {{pelicula.ID_PELICULA}}" ></button>
                 </div>
  
                 <div class="descripcion-p">

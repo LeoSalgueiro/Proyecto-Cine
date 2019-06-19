@@ -36,6 +36,10 @@ export class APIControllersService {
   BuscarBeneficiosDisponibles(){    
     return this.conector.get<any[]>(`http://localhost:3000/API/Beneficios/`);
   }
+
+  BuscarPelicula(id:number){
+    return this.conector.get<any[]>(`http://localhost:3000/API/Peliculas/${id}`);
+  }
   ObtenerCiudades(){  
 
   // this.conector.get(`http://localhost:3000/API/Ciudades/`).subscribe(data =>{ this.profile = data});
@@ -69,7 +73,7 @@ export class APIControllersService {
 // PARA VER UNA TRANSMISION PARTICULAR, PELICULA MAS SU HORARIO Y SALA
 getTransmision(id_pelicula: Number){    
 
-  return this.conector.get<any>(`http://localhost:3000/API/Transmiten/${id_pelicula}`);
+  return this.conector.get<any[]>(`http://localhost:3000/API/Transmiten/${id_pelicula}`);
 }
 
 

@@ -7,7 +7,6 @@
     .columna-izquierda,.columna-derecha{float:left;width:245px;}
     .columna-izquierda{margin-right:5px;padding-right:4px;border-right:1px solid #000}
     
-    
     .btn-corregir{text-align:center;clear:both}
 
 
@@ -16,7 +15,7 @@
         font-size: 16px;
         color:red;
     }
-    .texto.gris{
+    .texto-gris{
         color:grey;
         font-size: 12px;
     
