@@ -47,15 +47,9 @@ export class APIControllersService {
 }
 
 // PARA VER UNA TRANSMISION PARTICULAR, PELICULA MAS SU HORARIO Y SALA
-<<<<<<< HEAD
-getTransmision(id_pelicula: number){
-  console.log(typeof(id_pelicula));
-  return this.conector.get<any[]>(`http://localhost:3000/API/Transmiten/${id_pelicula}`);
-=======
 getTransmision(id_pelicula: Number){    
 
   return this.conector.get<any>(`http://localhost:3000/API/Transmiten/${id_pelicula}`);
->>>>>>> origin/pedro
 }
 
 
