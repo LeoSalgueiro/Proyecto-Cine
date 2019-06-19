@@ -24,9 +24,8 @@ export class ContactoComponent implements OnInit {
    public registrarConsulta(consultaForm:NgForm): void {//USO EL GESTOR
      
         let value=consultaForm.value;
-        if(!this.gestorPersona.existe(value.email)){
-            this.gestorPersona.crearPersona(value.ciudad,value.nombre,value.apellido,value.email,"","","",value.telefono,"consulta");
-        }
+        //this.gestorPersona.crearPersona(value.ciudad,value.nombre,value.apellido,value.email,"","","",value.telefono,"consulta");
+        
         this.gestorConsulta.crearConsulta(value.email,value.motivo,value.consulta);
         consultaForm.reset();
   }

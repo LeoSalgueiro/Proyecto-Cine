@@ -2,10 +2,10 @@
 export class Consulta{
     private id:number;
     private _email:string;
-    private motivo: number;
+    private motivo: string;
     private detalle: string;
     private nombreCiudad: string;
-    constructor(id: number=0,email: string='',motivo: number=0,detalle: string=''){
+    constructor(id: number=0,email: string='',motivo: string='',detalle: string=''){
         this.id=id;
         this.email=email;
         this.motivo=motivo;
@@ -20,7 +20,7 @@ export class Consulta{
       alert("lo setie: ");
       }
     }
-    public setMotivo(motivo:number){
+    public setMotivo(motivo:string){
       this.motivo=motivo;
     }
     public setDetalle(detalle:string){
@@ -35,7 +35,7 @@ export class Consulta{
     public getDetalle():string{
         return this.detalle;
     }
-    public getMotivo():number{
+    public getMotivo():string{
         return this.motivo;
     }
     public save(){//guardo el objeto en la base de datos
