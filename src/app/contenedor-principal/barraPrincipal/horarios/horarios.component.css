@@ -2,7 +2,7 @@
 
     border: 1px solid #000;}/*en ie no anda esto eh!*/
     
-    .contenido{height:500px;overflow:auto}/*para q muestre el scroll lateral*/
+    .contenido{height:400px;overflow:auto}/*para q muestre el scroll lateral*/
     
     .columna-izquierda,.columna-derecha{float:left;width:245px;}
     .columna-izquierda{margin-right:5px;padding-right:4px;border-right:1px solid #000}

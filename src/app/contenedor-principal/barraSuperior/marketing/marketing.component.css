@@ -14,14 +14,18 @@
 
 .section1{
 
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-        font-size: 10px;
+    font-family: Myriam-Pro-Light,"Arial", Arial;
+    font-size: 12px;
+    float:left;
+    width:30rem;
 }
 
 .section2{
 
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-family: Myriam-Pro-Light,"Arial", Arial;
+    font-size: 12px;
+    float:left;
+    width:30rem;
 }
 
 .campos{

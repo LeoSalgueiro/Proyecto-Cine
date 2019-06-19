@@ -30,7 +30,7 @@
              
         
                 <div class="contenido">
-
+                    <!--<p>{{transmiten | json}}</p>-->
                     <div class="columna-izquierda">
 
                                     <span class ="titulo_parte1">SELECCIONA</span><span class ="titulo_parte2"> TU PELICULA</span><br><br>
@@ -48,9 +48,10 @@
 
                             <span class ="titulo_parte1">HORARIOS</span><span class ="titulo_parte2"> DESDE:</span>
                            
-                           <section  >
-                               
-                           </section>
+                           <div >
+                              
+                               <app-ver-horario *ngIf="seHizoClick2()"  [pelicula]="pelicula"></app-ver-horario>
+                           </div>
                            
 
                         

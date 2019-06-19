@@ -55,6 +55,8 @@ export class MarketingComponent implements OnInit {
 
     err => console.log(err);
     alert('Consulta Enviada !');
+
+    form.reset();
   
 
 
