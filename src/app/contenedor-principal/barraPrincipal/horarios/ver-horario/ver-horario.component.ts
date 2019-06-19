@@ -28,8 +28,8 @@ export class VerHorarioComponent implements OnInit {
   obtenertransmision(){
   
 
-      this.conector.getTransmision(4).subscribe(res => {this.transmiten=res;});
-
+      this.conector.getTransmision(this.pelicula.ID_PELICULA).subscribe(res => {this.transmiten=res;});
+     
    
 
 }
