@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Persona, Consulta } from 'src/app/bd/bd.component';
 import { APIControllersService } from '../../../APIControllers/apicontrollers.service';
-import{FormsModule} from '@angular/forms';
 import{NgModule} from '@angular/core';
-import { Formulario } from './formulario.model';
+import{FormsModule, NgForm} from '@angular/forms'
+import {  FormEmpresa} from './formulario.model';
+//import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-marketing',
@@ -13,14 +15,23 @@ import { Formulario } from './formulario.model';
 
 @NgModule({
 
-  imports : [FormsModule]
+  imports : [FormsModule, NgForm]
 
 })
 export class MarketingComponent implements OnInit {
   private personas:any[];
   // CREO EL FORMULARIO como un atributo
 
-  formulario = new Formulario('','','','', '','');
+  //formulario = new Empresa('','','','', '','');
+  formulario : FormEmpresa = {
+
+    nombre : '',
+    empresa : '',
+    consulta :'',
+    email :'',
+    telefono :'',
+    ciudad : ''};
+
 
 
   constructor(private conector:APIControllersService) {
@@ -28,34 +39,26 @@ export class MarketingComponent implements OnInit {
 
   ngOnInit() {
   }
-  get currentFormulario(){
+ get currentFormulario(){
     return JSON.stringify(this.formulario);
   }
+
  // METODO QUE GUARDA EL FORMULARIO EN LA BD
-  enviarFomulario(){
-    console.log("enviarForm");
-    // CREO LA PERSONA  y la empresa ?---> Falta atributo empresa en tabla persona
-    // PERSONA Y CONSULTA ESTAN DEFINIDOS EN EL COMPONENTE "BD"
-    let persona : Persona;
-    persona.setNombre(this.formulario.nombre);
-    persona.setTelefono(this.formulario.telefono);
-    persona.setEmail(this.formulario.email);
-    persona.setCiudad(this.formulario.ciudad);
+  enviarFormulario(form: NgForm){
+   
+    //console.log(this.formulario);
+    // formulario es un objeto de la clase  Empresa
+    this.conector.guardarEmpresa(this.formulario)
+    .subscribe(
+      res => console.log(res)
+    );
 
-    // CREO LA CONSULTA
-
-    let consulta: Consulta;
-    consulta.setId(persona.getDocumento());
-    consulta.setConsulta(this.formulario.consulta);
-    consulta.setMotivo("marketing");
-    consulta.setEmail(this.formulario.email);
+    err => console.log(err);
+    alert('Consulta Enviada !');
   
-    console.log(this.conector.ObtenerPersona(persona.getEmail()).subscribe(res=>{this.personas=res}));
-         //this.conector.guardarConsulta(consulta);
-    //}
-    //else{
-        //this.conector.guardarPersona(persona);
-        //this.conector.guardarConsulta(consulta);
-    //}
+
+
   }
+
+
 }
