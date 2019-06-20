@@ -32,22 +32,17 @@ export class APIControllersService {
   BuscarBeneficiosDisponibles(){    
     return this.conector.get<any[]>(`http://localhost:3000/API/Beneficios/`);
   }
-  ObtenerCiudades(){  
-
-  // this.conector.get(`http://localhost:3000/API/Ciudades/`).subscribe(data =>{ this.profile = data});
+  ObtenerCiudades(){ 
+  
     return this.conector.get(`http://localhost:3000/API/Ciudades/`);
   }
-  crearConsulta(email:string,motivo:string,detalle:string){
-    this.conector.post(this.url+'/Consultas/', {ID_CONSULTA:null,DETALLE:detalle,MOTIVO:motivo,EMAIL:email} )  .subscribe(
-      res => console.log(res)
-    );
+  crearConsulta(datos:Object){   
+    this.conector.post(this.url+'/Consultas/', datos ).subscribe(res => console.log(res));
   }
   
-  crearPersona(ciudad: number,nombre: string,apellido: string,email: string,tipoDoc: string,nroDoc: string,fechaNac: string,telefono: string,personaTipo:string){
-       this.conector.post(this.url+'/Persona/', {DOC:nroDoc,TIPO_DOC:tipoDoc,NOMBRE:nombre,APELLIDO:apellido,EMAIL:email,FECHA_NAC:fechaNac,TELEFONO:telefono,PERSONA_TIPO:personaTipo} )  .subscribe(
-      res => console.log(res)
-    );
-  }
+  crearPersona(datos:Object){ 
+       this.conector.post(this.url+'/Personas/', datos ).subscribe(res => console.log(res));
+ }
  
  // METODO QUE GUARDA UNA CONSULTA DE UNA EMPRESA AL DEPARTAMENTO DE MARKETING
  guardarEmpresa(empresa: FormEmpresa): Observable<any>{
