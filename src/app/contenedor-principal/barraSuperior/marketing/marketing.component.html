@@ -100,7 +100,7 @@
                       </ul>
                     <br><br>
 
-                    <form ngNativeValidate  #formMarketing ="ngForm" class="form1" name = "formMarketing" (ngSubmit)="enviarFormulario(ForMarketing)">
+                    <form ngNativeValidate  #formMarketing ="ngForm" class="form1" name = "formMarketing" (ngSubmit)="enviarFormulario(formMarketing)">
                         <table >
                             <tr>
                                 <td>    <span class = "datos1">Nombre:</span></td>  <td><input type="text" maxlength="25" placeholder="Nombre" name="nombre" size = "30" class="campos" [(ngModel)] ="formulario.nombre" required></td>
@@ -134,7 +134,7 @@
                 </section>
 
             </article>
-            <p>{{currentFormulario}}</p>
+            
         </div>
     </div>
 </div>

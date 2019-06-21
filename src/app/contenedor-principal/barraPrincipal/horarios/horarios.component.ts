@@ -74,7 +74,7 @@ seHizoClick(){
 }
 
 seHizoClick2(){
-  if(this.pelicula=== undefined)return false;
+  if(this.pelicula === undefined)return false;
   else{
 
    // this.conector.getTransmision(this.pelicula.ID_PELICULA).subscribe(res => {this.transmiten=res;});
