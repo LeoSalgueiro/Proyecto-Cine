@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Pelicula, FormEmpresa, Transmiten} from '../bd/bd.component';
 import { Observable } from 'rxjs';
-
 import {Persona, Consulta } from 'src/app/bd/bd.component';
+import { formSuscriptor, formPersona } from '../contenedor-principal/noticias/suscriptor.model';
 
 @Injectable({
   providedIn: 'root'
@@ -77,6 +77,20 @@ getTransmision(id_pelicula: Number){
 }
 
 
+guardarSuscriptor(s:formSuscriptor):Observable<any>{
+  return this.conector.put('http://localhost:3000/API/Suscriptores/',s);
+}
 
+guardarPersona(p:formPersona):Observable<any>{
+  return this.conector.put('http://localhost:3000/API/Personas/',p);
+}
+
+existePersona(email:string){
+  return this.conector.get<any>(`http://localhost:3000/API/Personas/${email}`);
+}
+
+existeSuscriptor(email:string){
+  return this.conector.get<any>(`http://localhost:3000/API/Suscriptores/${email}`);
+}
 
 }

@@ -272,3 +272,12 @@ export interface Transmiten{
   ID_PELICULA: Number;
   HORARIOS: string;
 }
+
+export interface Suscriptor{
+EMAIL:string;
+ACOMPANIANTE:string;
+ID_DF:number;
+HORARIO:string;
+SEXO:string;
+
+}
