@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CarteleraComponent} from '../../../contenedor-principal/barraPrincipal/cartelera/cartelera.component';
 import { APIControllersService } from '../../../APIControllers/apicontrollers.service';
-import { Cartelera, Pelicula, Pelicula_class, Transmiten } from 'src/app/bd/bd.component';
-import{FormsModule, NgForm} from '@angular/forms';
 @Component({
   selector: 'app-horarios',
   templateUrl: './horarios.component.html',
@@ -10,80 +7,19 @@ import{FormsModule, NgForm} from '@angular/forms';
 })
 
 export class HorariosComponent implements OnInit {
-  private carteleraActual:Cartelera;
-  private hoy:Date;
-  private peliculas:any[];
-  pelicula: Pelicula;
- nombre : string;
- //transmiten: Transmiten;
- private transmiten:any;
+private peliculas:any[];
+private pelicula:any[];
+private horarios:any[];
 
-    constructor(private conector:APIControllersService) {
+private hoy:Date;
+  constructor(private conector:APIControllersService){}
+
+  ngOnInit(){
     this.hoy=new Date();
-    
-
-    
+    let fecha:String=this.calcularPeriodo(this.hoy);
+    this.conector.ObtenerCartelera(fecha).subscribe(res=> {this.peliculas=res;});
   }
-
-  ngOnInit() {
-    this.obtenerCartelera();
-  
-
-  }
-
-  obtenerCartelera(){
-    this.conector.ObtenerCartelera(this.calcularPeriodo(this.hoy)).subscribe(res => {this.peliculas=res;});
-    this.conector.getTransmision(4).subscribe(res =>{this.transmiten = res});
-   // console.log(this.transmiten.HORARIOS);
-   
-  }
-
  
-
-
-  seleccionar(peli){
-this.pelicula = {
-  ID_PELICULA: peli.ID_PELICULA,
-  NOMBRE:  peli.NOMBRE,
-  ID_DIR1:  peli.ID_DIR1,
-  ID_DIR2:  peli.ID_DIR2,
-  FECHAESTRENO: peli.FECHAESTRENO,
-  DISPONIBLE: peli.DISPONIBLE,
-  DURACION: peli.DURACION,
-  CLASIFICACION: peli.CLASIFICACION,
-  ID_DISTRIBUIDORA: peli.ID_DISTRIBUIDORA,
-  GENERO: peli.GENERO,
-  RESENIA: peli.RESENIA
-  
-  
-};
-
-
-   
-  
-}
-
-seHizoClick(){
-  if(this.pelicula === undefined)return false;
-  else{
-
-   // this.conector.getTransmision(this.pelicula.ID_PELICULA).subscribe(res => {this.transmiten=res;});
-  
-    return true;
-  }
-}
-
-seHizoClick2(){
-  if(this.pelicula === undefined)return false;
-  else{
-
-   // this.conector.getTransmision(this.pelicula.ID_PELICULA).subscribe(res => {this.transmiten=res;});
-  
-    return true;
-  }
-}
-
-
   calcularPeriodo(hoy:Date):String{
     let diaSemana:number=hoy.getDay();
     let diasRestantes:number;
@@ -102,5 +38,9 @@ seHizoClick2(){
     return fecha;
   }
 
- 
+  peliculaSeleccionada(id:number){
+    this.conector.getTransmision(id).subscribe(res=> {this.horarios=res;});
+    this.conector.BuscarPelicula(id).subscribe(res=>{this.pelicula=res;});
+  }
+
 }

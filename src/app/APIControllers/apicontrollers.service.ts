@@ -8,14 +8,16 @@ import {Persona, Consulta } from 'src/app/bd/bd.component';
   providedIn: 'root'
 })
 export class APIControllersService {
-  private url = (`http://localhost:3000/API`);
-  
+
+private url = (`http://localhost:3000/API`);
+
   constructor(private conector: HttpClient) { 
       
 
   }
   ObtenerCartelera(fecha: String):Observable<Pelicula[]>{    
     return this.conector.get<Pelicula[]>(`http://localhost:3000/API/Cartelera/${fecha}`);
+    
   }
   BuscarSolicitante(email: String){    
     return this.conector.get<any[]>(`http://localhost:3000/API/Solicitante/${email}`);
@@ -32,9 +34,12 @@ export class APIControllersService {
   BuscarBeneficiosDisponibles(){    
     return this.conector.get<any[]>(`http://localhost:3000/API/Beneficios/`);
   }
-  ObtenerCiudades(){ 
-  
-    return this.conector.get(`http://localhost:3000/API/Ciudades/`);
+  BuscarPelicula(id:number){
+    return this.conector.get<any[]>(`http://localhost:3000/API/Peliculas/${id}`);
+  }
+
+   ObtenerCiudades(){ 
+     return this.conector.get(`http://localhost:3000/API/Ciudades/`);
   }
   crearConsulta(datos:Object){   
     this.conector.post(this.url+'/Consultas/', datos ).subscribe(res => console.log(res));
@@ -55,7 +60,7 @@ export class APIControllersService {
 // PARA VER UNA TRANSMISION PARTICULAR, PELICULA MAS SU HORARIO Y SALA
 getTransmision(id_pelicula: Number){    
 
-  return this.conector.get<any>(`http://localhost:3000/API/Transmiten/${id_pelicula}`);
+  return this.conector.get<any[]>(`http://localhost:3000/API/Transmiten/${id_pelicula}`);
 }
 
 

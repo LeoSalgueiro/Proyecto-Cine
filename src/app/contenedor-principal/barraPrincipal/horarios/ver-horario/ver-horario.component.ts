@@ -10,25 +10,21 @@ import { APIControllersService } from '../../../../APIControllers/apicontrollers
 })
 export class VerHorarioComponent implements OnInit {
 
-  @Input() horarios: string; // A PARTIR DE SU IDE BUSCO EN LA TABLA TRANSMITEN SU HORARIO
+  @Input() horarios: any; // A PARTIR DE SU IDE BUSCO EN LA TABLA TRANSMITEN SU HORARIO
 
-   transmiten: Transmiten;
-  @Input() pelicula:Pelicula;
   constructor(private conector:APIControllersService) {
   
 
    }
 
   ngOnInit() {
-    this.obtenertransmision();
-   
    
   }
 
   obtenertransmision(){
   
 
-      this.conector.getTransmision(this.pelicula.ID_PELICULA).subscribe(res => {this.transmiten=res;});
+      //this.conector.getTransmision(this.pelicula.ID_PELICULA).subscribe(res => {this.transmiten=res;});
      
    
 

@@ -16,22 +16,22 @@
                           <label class="control-label" for="r1"><strong>Nombre:</strong></label>
 
                           <div class="controls">
-                              <input type="text"  maxlength="100"  id="r1" name="r1"  placeholder="Nombre Completo" required />
+                              <input type="text" [(ngModel)]="persona.NOMBRE"  maxlength="100"  id="r1" name="r1"  placeholder="Nombre Completo" pattern="[A-Za-z]+" required />
                           </div>
                       </div>
 
                       <div class="control-group" id="r2Div">
-                        <label class="control-label" for="r1"><strong>Apellido:</strong></label>
+                        <label class="control-label" for="r1" [(ngModel)]="persona.APELLIDO"><strong>Apellido:</strong></label>
 
                         <div class="controls">
-                            <input type="text"  maxlength="100"  id="r1" name="r1"  placeholder="Apellido Completo" required />
+                            <input type="text"  maxlength="100"  id="r1" name="r1"  placeholder="Apellido Completo" pattern="[A-Za-z]+" required />
                         </div>
                     </div>
 
                     <div class="control-group" id="r3Div">
                         <label class="control-label" for="r3"><strong>Género:</strong></label>
                         <div class="controls">
-                            <select id="r3" name="r3"  required>
+                            <select id="r3" name="r3" [(ngModel)]="suscriptor.SEXO" required>
                                 <option value="">(Elija un género)</option>
                                 <option value="1">Masculino</option>
                                 <option value="2">Femenino</option>
@@ -43,7 +43,7 @@
                       <div class="control-group" id="r4Div">
                           <label class="control-label" for="r4"><strong>Email:</strong></label>
                           <div class="controls">
-                              <input type="email"  maxlength="100"  id="r4" name="r4" placeholder="ejemplo@email.com"  required />
+                              <input type="email" [(ngModel)]="suscriptor.EMAIL"  maxlength="100"  id="r4" name="r4" placeholder="ejemplo@email.com" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  required />
                           </div>
                       </div>
                       <br>
@@ -51,21 +51,21 @@
                       <div class="control-group" id="r5Div">
                           <label class="control-label" for="r5"><strong>DNI:</strong></label>
                           <div class="controls">
-                              <input type="text" pattern="\d*"  maxlength="100"  id="r5" name="r5" placeholder="XXXXXXXX" required />
+                              <input type="text" pattern="[0-9]+" [(ngModel)]="persona.DOC"  maxlength="100"  id="r5" name="r5" placeholder="XXXXXXXX" required />
                           </div>
                       </div>
                     
                       <div class="control-group" id="r6Div">
                         <label class="control-label" for="r6"><strong>Fecha de Nacimiento:</strong></label>
                         <div class="controls">
-                            <input type="text" pattern="\d*"  maxlength="100"  id="r6" name="r6" placeholder="dd/mm/aaaa" required />
+                            <input type="date" [(ngModel)]="persona.FECHA_NAC" min="1920-01-01" max="2011-01-01"  id="r6" name="r6" placeholder="dd/mm/aaaa" required />
                         </div>
                     </div>
 
                     <div class="control-group" id="r7Div">
                         <label class="control-label" for="r7"><strong>Profesión:</strong></label>
                         <div class="controls">
-                            <input type="text" pattern="\d*"  maxlength="100"  id="r7" name="r7" placeholder="Profesión" required />
+                            <input type="text" [(ngModel)]="suscriptor.PROFESION" pattern="[A-Za-z]+"  maxlength="100"  id="r7" name="r7" placeholder="Profesión" required />
                         </div>
                     </div>
 
@@ -97,16 +97,16 @@
                           </div>
                       </div>
                       <div class="control-group" id="r9Div">
-                        <label class="control-label" for="r9"><strong>Teléfono:</strong></label>
+                        <label class="control-label" for="r9"><strong>Teléfono (sin divisiones):</strong></label>
                         <div class="controls">
-                            <input type="text" pattern="\d*"  maxlength="100"  id="r9" name="r9" placeholder="Teléfono" required />
+                            <input type="text" [(ngModel)]="persona.TELEFONO" pattern="[0-9]"  maxlength="100"  id="r9" name="r9" placeholder="Teléfono" required />
                         </div>
                     </div>
 
                     <div class="control-group" id="r10Div">
                         <label class="control-label" for="r10"><strong>Con quién vas:</strong></label>
                         <div class="controls">
-                            <input type="text" pattern="\d*"  maxlength="100"  id="r10" name="r10" placeholder="Pareja/Amigos/Familia/Solo" required />
+                            <input type="text" [(ngModel)]="suscriptor.ACOMPANIANTE" pattern="[A-Za-z]+"  maxlength="100"  id="r10" name="r10" placeholder="Pareja/Amigos/Familia/Solo" required />
                         </div>
                     </div>
 
@@ -114,7 +114,7 @@
                     <div class="control-group" id="r11Div">
                         <label class="control-label" for="r11"><strong>Qué día:</strong></label>
                         <div class="controls">
-                            <select id="r11" name="r11"  required>
+                            <select id="r11" name="r11" [(ngModel)]="suscriptor.ID_DF"  required>
                                 <option value="1">Domingo</option>
                                 <option value="2">Lunes</option>
                                 <option value="3">Martes</option>
@@ -129,7 +129,7 @@
                     <div class="control-group" id="r12Div">
                         <label class="control-label" for="r12"><strong>Horario:</strong></label>
                         <div class="controls">
-                            <select id="r12" name="r12"  required>
+                            <select id="r12" name="r12" [(ngModel)]="suscriptor.HORARIO"  required>
                                 <option value="1">Indistinto</option>
                                 <option value="2">Matinee</option>
                                 <option value="3">Tarde</option>
@@ -141,7 +141,7 @@
                     </div>                    
 
                       <div class="controls button btn-cine boton_rojo botonSubmit">
-                          <button type="submit"><span>SUSCRIBIRME</span></button>
+                          <button (click)="enviarSuscripcion()"><span>SUSCRIBIRME</span></button>
                       </div>
                   </fieldset>
               </form>

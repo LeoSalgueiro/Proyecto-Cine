@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -33,6 +34,7 @@ import { APIControllersService } from './APIControllers/apicontrollers.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DescripcionPeliculaComponent } from './contenedor-principal/barraPrincipal/horarios/descripcion-pelicula/descripcion-pelicula.component';
 import { VerHorarioComponent } from './contenedor-principal/barraPrincipal/horarios/ver-horario/ver-horario.component';
+import { VerDetallePeliculaComponent } from './contenedor-principal/barraPrincipal/cartelera/ver-detalle-pelicula/ver-detalle-pelicula.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,8 @@ import { VerHorarioComponent } from './contenedor-principal/barraPrincipal/horar
     NoticiasComponent,
     ControllerApiComponent,
     DescripcionPeliculaComponent,
-    VerHorarioComponent
+    VerHorarioComponent,
+    VerDetallePeliculaComponent
   ],
   imports: [
     BrowserModule,

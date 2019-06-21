@@ -1,0 +1,100 @@
+.titulo-pelicula-rojo{
+    font-family: myriam-pro,"Arial", Helvetica, sans-serif;
+    font-size: 16px;
+    color:red;
+    letter-spacing: -5;
+}
+
+.titulo-pelicula-negro{
+    font-family: myriam-pro,"Arial", Helvetica, sans-serif;
+    font-size: 16px;
+    color:black;
+    letter-spacing: -5;
+}
+.texto.gris{
+    color:grey;
+    font-size: 12px;
+
+}
+.atributo{
+    color:black;
+    font-size: 12px;
+
+}
+
+.imagen-p{
+    float:left;
+    width:200px;
+}
+
+.descripcion-p{
+    margin-left: 10px;
+    color:grey;
+    font-family: Myriam-Pro-Light,"Arial", Arial;
+    font-size: 12px;
+    float:left;
+    width:400px;
+}
+
+.tarjeta-pelicula{
+    width:638px;
+    height:1100px;
+}
+
+.flecha{
+    float: left;
+    margin-top: 7px;
+    margin-right: 3px;
+    width: 11px;
+    height: 11px;
+    background: url(../../../../../assets/img/bullet-1.png) no-repeat center center;
+}
+.tabla{
+    display: block;
+    line-height: 24px;
+    background: url(../../../../../assets/img/gradient-black-red.jpg) repeat-y top left #b13237;
+    color: #fff;
+    padding-left: 10px;
+}
+
+.atributo2{
+    color:white;
+    font-size: 12px;
+
+}
+
+.tabla-c{
+    width: 400px;
+    height: 119px;
+    background-color: #f8f8f8;
+}
+
+.detalle-peli{
+        margin-left: 10px;
+        color:grey;
+        font-family: Myriam-Pro-Light,"Arial", Arial;
+        font-size: 12px;
+        float:left;
+        width:200px;
+    
+}
+.trailer{
+    width: 600px;
+    max-height: 500px;
+    float:left;
+    margin-top:20px;
+}
+
+.inferior-peli{
+    padding-top: 10px;
+    width: 600px;
+    float: left;
+}
+
+#boton-volver{
+    background-color: white;
+    border-style: none;
+    color:grey;
+    font-size: 12px;
+    font-family: myriam-pro,"Arial", Helvetica, sans-serif;
+}

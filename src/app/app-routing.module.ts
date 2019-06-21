@@ -16,6 +16,7 @@ import { RecursosHumanosComponent } from './contenedor-principal/barraSuperior/r
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BeneficiosComponent } from './contenedor-principal/beneficios/beneficios.component';
 import { NoticiasComponent } from './contenedor-principal/noticias/noticias.component';
+import { VerDetallePeliculaComponent } from './contenedor-principal/barraPrincipal/cartelera/ver-detalle-pelicula/ver-detalle-pelicula.component';
 
 const routes: Routes = [
   {path:"inicio", component:InicioComponent},//barra de navegación pequeña
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:"calificaciones", component:CalificacionesComponent},//barra de navegación pequeña
   {path:"consideraciones-generales", component:ConsideracionesGeneralesComponent},//barra de navegación pequeña
   {path:"peliculas-en-cartelera", component:CarteleraComponent},//barra de navegación principal
+  {path:"peliculas-en-cartelera/:id", component: VerDetallePeliculaComponent},//detalle película
   {path:"horarios", component:HorariosComponent},//barra de navegación principal
   {path:"proximos-estrenos", component:ProximosEstrenosComponent},//barra de navegación principal
   {path:"precios", component:PreciosComponent},//barra de navegación principal

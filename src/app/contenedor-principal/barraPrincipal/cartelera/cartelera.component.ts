@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cartelera, Pelicula } from 'src/app/bd/bd.component';
 import { APIControllersService } from '../../../APIControllers/apicontrollers.service';
 import { Subscription, Observable } from 'rxjs';
+import {Router} from '@angular/router';
 
 
 
@@ -15,7 +16,7 @@ export class CarteleraComponent implements OnInit {
   private hoy:Date;
   private peliculas:any[];
 
-    constructor(private conector:APIControllersService) {
+    constructor(private conector:APIControllersService, private router: Router) {
     this.hoy=new Date();
     
   }
@@ -46,6 +47,10 @@ export class CarteleraComponent implements OnInit {
     fechaFin.setDate(hoy.getDate()+diasRestantes);
     fecha=fechaFin.getFullYear()+"-"+(fechaFin.getMonth()+1)+"-"+fechaFin.getDate();
     return fecha;
+  }
+
+  peliculaSeleccionada(pelicula:any){
+    this.router.navigate(['/peliculas-en-cartelera',pelicula.ID_PELICULA]);
   }
 
 }
