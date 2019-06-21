@@ -10,8 +10,8 @@ export class GestorConsultaService {
   
   constructor(private conector:APIControllersService){ }
   
-  public crearConsulta(email:string,motivo:string,detalle:string) {
-      this.conector.crearConsulta({ID_CONSULTA:null,DETALLE:detalle,MOTIVO:motivo,EMAIL:email});
+  public crearConsulta(email:string,motivo:string,detalle:string,ciudad:string) {
+      this.conector.crearConsulta({ID_CONSULTA:null,DETALLE:detalle,MOTIVO:motivo,EMAIL:email,CIUDAD:ciudad});
       
   }
  

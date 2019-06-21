@@ -16,16 +16,24 @@ import{NgForm}from'@angular/forms';
 })
 export class ContactoComponent implements OnInit {
    private ciudades:any[]=[];
+   private show:boolean=true;
    constructor(private gestorConsulta: GestorConsultaService,private gestorPersona:GestorPersonaService,private gestorCiudad:GestorCiudadService) {
   }
    ngOnInit() {
        this.gestorCiudad.getCiudades().subscribe(res => {this.ciudades = res;});
   }
-   public registrarConsulta(consultaForm:NgForm): void {//USO EL GESTOR
-     
+   public registrarConsulta(consultaForm:NgForm): void {
+        let ciudad:string;
         let value=consultaForm.value;
-        this.gestorPersona.crearPersona(value.ciudad,value.nombre,value.apellido,value.email,"","","",value.telefono,"consultaCinemacenter");
-        this.gestorConsulta.crearConsulta(value.email,value.motivo,value.consulta);
+        
+        if(value.otra){
+            ciudad=value.ciudad2;
+        }
+        else{
+            ciudad=value.ciudad;
+        }
+        this.gestorPersona.crearPersona(value.nombre,value.apellido,value.email,"","","",value.telefono,"consultaCinemacenter");
+        this.gestorConsulta.crearConsulta(value.email,value.motivo,value.consulta,ciudad);
         
         consultaForm.reset();
   }

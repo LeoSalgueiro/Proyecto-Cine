@@ -9,7 +9,7 @@ export class GestorPersonaService {
  // private  persona: Persona;
   constructor(private conector:APIControllersService){ }
  
-  public crearPersona(ciudad: number,nombre: string,apellido: string,email: string,tipoDoc: string,nroDoc: string,fechaNac: string,telefono: string,personaTipo:string) {
+  public crearPersona(nombre: string,apellido: string,email: string,tipoDoc: string,nroDoc: string,fechaNac: string,telefono: string,personaTipo:string) {
      this.conector.crearPersona({DOC:nroDoc,TIPO_DOC:tipoDoc,NOMBRE:nombre,APELLIDO:apellido,EMAIL:email,FECHA_NAC:fechaNac,TELEFONO:telefono,PERSONA_TIPO:personaTipo});
     
   }

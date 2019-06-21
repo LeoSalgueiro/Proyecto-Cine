@@ -75,16 +75,21 @@
                         <div class="control-group" id="ciudadDiv" >
                             <label class="control-label" for="ciudad"><strong>Ciudad:</strong></label>
                             <div class="controls">
-                                <select id="ciudad" name="ciudad"  [(ngModel)]="ciudad"  required>
-                                    <option value="">(Elija su ciudad)</option>
-                                     <option  *ngFor="let ciudad of ciudades" [value]="ciudad.getNombre()">
-                                        {{ciudad.getNombre()}}
-                                     </option>
-                                </select>
-                                <div id="inputCiudad" class="ocultar" >
-                                    <input type="text" maxlength="100"  id="otra_ciudad" name="otra_ciudad"  placeholder="Ciudad" />
+                                <div  *ngIf="show; else notShow">
+                                    <select id="ciudad" name="ciudad"  [(ngModel)]="ciudad"  required>
+                                        <option value="">(Elija su ciudad)</option>
+                                         <option  *ngFor="let ciudad of ciudades" [value]="ciudad.getNombre()">
+                                            {{ciudad.getNombre()}}
+                                         </option>
+                                    </select>
                                 </div>
-                                <label >Otra<input type="checkbox" id="otra" name="otra"></label>
+                                 <ng-template id="div_sesion"  name="div_sesion"   #notShow >
+                                    <div id="inputCiudad">
+                                        <input type="text" maxlength="100"  id="ciudad2" name="ciudad2" [(ngModel)]="ciudad2" placeholder="Ciudad" />
+                                    </div>
+                                 </ng-template >
+                                    
+                                <label >Otra<input type="checkbox" id="otra" name="otra"  [(ngModel)]="otra"  (click)="show = !show;otra=true"></label>
                             </div>
                         </div>
                         <div class="control-group">
