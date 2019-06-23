@@ -2,25 +2,22 @@
 export class Consulta{
     private id:number;
     private _email:string;
-    private motivo: number;
+    private motivo: string;
     private detalle: string;
     private nombreCiudad: string;
-    constructor(id: number=0,email: string='',motivo: number=0,detalle: string=''){
+    constructor(id: number=0,email: string='',motivo: string='',detalle: string=''){
         this.id=id;
-        this.email=email;
+        this._email=email;
         this.motivo=motivo;
         this.detalle=detalle;
     }
     public setId(id:number){
       this.id=id;
     }
-    set email(email:string){
+    /*set email(email:string){
       this._email=email;
-      if(email=='ina@h.h'){
-      alert("lo setie: ");
-      }
-    }
-    public setMotivo(motivo:number){
+    }*/
+    public setMotivo(motivo:string){
       this.motivo=motivo;
     }
     public setDetalle(detalle:string){
@@ -29,18 +26,16 @@ export class Consulta{
     public getId():number{
         return this.id;
     }
-    get email():string{
+    /*get email():string{
         return this._email;
-    }
+    }*/
     public getDetalle():string{
         return this.detalle;
     }
-    public getMotivo():number{
+    public getMotivo():string{
         return this.motivo;
     }
-    public save(){//guardo el objeto en la base de datos
-        console.log("se creo la consulta!. Motivo= "+this.motivo+"| Consulta= "+this.detalle);
-    }
+    
     
     
 }

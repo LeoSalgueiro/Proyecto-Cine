@@ -10,9 +10,8 @@ import { formSuscriptor, formPersona } from '../contenedor-principal/noticias/su
 })
 export class APIControllersService {
 
-  private url = (`http://localhost:3000/API`);
-  
- 
+private url = (`http://localhost:3000/API`);
+
   constructor(private conector: HttpClient) { 
       
 
@@ -36,36 +35,25 @@ export class APIControllersService {
   BuscarBeneficiosDisponibles(){    
     return this.conector.get<any[]>(`http://localhost:3000/API/Beneficios/`);
   }
-
   BuscarPelicula(id:number){
     return this.conector.get<any[]>(`http://localhost:3000/API/Peliculas/${id}`);
   }
-  ObtenerCiudades(){  
 
-  // this.conector.get(`http://localhost:3000/API/Ciudades/`).subscribe(data =>{ this.profile = data});
-    return this.conector.get(`http://localhost:3000/API/Ciudades/`);
+   ObtenerCiudades(){ 
+     return this.conector.get(`http://localhost:3000/API/Ciudades/`);
   }
-  crearConsulta(){
-      /*return this.conector.put('http://localhost:3000/API/Consultas/', {
-        "DETALLE":  "trantando guardar",
-        "MOTIVO":  "1",
-        "MAIL":""
-        }, httpOptions)
-    .pipe(
-      catchError(this.handleError('update', {
-        "DETALLE":  "trantando guardar",
-        "MOTIVO":  "1",
-        "MAIL":"inaleng25@gmail.com"
-        }))
-    )¨*/
+  crearConsulta(datos:Object){   
+    this.conector.post(this.url+'/Consultas/', datos ).subscribe(res => console.log(res));
   }
-
+  
+  crearPersona(datos:Object){ 
+       this.conector.post(this.url+'/Personas/', datos ).subscribe(res => console.log(res));
+ }
  
  // METODO QUE GUARDA UNA CONSULTA DE UNA EMPRESA AL DEPARTAMENTO DE MARKETING
  guardarEmpresa(empresa: FormEmpresa): Observable<any>{
   //  let json = JSON.stringify(empresa);
    //let empresaJSON = "json="+json;
-
     return this.conector.post(this.url+'/Empresas/', empresa );
 
 }
