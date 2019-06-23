@@ -35,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DescripcionPeliculaComponent } from './contenedor-principal/barraPrincipal/horarios/descripcion-pelicula/descripcion-pelicula.component';
 import { VerHorarioComponent } from './contenedor-principal/barraPrincipal/horarios/ver-horario/ver-horario.component';
 import { VerDetallePeliculaComponent } from './contenedor-principal/barraPrincipal/cartelera/ver-detalle-pelicula/ver-detalle-pelicula.component';
+import { SorteosSemanalesComponent } from './contenedor-principal/sorteos-semanales/sorteos-semanales.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { VerDetallePeliculaComponent } from './contenedor-principal/barraPrincip
     ControllerApiComponent,
     DescripcionPeliculaComponent,
     VerHorarioComponent,
-    VerDetallePeliculaComponent
+    VerDetallePeliculaComponent,
+    SorteosSemanalesComponent
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BeneficiosComponent } from './contenedor-principal/beneficios/beneficios.component';
 import { NoticiasComponent } from './contenedor-principal/noticias/noticias.component';
 import { VerDetallePeliculaComponent } from './contenedor-principal/barraPrincipal/cartelera/ver-detalle-pelicula/ver-detalle-pelicula.component';
+import { SorteosSemanalesComponent} from './contenedor-principal/sorteos-semanales/sorteos-semanales.component';
 
 const routes: Routes = [
   {path:"inicio", component:InicioComponent},//barra de navegación pequeña
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path:"contacto", component:ContactoComponent},//barra de navegación principal
   {path:"beneficios", component:BeneficiosComponent},//banner
   {path:"noticias", component:NoticiasComponent},//banner
+  {path:"sorteos-semanales", component:SorteosSemanalesComponent}, //banner
   { path: '', redirectTo: 'inicio', pathMatch: 'full'},
   { path: '**', component:PageNotFoundComponent}
 ];
