@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { APIControllersService } from '../../APIControllers/apicontrollers.service';
 import { Subscription, Observable } from 'rxjs';
-import {formParticipante} from './suscriptor.model';
+import {FormParticipante} from './suscriptor.model';
 import{FormsModule, NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
 import { FLAGS } from '@angular/core/src/render3/interfaces/view';
+import{NgModule} from '@angular/core';
 
 
 
@@ -13,17 +14,24 @@ import { FLAGS } from '@angular/core/src/render3/interfaces/view';
   templateUrl: './sorteos-semanales.component.html',
   styleUrls: ['./sorteos-semanales.component.css']
 })
+
+@NgModule({
+
+  imports : [FormsModule, NgForm]
+
+})
+
 export class SorteosSemanalesComponent implements OnInit {
   bandera: number;
   private existeP:any[];
   private existeParticipante:any[];
-  participante : formParticipante = {
+  participante : FormParticipante = {
 
     NOMBRE: '',
-    EMAIL: '',
+    EMAIL: '', 
     CIUDAD: '',
-    UTDDNI: 0,      //Ultimos Tres Digitos DNI
-    ID_RES: 0,};  //ID respuesta
+    UTDDNI: '',      //Ultimos Tres Digitos DNI
+    ID_RESPUESTA: '',};  //ID respuesta
     
     constructor(private conector:APIControllersService, private router: Router) {
 
@@ -34,21 +42,20 @@ export class SorteosSemanalesComponent implements OnInit {
 
   enviarFormulario(formC:NgForm){
     
-   let participante : formParticipante = {
-    NOMBRE: this.participante.NOMBRE,
-    EMAIL: this.participante.EMAIL,
-    CIUDAD: this.participante.CIUDAD,
-    UTDDNI: this.participante.UTDDNI,
-    ID_RES: this.participante.ID_RES,};
-
     //console.log(this.formulario);
     // formulario es un objeto de la clase  Empresa
-    this.conector.existeParticipante(this.participante.EMAIL).subscribe(res => {this.existeParticipante=res;})
+    //this.conector.existeParticipante(this.participante.EMAIL).subscribe(res => {this.existeParticipante=res;})
 
     this.conector.guardarParticipante(this.participante).subscribe(res => console.log(res));
     err => console.log(err);
+    console.log(this.participante);
+    console.log(this.participante.EMAIL);
+    console.log(this.participante.ID_RESPUESTA);
+    console.log(this.participante.NOMBRE);
+    console.log(this.participante.UTDDNI);
+    console.log(this.participante.CIUDAD);
     alert('¡Se ha suscripto correctamente!');
-    formC.reset();
+    //formC.reset();
   }
 }
 

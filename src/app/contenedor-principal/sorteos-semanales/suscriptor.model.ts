@@ -1,10 +1,10 @@
-export interface formParticipante{
+export interface FormParticipante{
 
-    NOMBRE: string;
-    CIUDAD: string;
-    EMAIL: string;
-    ID_RES: number;
-    UTDDNI: number;
+    NOMBRE: String;
+    CIUDAD: String;
+    EMAIL: String;
+    ID_RESPUESTA: String;
+    UTDDNI: String;
     
     }
     

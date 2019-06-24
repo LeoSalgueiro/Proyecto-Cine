@@ -1,3 +1,5 @@
+{{participante|json}}
+
 <div id="principal">
     <div style="max-width: 40rem;">
         
@@ -20,7 +22,7 @@
                             
   
                             <div class="controls">
-                                <input type="text" maxlength="100"  id="r1" name="NOMBRE"  placeholder="Nombre" pattern="[A-Za-z]+" [(ngModel)]="NOMBRE"  required />
+                                <input type="text" maxlength="100"  id="r1" name="NOMBRE"  placeholder="Nombre" pattern="[A-Za-z]+" [(ngModel)]="participante.NOMBRE"  required />
                                 
                             </div>
                             
@@ -33,7 +35,7 @@
                         <div class="control-group" id="r4Div">
                             <label class="control-label" for="r4"><strong>Email:</strong><br><span class="peque"> Datos obligatorios</span></label>
                             <div class="controls">
-                                <input type="email" [(ngModel)]="EMAIL"  maxlength="100"  id="r4" name="EMAIL" placeholder="ejemplo@email.com" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  required />
+                                <input type="email" [(ngModel)]="participante.EMAIL"  maxlength="100"  id="r4" name="EMAIL" placeholder="ejemplo@email.com" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  required />
                             </div>
                         </div>
                         <br>
@@ -43,7 +45,7 @@
                             <label class="control-label" for="r1"><strong>Ciudad:</strong><br><span class="peque"> Datos obligatorios</span></label>
   
                             <div class="controls">
-                                <input type="text" maxlength="100"  id="r1" name="CIUDAD"  placeholder="Ciudad" pattern="[A-Z a-z]+"  [(ngModel)]="CIUDAD"  required />
+                                <input type="text" maxlength="100"  id="r1" name="CIUDAD"  placeholder="Ciudad" pattern="[A-Z a-z]+"  [(ngModel)]="participante.CIUDAD"  required />
                             </div>
                         </div>
                         
@@ -51,7 +53,7 @@
                             <label class="control-label" for="r1"><strong>Ultimos tres dígitos del DNI:</strong><br><span class="peque"> Datos obligatorios</span></label>
     
                             <div class="controls">
-                                <input type="text"  maxlength="3"  id="r1" name="UTDDNI"  placeholder="XXX" [(ngModel)]="UTDDNI" pattern="[0-9]+" required />
+                                <input type="text"  maxlength="3"  id="r1" name="UTDDNI"  placeholder="XXX" [(ngModel)]="participante.UTDDNI" pattern="[0-9]+" required />
                             </div>
                         </div>
     
@@ -64,7 +66,7 @@
                       <div class="control-group" id="r11Div">
                           <label class="control-label" for="r11"><strong>Opciones:</strong><br><span class="peque"> Datos obligatorios</span></label>
                           <div class="controls">
-                              <select id="r11" name="ID_RES" [(ngModel)]="ID_RES"  required>
+                              <select id="r11" name="ID_RESPUESTA" [(ngModel)]="participante.ID_RESPUESTA"  required>
                                   <option value="1">Seleccione...</option>
                                   <option value="2">Porky</option>
                                   <option value="3">Forky</option>
