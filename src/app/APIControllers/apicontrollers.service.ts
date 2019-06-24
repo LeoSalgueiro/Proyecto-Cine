@@ -4,6 +4,7 @@ import {Pelicula, FormEmpresa, Transmiten} from '../bd/bd.component';
 import { Observable } from 'rxjs';
 import {Persona, Consulta } from 'src/app/bd/bd.component';
 import { formSuscriptor, formPersona } from '../contenedor-principal/noticias/suscriptor.model';
+import { formParticipante } from '../contenedor-principal/sorteos-semanales/suscriptor.model';
 
 @Injectable({
   providedIn: 'root'
@@ -79,6 +80,15 @@ existePersona(email:string){
 
 existeSuscriptor(email:string){
   return this.conector.get<any>(`http://localhost:3000/API/Suscriptores/${email}`);
+}
+
+
+existeParticipante(email:string){
+  return this.conector.get<any>(`http://localhost:3000/API/Participantes/${email}`);
+}
+
+guardarParticipante(p:formParticipante):Observable<any>{
+  return this.conector.put('http://localhost:3000/API/Participantes/',p);
 }
 
 }

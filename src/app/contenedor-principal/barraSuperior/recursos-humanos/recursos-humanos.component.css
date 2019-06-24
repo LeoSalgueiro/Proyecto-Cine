@@ -34,6 +34,13 @@
     text-align-last: end;
     
 }
+.block_inf {
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background: white;
+}
 
 .campos{
    
@@ -42,6 +49,7 @@
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 10px;
     color: #FFFFFF;
+    text-align: left;
 
 }
 
