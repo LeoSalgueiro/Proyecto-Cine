@@ -2,8 +2,8 @@ import { Component ,OnInit } from '@angular/core';
 import { GestorConsultaService } from './../../../modelo/gestor-consulta.service';
 import { GestorPersonaService } from './../../../modelo/gestor-persona.service';
 import { GestorCiudadService } from './../../../modelo/gestor-ciudad.service';
-import { Ciudad } from './../../../modelo/ciudad';//pongo que voy a usar esas clases del modelo
-import { Consulta } from './../../../modelo/consulta';//pongo que voy a usar esas clases del modelo
+import { Ciudad } from './../../../modelo/ciudad';
+import { Consulta } from './../../../modelo/consulta';
 import { map } from 'rxjs/operators';
 
 
@@ -17,6 +17,8 @@ import{NgForm}from'@angular/forms';
 export class ContactoComponent implements OnInit {
    private ciudades:any[]=[];
    private show:boolean=true;
+   private motivo={'status':""};
+   private ciudad={'status':""};
    constructor(private gestorConsulta: GestorConsultaService,private gestorPersona:GestorPersonaService,private gestorCiudad:GestorCiudadService) {
   }
    ngOnInit() {

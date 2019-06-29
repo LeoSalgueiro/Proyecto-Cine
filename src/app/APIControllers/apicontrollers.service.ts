@@ -43,7 +43,7 @@ private url = (`http://localhost:3000/API`);
      return this.conector.get(`http://localhost:3000/API/Ciudades/`);
   }
   crearConsulta(datos:Object){   
-    this.conector.post(this.url+'/Consultas/', datos ).subscribe(res => console.log(res));
+    this.conector.post(this.url+'/Consultas/', datos ).subscribe((res) =>{ console.log(res);alert(res["message"]);});
   }
   
   crearPersona(datos:Object){ 
