@@ -83,8 +83,8 @@ existeSuscriptor(email:string){
 }
 
 
-existeParticipante(email:string){
-  return this.conector.get<any>(`http://localhost:3000/API/Participantes/${email}`);
+getParticipante(){
+  return this.conector.get<any>(`http://localhost:3000/API/Participantes/`);
 }
 
 /*guardarParticipante(p:FormParticipante):Observable<any>{

@@ -23,7 +23,8 @@ import{NgModule} from '@angular/core';
 
 export class SorteosSemanalesComponent implements OnInit {
   bandera: number;
-  private existeP:any[];
+  datos: String;
+  private participantes:any[];
   private existeParticipante:any[];
   participante : FormParticipante = {
 
@@ -34,29 +35,34 @@ export class SorteosSemanalesComponent implements OnInit {
     ID_RESPUESTA: '',};  //ID respuesta
     
     constructor(private conector:APIControllersService, private router: Router) {
-
+      this.conector.getParticipante().subscribe(res => {this.existeParticipante = res});
     }
 
     ngOnInit() {   
     }
-
-  enviarFormulario(formC:NgForm){
+ 
+    enviarFormulario(formC:NgForm){
     
-    //console.log(this.formulario);
-    // formulario es un objeto de la clase  Empresa
-    //this.conector.existeParticipante(this.participante.EMAIL).subscribe(res => {this.existeParticipante=res;})
-
-    this.conector.guardarParticipante(this.participante).subscribe(res => console.log(res));
-    err => console.log(err);
-    console.log(this.participante);
-    console.log(this.participante.EMAIL);
-    console.log(this.participante.ID_RESPUESTA);
-    console.log(this.participante.NOMBRE);
-    console.log(this.participante.UTDDNI);
-    console.log(this.participante.CIUDAD);
-    alert('¡Se ha suscripto correctamente!');
-    //formC.reset();
-  }
+      for(var d of this.existeParticipante){
+          var myjson = JSON.stringify(d);
+          let emil = myjson.split(':'); //toma del json solo la parte del mail
+  
+         if(emil[1].substring(1, emil[1].length-2) == this.participante.EMAIL){
+            this.bandera=1;
+            alert('Este mail ya se encuentra registrado en el sorteo semanal');
+            break;
+          }
+        this.bandera=0;
+      }
+      if(this.bandera==0){
+ 
+          this.conector.guardarParticipante(this.participante).subscribe(res => {this.existeParticipante = res; console.log(res);});
+          err => console.log(err)
+          alert('¡Se ha suscripto correctamente!');
+          formC.reset();
+      }
+      
+    }
 }
 
 
