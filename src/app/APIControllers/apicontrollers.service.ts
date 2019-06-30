@@ -11,8 +11,14 @@ import { FormParticipante } from '../contenedor-principal/sorteos-semanales/susc
 })
 export class APIControllersService {
 
+<<<<<<< HEAD
 private url = (`http://localhost:3000/API`);
 
+=======
+  private url = (`http://localhost:3000/API`);
+  
+ 
+>>>>>>> origin/pedro
   constructor(private conector: HttpClient) { 
       
 
@@ -36,12 +42,21 @@ private url = (`http://localhost:3000/API`);
   BuscarBeneficiosDisponibles(){    
     return this.conector.get<any[]>(`http://localhost:3000/API/Beneficios/`);
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/pedro
   BuscarPelicula(id:number){
     return this.conector.get<any[]>(`http://localhost:3000/API/Peliculas/${id}`);
   }
 
+<<<<<<< HEAD
    ObtenerCiudades(){ 
      return this.conector.get(`http://localhost:3000/API/Ciudades/`);
+=======
+  // this.conector.get(`http://localhost:3000/API/Ciudades/`).subscribe(data =>{ this.profile = data});
+    return this.conector.get(`http://localhost:3000/API/Ciudades/`);
+>>>>>>> origin/pedro
   }
   crearConsulta(datos:Object){   
     this.conector.post(this.url+'/Consultas/', datos ).subscribe(res => console.log(res));

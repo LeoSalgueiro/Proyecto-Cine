@@ -7,6 +7,7 @@
     <div class="block_inf">
 
 
+<<<<<<< HEAD
         <div class="tarjeta" *ngFor="let c of combos">
              <article>
                 <div class="imagen">
@@ -33,3 +34,27 @@
 
 
 </div>
+=======
+            <div class="tarjeta" *ngFor="let c of combos">
+                    <div class="imagen">
+                       <img src="../../../assets/img/supercombos/{{c.ID_COMBO}}.jpg">
+                   </div>
+                   <br>
+                   <div class="texto1">
+                       <b class="titulo">{{c.NOMBRE}}</b>
+                       <br>
+                       <img src="../../../assets/img/estrella_roja.png">
+                       <span class="texto gris">{{c.INCLUYE.split('#')[0]}} </span>
+                       <br> 
+                       <img src="../../../assets/img/estrella_roja.png">
+                       <span class="texto gris"> {{c.INCLUYE.split('#')[1]}}</span>
+                   </div>
+                   
+                   <br>
+                   <br>
+               </div><!--cierre tarjeta-->
+
+        </div>
+
+    </div>
+>>>>>>> origin/pedro
