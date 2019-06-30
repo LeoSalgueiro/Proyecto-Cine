@@ -78,7 +78,8 @@ getTransmision(id_pelicula: Number){
 
 
 guardarSuscriptor(s:formSuscriptor):Observable<any>{
-  return this.conector.put('http://localhost:3000/API/Suscriptores/',s);
+  console.log(s);
+  return this.conector.post('http://localhost:3000/API/Suscriptores/',s);
 }
 
 guardarPersona(p:formPersona):Observable<any>{
@@ -91,6 +92,14 @@ existePersona(email:string){
 
 existeSuscriptor(email:string){
   return this.conector.get<any>(`http://localhost:3000/API/Suscriptores/${email}`);
+}
+
+borrarSuscriptor(email:string){
+    return this.conector.delete<any>(`http://localhost:3000/API/Suscriptores/${email}`);
+}
+
+borrarPersona(email:string){
+  return this.conector.delete<any>(`http://localhost:3000/API/Personas/${email}`);
 }
 
 }

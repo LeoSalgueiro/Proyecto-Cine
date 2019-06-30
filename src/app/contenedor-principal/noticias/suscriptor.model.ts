@@ -35,3 +35,24 @@ HORARIO: string;
 SEXO: string;
 
 }
+
+
+export class ExisteSuscriptor {
+private resultado: number;
+constructor(resultado: number){
+    this.resultado=resultado;
+}
+
+getResultado():number{return this.resultado;}
+
+}
+
+
+export class ExistePersona {
+    private resultado: number;
+    constructor(resultado: number){
+        this.resultado=resultado;
+    }
+    getResultado():number{return this.resultado;}
+    
+    }

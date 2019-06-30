@@ -3,9 +3,10 @@
       <app-ficha-principal [texto_rojo]="'NEWS '" [texto_negro]="' LETTERS · '" [texto_light]="'RECIBI TODA LA INFORMACIÓN ACTUALIZADA DE TUS CINES'" [imagen]="'icon-news.png'"></app-ficha-principal>
       <div class="block_inf">
           <div class="row-fluid">
+              
               <p class="peque">Suscribiéndote podes enterarte por mail de la programación, promociones y novedades de nuestros cines todas las semanas.</p>
               <p class="peque">En la semana de tu cumpleaños, te vamos a estar dando descuentos para que puedas disfrutar de una película con quien vos quieras!!</p>
-
+              
           </div>
           <div class="row-fluid" style="margin-top: 10px;">
               
@@ -31,11 +32,8 @@
                     <div class="control-group" id="r3Div">
                         <label class="control-label" for="r3"><strong>Género:</strong></label>
                         <div class="controls">
-                            <select id="r3" name="SEXO" [(ngModel)]="completo.SEXO" required>
-                                <option value="" name="nada">(Elija un género)</option>
-                                <option value="1" name="masculino">Masculino</option>
-                                <option value="2"name="femenino">Femenino</option>
-                                <option value="3" name="otro">Otro</option>
+                            <select id="g" name="SEXO" [(ngModel)]="completo.SEXO" required>
+                                <option *ngFor="let g of generos" [value]="g">{{g}}</option>
                             </select>
                         </div>
                     </div>
@@ -79,7 +77,9 @@
                     <div class="control-group" id="r10Div">
                         <label class="control-label" for="r10"><strong>Con quién vas:</strong></label>
                         <div class="controls">
-                            <input type="text" [(ngModel)]="completo.ACOMPANIANTE" pattern="[A-Za-z]+"  maxlength="100"  id="r10" name="ACOMPANIANTE" placeholder="Pareja/Amigos/Familia/Solo" required />
+                            <select id="acompaniante" name="ACOMPANIANTE" [(ngModel)]="completo.ACOMPANIANTE" required>
+                                <option *ngFor="let opcion of opciones" [value]="opcion">{{opcion}}</option>
+                            </select>
                         </div>
                     </div>
 
@@ -118,8 +118,10 @@
                       </div>
                   </fieldset>
               </form>
+
+
               <br><br>
-              <p class="peque">Si usted desea eliminar su información personal de nuestra base de datos y así dejar de recibir nuestros mailings y newsletter semanal haga click aquí.</p>
+              <p class="peque">Si usted desea eliminar su información personal de nuestra base de datos y así dejar de recibir nuestros mailings y newsletter semanal haga click <a routerLink="eliminar-datos" routerLinkActive="active">aquí.</a></p>
               <p class="peque">Para ser beneficiado con el cupón 2x1 por el cumpleaños, el usuario deberá suscribirse con al menos 10 días de anticipación a su fecha de cumpleaños completá todos los datos y ya mismo empezá a disfrutar de todos los beneficios que Cinemacenter tiene para ofrecerte.</p>
 
           </div>

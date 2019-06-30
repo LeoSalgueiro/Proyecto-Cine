@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {formPersona, formSuscriptor, formSusCompleto} from './suscriptor.model';
 import { APIControllersService } from '../../APIControllers/apicontrollers.service';
-import{FormsModule, NgForm} from '@angular/forms';
+import{ NgForm} from '@angular/forms';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-noticias',
@@ -11,6 +12,9 @@ import{FormsModule, NgForm} from '@angular/forms';
 export class NoticiasComponent implements OnInit {
   private existeP:any[];
   private existeS:any[];
+  private generos:string[]=["Femenino","Masculino","Otro"];
+  private opciones:string[]=["Amigos","Familia","Pareja","Solo/a"];
+  
   suscriptor : formSuscriptor = {
     EMAIL: '',
     PROFESION: '',
@@ -31,7 +35,7 @@ export class NoticiasComponent implements OnInit {
     }
 
     completo:formSusCompleto={
-      DOC: 0,
+      DOC: null,
       TIPO_DOC:'DNI',
       NOMBRE: '',
       APELLIDO: '',
@@ -40,18 +44,20 @@ export class NoticiasComponent implements OnInit {
       TELEFONO: '',
       PERSONA_TIPO:'suscriptor',
       PROFESION: '',
-    ACOMPANIANTE: '',
-    ID_DF: 0,
-    HORARIO: '',
-    SEXO: ''};
+      ACOMPANIANTE: '',
+      ID_DF: 0,
+      HORARIO: '',
+      SEXO: ''};
 
   constructor(private conector:APIControllersService) { }
 
   ngOnInit() {
   }
 
+
   enviarFormulario(formC:NgForm){
-   let suscriptor : formSuscriptor = {
+    
+    let suscriptor : formSuscriptor = {
     EMAIL: this.completo.EMAIL,
     PROFESION: this.completo.PROFESION,
     ACOMPANIANTE: this.completo.ACOMPANIANTE,
@@ -69,20 +75,26 @@ export class NoticiasComponent implements OnInit {
       TELEFONO: this.completo.TELEFONO,
       PERSONA_TIPO:'suscriptor'
     }
-    //console.log(this.formulario);
-    // formulario es un objeto de la clase  Empresa
-    this.conector.existeSuscriptor(this.suscriptor.EMAIL).subscribe(res => {this.existeS=res;});
-    this.conector.existePersona(this.persona.EMAIL).subscribe(res => {this.existeP=res;});
-    //if (existe){}
     
-    this.conector.guardarSuscriptor(this.suscriptor).subscribe(res => console.log(res));
-    this.conector.guardarPersona(this.persona).subscribe(res => console.log(res));
-    err => console.log(err);
-    alert('¡Se ha suscripto correctamente!');
+    console.log(suscriptor.EMAIL);
+    this.conector.existeSuscriptor(suscriptor.EMAIL).subscribe(res => {
+      let resultado=JSON.stringify(res);
+      let numero= Number.parseInt(resultado.slice(17,18));
+      if (numero==0){
+        console.log("no existen suscriptores con ese email");
+        this.conector.guardarPersona(persona).subscribe(res => {
+          console.log("guardar ahora suscriptor");
+          this.conector.guardarSuscriptor(suscriptor).subscribe(res => console.log(res));
+          alert("Sus datos han sido registrados con éxito. ¡Gracias!");
+          formC.reset();
+        });
 
-    formC.reset();
-    
-  
+      }
+      else {
+        alert("El mail ya se encuentra registrado como suscriptor. Intente con otro mail.");
+      }
+      
+    });
 
 
   }
