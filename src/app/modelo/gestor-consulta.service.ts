@@ -10,10 +10,9 @@ export class GestorConsultaService {
   
   constructor(private conector:APIControllersService){ }
   
-  public crearConsulta(email:string,motivo:number,detalle:string) {
-    let consulta=new Consulta(0,email,motivo,detalle);
-    consulta.save();//guarda en BD
-   
+  public crearConsulta(email:string,motivo:string,detalle:string) {
+      this.conector.crearConsulta({ID_CONSULTA:null,DETALLE:detalle,MOTIVO:motivo,EMAIL:email});
+      
   }
  
 }

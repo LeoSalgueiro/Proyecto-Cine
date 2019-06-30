@@ -1,6 +1,6 @@
 
 export interface FormEmpresa{
-    
+         id_consultae:Number
          nombre: string;
          email:string;
          empresa:string;

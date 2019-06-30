@@ -24,7 +24,7 @@ export class MarketingComponent implements OnInit {
 
   //formulario = new Empresa('','','','', '','');
   formulario : FormEmpresa = {
-
+    id_consultae:0,
     nombre : '',
     empresa : '',
     consulta :'',

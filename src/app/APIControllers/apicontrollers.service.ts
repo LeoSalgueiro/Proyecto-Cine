@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Pelicula, FormEmpresa, Transmiten} from '../bd/bd.component';
 import { Observable } from 'rxjs';
-
 import {Persona, Consulta } from 'src/app/bd/bd.component';
 
 @Injectable({
@@ -45,27 +44,18 @@ export class APIControllersService {
   // this.conector.get(`http://localhost:3000/API/Ciudades/`).subscribe(data =>{ this.profile = data});
     return this.conector.get(`http://localhost:3000/API/Ciudades/`);
   }
-  crearConsulta(){
-      /*return this.conector.put('http://localhost:3000/API/Consultas/', {
-        "DETALLE":  "trantando guardar",
-        "MOTIVO":  "1",
-        "MAIL":""
-        }, httpOptions)
-    .pipe(
-      catchError(this.handleError('update', {
-        "DETALLE":  "trantando guardar",
-        "MOTIVO":  "1",
-        "MAIL":"inaleng25@gmail.com"
-        }))
-    )¨*/
+  crearConsulta(datos:Object){   
+    this.conector.post(this.url+'/Consultas/', datos ).subscribe(res => console.log(res));
   }
-
+  
+  crearPersona(datos:Object){ 
+       this.conector.post(this.url+'/Personas/', datos ).subscribe(res => console.log(res));
+ }
  
  // METODO QUE GUARDA UNA CONSULTA DE UNA EMPRESA AL DEPARTAMENTO DE MARKETING
  guardarEmpresa(empresa: FormEmpresa): Observable<any>{
   //  let json = JSON.stringify(empresa);
    //let empresaJSON = "json="+json;
-
     return this.conector.post(this.url+'/Empresas/', empresa );
 
 }
