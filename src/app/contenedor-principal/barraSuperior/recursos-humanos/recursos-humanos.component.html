@@ -52,7 +52,7 @@
                 <div class="control-group" style="margin-top: 1px;" >
                     <label class="control-label color" for="genero"><p> Género:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
-                        <select id="genero" class="campos" name="genero" [(ngModel)]="model.genero"  required>
+                        <select class="campos" id="genero"  name="genero" [(ngModel)]="model.genero"  required>
                             <option value="">Ingrese su género</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
@@ -175,12 +175,9 @@
                     <label class="control-label color" for="CV"><p> CV:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
                     <div class="controls">
                         
-                        
                         <input 
-                
                             type="file"
                             name="CV"
-                           
                             id="CV"
                             [(ngModel)]="model.CV"
                             required
@@ -188,17 +185,12 @@
                     </div>
 
                 </div>
-                <div class="controls">
+                <div class="controls button btn-cine boton_rojo botonSubmit">
                     <button type="submit" class="btn btn-success">
                         Enviar
                     </button>
                 </div>
             </form>
-
-            <div class="pre">
-                <h3>MODELO:</h3>
-                {{currentSolicitud}}
-            </div>
 
         </div>
         <hr>

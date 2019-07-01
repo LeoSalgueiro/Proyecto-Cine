@@ -11,7 +11,6 @@ export class GestorCiudadService {
   constructor(private conector:APIControllersService) { }
   
  public getCiudades(){
-      this.conector.crearConsulta();
       
   return this.conector.ObtenerCiudades().pipe(
      map(datos => {

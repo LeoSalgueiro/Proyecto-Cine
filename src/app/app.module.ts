@@ -37,6 +37,7 @@ import { VerHorarioComponent } from './contenedor-principal/barraPrincipal/horar
 import { VerDetallePeliculaComponent } from './contenedor-principal/barraPrincipal/cartelera/ver-detalle-pelicula/ver-detalle-pelicula.component';
 import { EliminarDatosComponent } from './contenedor-principal/noticias/eliminar-datos/eliminar-datos.component';
 import { UrlSeguridadComponent } from './contenedor-principal/barraPrincipal/cartelera/url-seguridad/url-seguridad.component';
+import { SorteosSemanalesComponent } from './contenedor-principal/sorteos-semanales/sorteos-semanales.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { UrlSeguridadComponent } from './contenedor-principal/barraPrincipal/car
     VerHorarioComponent,
     VerDetallePeliculaComponent,
     EliminarDatosComponent,
-    UrlSeguridadComponent
+    UrlSeguridadComponent,
+    SorteosSemanalesComponent
   ],
   imports: [
     BrowserModule,

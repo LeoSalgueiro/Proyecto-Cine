@@ -1,0 +1,100 @@
+{{participante|json}}
+
+<div id="principal">
+    <div style="max-width: 40rem;">
+        
+        <app-ficha-principal [texto_rojo]="'SORTEO '" [texto_negro]="' SEMANAL'" [imagen]="'icon-movies.png'"></app-ficha-principal>
+
+        <img src=".\..\..\assets\img\sorteoactual.jpg" alt="sorteo actual">
+        <div class="block_inf">
+            <div class="row-fluid">
+                <p class="peque">¡Participá y ganá!</p>
+                <p class="peque">Esta semana sorteamos: Entradas y Candy + kit película "Toy Story 4".</p>
+  
+            </div>
+            <div class="row-fluid" style="margin-top: 10px;">
+                
+                <form ngNativeValidate class="form-horizontal form_cinema" (ngSubmit)="enviarFormulario(formParticipante)" #formParticipante ="ngForm" name="formParticipante">
+                    <fieldset>
+                        <legend></legend>
+                        <div class="control-group" id="r1Div">
+                            <label class="control-label" for="r1"><strong>Nombre:</strong><br><span class="peque"> Datos obligatorios</span></label>
+                            
+  
+                            <div class="controls">
+                                <input type="text" maxlength="100"  id="r1" name="NOMBRE"  placeholder="Nombre" pattern="[A-Za-z]+" [(ngModel)]="participante.NOMBRE"  required />
+                                
+                            </div>
+                            
+                            
+                        </div>
+  
+                        
+                      
+  
+                        <div class="control-group" id="r4Div">
+                            <label class="control-label" for="r4"><strong>Email:</strong><br><span class="peque"> Datos obligatorios</span></label>
+                            <div class="controls">
+                                <input type="email" [(ngModel)]="participante.EMAIL"  maxlength="100"  id="r4" name="EMAIL" placeholder="ejemplo@email.com" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  required />
+                            </div>
+                        </div>
+                        <br>
+                      
+  
+                        <div class="control-group" id="r1Div">
+                            <label class="control-label" for="r1"><strong>Ciudad:</strong><br><span class="peque"> Datos obligatorios</span></label>
+  
+                            <div class="controls">
+                                <input type="text" maxlength="100"  id="r1" name="CIUDAD"  placeholder="Ciudad" pattern="[A-Z a-z]+"  [(ngModel)]="participante.CIUDAD"  required />
+                            </div>
+                        </div>
+                        
+                        <div class="control-group" id="r2Div">
+                            <label class="control-label" for="r1"><strong>Ultimos tres dígitos del DNI:</strong><br><span class="peque"> Datos obligatorios</span></label>
+    
+                            <div class="controls">
+                                <input type="text"  maxlength="3"  id="r1" name="UTDDNI"  placeholder="XXX" [(ngModel)]="participante.UTDDNI" pattern="[0-9]+" required />
+                            </div>
+                        </div>
+    
+                       <div class="pregunta">
+                            <p><span class="color-rojo">Pregunta:</span><span class="peque"> ¿Cómo se llama el nuevo personaje al que ayudara Woody?</span></p>
+  
+                       </div>
+  
+                     
+                      <div class="control-group" id="r11Div">
+                          <label class="control-label" for="r11"><strong>Opciones:</strong><br><span class="peque"> Datos obligatorios</span></label>
+                          <div class="controls">
+                              <select id="r11" name="ID_RESPUESTA" [(ngModel)]="participante.ID_RESPUESTA"  required>
+                                  <option value="1">Seleccione...</option>
+                                  <option value="2">Porky</option>
+                                  <option value="3">Forky</option>
+                                  <option value="2">Donky</option>
+                                  <option value="3">Monkey</option>
+                                  
+                              </select>
+                          </div>
+                      </div>
+  
+                                          
+  
+                        <div class="controls button btn-cine boton_rojo botonSubmit" id="boton">
+                            <button type="submit">ENVIAR RESPUESTA</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <br><br>
+                
+            </div>
+        </div>
+        <hr>
+        <p class="peque">Todas las personas que llenen el formulario y contesten correctamente la pregunta de la semana participan del sorteo. Sólo es válida una respuesta por usuario vía mail por semana.</p>
+        <p class="peque">El cierre del sorteo se realiza los días jueves y se anuncia el ganador por mail los lunes.
+            Los ganadores deberán ser mayores de 18 años.</p>
+        <p class="peque">En el caso de ser menores de edad deberán concurrir a hacer uso del premio con alguno de sus padres que demuestren fehacientemente el vínculo</p>
+        
+
+
+    </div>
+</div>

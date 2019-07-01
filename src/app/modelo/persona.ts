@@ -1,6 +1,5 @@
 
 export class Persona{
-    private idCiudad: number;
     private nombre: string;
     private apellido: string;
     private email: string;
@@ -9,9 +8,8 @@ export class Persona{
     private fechaNac: string;
     private telefono: string;
     private personaTipo:string;
-    constructor(idCiudad: number,nombre: string,apellido: string,email: string,tipoDoc: string,nroDoc: string,fechaNac: string,telefono: string,personaTipo:string){
+    constructor(nombre: string,apellido: string,email: string,tipoDoc: string,nroDoc: string,fechaNac: string,telefono: string,personaTipo:string){
        
-        this.idCiudad=idCiudad;
         this.nombre=nombre;
         this.apellido=apellido;
         this.email=email;
@@ -23,9 +21,6 @@ export class Persona{
     }
     
   
-    public setIdCiudad(idCiudad:number){
-      this.idCiudad=idCiudad;
-    }
     public setNombre(nombre:string){
       this.nombre=nombre;
     }
@@ -50,7 +45,6 @@ export class Persona{
      public setPersonaTipo(personaTipo:string){
       this.personaTipo=personaTipo;
     }
-    public getIdCiudad():number{return this.idCiudad;}
     public getNombre():string{return this.nombre;}
     public getApellido():string{return this.apellido;}
     public getEmail():string{return this.email;}
@@ -60,8 +54,4 @@ export class Persona{
     public getTelefono():string{return this.telefono;}
     public getPersonaTipo():string{return this.personaTipo;}
     
-    public save(){
-         console.log("Se creo la persona!. Nombre="+this.nombre+" |Apellido= "+this.apellido+"| Email="+this.email+"| telefono="+this.telefono+"| idCiudad="+this.idCiudad);
-     
-    }//guardo el objeto en la base de datos
 }
