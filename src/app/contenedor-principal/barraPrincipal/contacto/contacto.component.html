@@ -76,8 +76,9 @@
                             <label class="control-label" for="ciudad"><strong>Ciudad:</strong></label>
                             <div class="controls">
                                 <div  *ngIf="show; else notShow">
-                                    <select id="ciudad" name="ciudad"  [(ngModel)]="ciudad"  required>
-                                        <option value="">(Elija su ciudad)</option>
+                                    <select id="ciudad" name="ciudad"  [(ngModel)]="ciudad.status"  required oninvalid="this.setCustomValidity('Debes elegir una ciudad')"
+ oninput="setCustomValidity('')">
+                                        <option  [value]="''" [selected]="ciudad.status ==''" disabled >(Elija su ciudad)</option>
                                          <option  *ngFor="let ciudad of ciudades" [value]="ciudad.getNombre()">
                                             {{ciudad.getNombre()}}
                                          </option>
@@ -95,8 +96,9 @@
                         <div class="control-group">
                             <label class="control-label" for="motivo"><strong>Motivo</strong></label>
                             <div class="controls">
-                                <select id="motivo" name="motivo"  [(ngModel)]="motivo"  required>
-                                    <option value="">(Elija un motivo)</option>
+                                <select id="motivo" name="motivo"  [(ngModel)]="motivo.status"  required oninvalid="this.setCustomValidity('Debes elegir un motivo')"
+ oninput="setCustomValidity('')">
+                                    <option  [value]="''" [selected]="motivo.status ==''" disabled >(Elija un motivo)</option>
                                     <option value="publicidad">Por publicidad en los cines</option>
                                     <option value="consulta general">consulta general</option>
                                     <option value="critica">Para hacer una cr&iacute;tica</option>
