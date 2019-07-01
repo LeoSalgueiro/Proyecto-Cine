@@ -54,6 +54,7 @@ export class SorteosSemanalesComponent implements OnInit {
           }
         this.bandera=0;
       }
+      this.bandera=0;
       if(this.bandera==0){
  
           this.conector.guardarParticipante(this.participante).subscribe(res => {this.existeParticipante = res; console.log(res);});
