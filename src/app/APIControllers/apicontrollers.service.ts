@@ -95,8 +95,8 @@ borrarPersona(email:string){
 }
 
 
-getParticipante(){
-  return this.conector.get<any>(`http://localhost:3000/API/Participantes/`);
+getParticipante(email:string){
+  return this.conector.get<any>(`http://localhost:3000/API/Participantes/${email}`);
 }
 
 /*guardarParticipante(p:FormParticipante):Observable<any>{
