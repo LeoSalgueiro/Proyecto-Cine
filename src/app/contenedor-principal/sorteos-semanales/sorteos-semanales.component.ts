@@ -42,17 +42,18 @@ export class SorteosSemanalesComponent implements OnInit {
     }
  
     enviarFormulario(formC:NgForm){
-    
+      this.bandera=0;
       for(var d of this.existeParticipante){
           var myjson = JSON.stringify(d);
           let emil = myjson.split(':'); //toma del json solo la parte del mail
-  
+          console.log(this.participante.EMAIL);
          if(emil[1].substring(1, emil[1].length-2) == this.participante.EMAIL){
             this.bandera=1;
             alert('Este mail ya se encuentra registrado en el sorteo semanal');
+            
             break;
           }
-        this.bandera=0;
+        
       }
       //this.bandera=0;
       if(this.bandera==0){
