@@ -35,15 +35,30 @@ export class SorteosSemanalesComponent implements OnInit {
     ID_RESPUESTA: '',};  //ID respuesta
     
     constructor(private conector:APIControllersService, private router: Router) {
-      this.conector.getParticipante().subscribe(res => {this.existeParticipante = res});
+      //this.conector.getParticipante().subscribe(res => {this.existeParticipante = res});
     }
 
     ngOnInit() {   
     }
  
     enviarFormulario(formC:NgForm){
+
+      this.conector.getParticipante(this.participante.EMAIL).subscribe(res => {
+        let resultado=JSON.stringify(res);
+        let numero= Number.parseInt(resultado.slice(17,18));
+        if (numero==0){
+          console.log("no existen participantes con ese email");
+          this.conector.guardarParticipante(this.participante).subscribe(res => {this.existeParticipante = res; console.log(res);});
+          alert('¡Se ha suscripto correctamente!');
+          formC.reset();
+        }
+        else {
+          alert("El mail ya se encuentra registrado como participante. Intente con otro mail.");
+        }
+        
+      });
     
-      for(var d of this.existeParticipante){
+      /*for(var d of this.existeParticipante){
           var myjson = JSON.stringify(d);
           let emil = myjson.split(':'); //toma del json solo la parte del mail
   
@@ -61,7 +76,7 @@ export class SorteosSemanalesComponent implements OnInit {
           err => console.log(err)
           alert('¡Se ha suscripto correctamente!');
           formC.reset();
-      }
+      }*/
       
     }
 }
