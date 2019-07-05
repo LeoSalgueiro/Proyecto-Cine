@@ -105,6 +105,7 @@ getParticipante(){
 guardarParticipante(parti: FormParticipante): Observable<any>{
   //  let json = JSON.stringify(empresa);
    //let empresaJSON = "json="+json;
+   console.log(parti);
     return this.conector.post(this.url+'/Participantes/', parti );
 
 } 

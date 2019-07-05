@@ -50,14 +50,14 @@
                             <label class="control-label" for="nombre"><strong>Nombre:</strong></label>
 
                             <div class="controls">
-                                <input type="text"  maxlength="50"  id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Nombre Completo" required />
+                                <input type="text" minlength="4"  maxlength="50"  id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Nombre Completo" required />
                             </div>
                         </div>
                         <div class="control-group" >
                             <label class="control-label" for="apellido"><strong>Apellido</strong></label>
 
                             <div class="controls">
-                                <input type="text"  maxlength="50"  id="apellido" name="apellido" [(ngModel)]="apellido" placeholder="Apellido" required />
+                                <input type="text" minlength="4"  maxlength="50"  id="apellido" name="apellido" [(ngModel)]="apellido" placeholder="Apellido" required />
                             </div>
                         </div>
                         <div class="control-group" >
@@ -69,7 +69,7 @@
                         <div class="control-group">
                             <label class="control-label" for="telefono"><strong>Tel&eacute;fono:</strong></label>
                             <div class="controls">
-                                <input type="text" pattern="\d*"  maxlength="50"  id="telefono" name="telefono" [(ngModel)]="telefono" placeholder="Tel&eacute;fono" required />
+                                <input type="text" pattern="\d*" minlength="10"  maxlength="50"  id="telefono" name="telefono" [(ngModel)]="telefono" placeholder="Tel&eacute;fono" required />
                             </div>
                         </div>
                         <div class="control-group" id="ciudadDiv" >
@@ -86,7 +86,7 @@
                                 </div>
                                  <ng-template id="div_sesion"  name="div_sesion"   #notShow >
                                     <div id="inputCiudad">
-                                        <input type="text" maxlength="100"  id="ciudad2" name="ciudad2" [(ngModel)]="ciudad2" placeholder="Ciudad" />
+                                        <input type="text" minlength="5" maxlength="100"  id="ciudad2" name="ciudad2" [(ngModel)]="ciudad2" placeholder="Ciudad" />
                                     </div>
                                  </ng-template >
                                     
@@ -111,7 +111,7 @@
                         <div class="control-group">
                             <label class="control-label" for="consulta"><strong>Consulta</strong></label>
                             <div class="controls">
-                                <textarea required  id="consulta" name="consulta"  [(ngModel)]="consulta" class="input_bg"   ></textarea>
+                                <textarea required minlength="10" maxlength="500"  id="consulta" name="consulta"  [(ngModel)]="consulta" class="input_bg"   ></textarea>
                             </div>
                         </div>
                         <div class="controls button btn-cine boton_rojo botonSubmit">

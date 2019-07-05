@@ -9,8 +9,9 @@ import {APIControllersService} from '../../../../APIControllers/apicontrollers.s
 export class VerDetallePeliculaComponent implements OnInit {
   private idPelicula:number;
   private hoy:Date;
-  private var:string="https://www.youtube.com/embed/watch?v=1irrY_SSIew";
   private pelicula:any[];
+  private horarios:any[];
+  private dias:string[]=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
 
 
   constructor(private route:ActivatedRoute, private conector:APIControllersService) { }
@@ -21,7 +22,7 @@ export class VerDetallePeliculaComponent implements OnInit {
     this.hoy=new Date();
     this.idPelicula=parseInt(this.route.snapshot.paramMap.get('id'));
     this.conector.BuscarPelicula(this.idPelicula).subscribe(res=>{this.pelicula=res});
-    
+    this.conector.getTransmision(this.idPelicula).subscribe(res=> {this.horarios=res;console.log(this.horarios);});
   }
 
 }

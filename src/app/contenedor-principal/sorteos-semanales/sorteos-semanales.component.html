@@ -20,7 +20,7 @@
                             
   
                             <div class="controls">
-                                <input type="text" maxlength="100"  id="r1" name="NOMBRE"  placeholder="Nombre" pattern="[A-Za-z]+" [(ngModel)]="participante.NOMBRE"  required />
+                                <input type="text" minlength="4" maxlength="100"  id="r1" name="NOMBRE"  placeholder="Nombre" pattern="[A-Za-z]+" [(ngModel)]="participante.NOMBRE"  required />
                                 
                             </div>
                             
@@ -43,7 +43,7 @@
                             <label class="control-label" for="r1"><strong>Ciudad:</strong><br><span class="peque"> Datos obligatorios</span></label>
   
                             <div class="controls">
-                                <input type="text" maxlength="100"  id="r1" name="CIUDAD"  placeholder="Ciudad" pattern="[A-Z a-z]+"  [(ngModel)]="participante.CIUDAD"  required />
+                                <input type="text" minlength="5" maxlength="100"  id="r1" name="CIUDAD"  placeholder="Ciudad" pattern="[A-Z a-z]+"  [(ngModel)]="participante.CIUDAD"  required />
                             </div>
                         </div>
                         
@@ -51,7 +51,7 @@
                             <label class="control-label" for="r1"><strong>Ultimos tres dígitos del DNI:</strong><br><span class="peque"> Datos obligatorios</span></label>
     
                             <div class="controls">
-                                <input type="text"  maxlength="3"  id="r1" name="UTDDNI"  placeholder="XXX" [(ngModel)]="participante.UTDDNI" pattern="[0-9]+" required />
+                                <input type="text" minlength="3"  maxlength="3"  id="r1" name="UTDDNI"  placeholder="XXX" [(ngModel)]="participante.UTDDNI" pattern="[0-9]+" required />
                             </div>
                         </div>
     

@@ -65,12 +65,12 @@
 
 .tabla-c{
     width: 400px;
-    height: 119px;
+    height: 310px;
     background-color: #f8f8f8;
 }
 
 .detalle-peli{
-        margin-left: 10px;
+        margin-left: 0px;
         color:grey;
         font-family: Myriam-Pro-Light,"Arial", Arial;
         font-size: 12px;
