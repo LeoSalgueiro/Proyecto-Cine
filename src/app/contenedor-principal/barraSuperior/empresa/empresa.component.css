@@ -1,31 +1,18 @@
-#titulo1{
-    color:black;
-    font-size: 24px;
-    font-family: myriad-pro,"Arial black", Arial;
-    letter-spacing: -1px;
+.titulo .myriad{
+    font-size: 18px;
 }
-#titulo2{
-    color:lightslategrey;
-    font-family: MyriadProLight,"Arial",Arial;
-    letter-spacing: -1px;
-    font-size: 20px;
+.titulo .lista_estrella{
+    margin-top:20px;
 }
-
-li {
-    font-size: 13px;
-    font-family: Tahoma, sans-serif;
-    font-weight: bold;
+.lista_estrella li{
+   line-height: 18px;
+    font-size: 12px;
+    padding-bottom: 10px;
 }
-
-.texto-rojo{
-    color:red;
-    font-family: Tahoma, sans-serif;
+.titulo p,.titulo li{
+    font-weight: lighter;
+    font-family: Tahoma;
+    color: #989898;
+    font-size: 12px;
+        line-height: 16px;
 }
-p{
-    color: black;
-    font-weight: normal;
-}
-a{
-    color:lightslategrey;
-}
-
