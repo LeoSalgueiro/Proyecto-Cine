@@ -14,7 +14,7 @@ export class SupercombosComponent implements OnInit {
   constructor(private conector:APIControllersService) { }
 
   ngOnInit() {
-    this.conector.ObtenerCombosDisponibles("San Luis").subscribe(res => {this.combos=res})
+    this.conector.ObtenerCombosDisponibles("San Luis").subscribe(res => {this.combos=res});
   }
 
 }

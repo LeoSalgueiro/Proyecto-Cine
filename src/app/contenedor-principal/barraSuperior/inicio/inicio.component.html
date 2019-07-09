@@ -1,4 +1,39 @@
 <app-anuncios></app-anuncios>
 <div id="principal">
-<p>inicio works!</p>
+    <div style="max-width: 40rem;">
+        <app-ficha-principal [texto_rojo]="'EN '" [texto_negro]="' CARTELERA '" [texto_light]="'PR&Oacute;XIMOS ESTRENOS'" [imagen]="'icon-movies.png'"></app-ficha-principal>
+        <div class="block_inf">
+            
+        </div>
+        <app-ficha [titulo]="'SUPERCOMBOS '" [subtitulo]="'CINEMACENTER'" [imagen]="'icon-promos.png'"></app-ficha>
+        <div class="block_inf">
+            <div id="myCarousel_combos" class="carousel slide" style="margin-bottom: 0px;">
+ 
+    <ol class="carousel-indicators">
+        <li *ngFor="let c of combos;let i = index"  [ngClass]="{'active': i==0}" data-target="#myCarousel_combos" data-slide-to="i" ></li>
+      
+    </ol>
+    <!-- Carousel items -->
+    <div class="carousel-inner" >
+
+        <div class="item" *ngFor="let c of combos;let i = index" [ngClass]="{'active': i==0}">
+             <img src="../../../assets/img/supercombos/{{c.ID_COMBO}}.jpg">
+            <div class="carousel-caption">
+                <h4 class="myriad" style="font-size: 14px;"> {{c.INCLUYE.split('#')[0]}}</h4>
+            </div>
+        </div>
+       
+    </div>
+    <!-- Carousel nav -->
+   
+    <a class="carousel-control left" href="#myCarousel_combos" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel_combos" data-slide="next">&rsaquo;</a>
+   
+</div>
+        </div>
+        <app-ficha-principal [texto_rojo]="'NOVEDADES '" [texto_negro]="'DEL MUNDO DEL CINE'" [texto_light]="' . NOTICIAS'" [imagen]="'icon-news.png'"></app-ficha-principal>
+        <div class="block_inf"></div>
+            
+    </div>
+        
 </div>

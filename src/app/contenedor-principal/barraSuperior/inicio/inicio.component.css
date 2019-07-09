@@ -1,0 +1,14 @@
+#myCarousel_combos{
+   /*height: 400px;*/
+   
+}
+
+#myCarousel_combos .carousel-control.right{
+    right: 30px;
+}
+#myCarousel_combos .carousel-inner{
+    width:608px;
+}
+#myCarousel_combos .carousel-caption{
+    width: 608px;
+}
