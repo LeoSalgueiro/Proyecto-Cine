@@ -1,5 +1,7 @@
 .titulo .myriad{
     font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .titulo .lista_estrella{
     margin-top:20px;
@@ -14,5 +16,10 @@
     font-family: Tahoma;
     color: #989898;
     font-size: 12px;
-        line-height: 16px;
+    line-height: 16px; 
+}
+.titulo p{
+    text-align: justify; 
+    padding-left: 10px;
+    padding-right: 10px;
 }
