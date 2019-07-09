@@ -19,7 +19,7 @@
         <div class="item" *ngFor="let c of combos;let i = index" [ngClass]="{'active': i==0}">
              <img src="../../../assets/img/supercombos/{{c.ID_COMBO}}.jpg">
             <div class="carousel-caption">
-                <h4 class="myriad" style="font-size: 14px;"> {{c.INCLUYE.split('#')[0]}}</h4>
+                <a routerLink="/supercombos"><h4 class="myriad" style="font-size: 14px;"> {{c.INCLUYE.split('#')[0]}}</h4></a>
             </div>
         </div>
        
