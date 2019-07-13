@@ -21,10 +21,7 @@
                             <option value="15">Tucuman</option> 
                         </select>
                         <select id="r2" name="r2"  >
-                            <option value="">SELECCIONA TU PEL&Iacute;CULA</option>
-                            <option value="1">ALADDIN - 2D CAST</option>
-                            <option value="2">JOHN WICK 3: PARABELLUM - 2D CAST</option>
-                            <option value="3">AVENGERS: ENDGAME - 2D CAST</option>
+                            <option *ngFor="let peli of peliculas" (onClick)="this.verPelicula()">{{peli.NOMBRE}}</option>
                         </select>
                 </div>
             </fieldset>
