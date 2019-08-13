@@ -27,3 +27,22 @@ span{
 .item_sidebar{
     margin-bottom: 5px;
 }
+
+#facebook{
+    width: 298px;
+    height: 258px;
+    border-style: solid;
+    border-color: black;
+    border-width:1px;
+}
+
+.cabecera{
+    background-color:#CAD2E8;
+    color:white;
+    font-family:Arial;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    height: 32px;
+
+}

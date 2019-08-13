@@ -1,10 +1,206 @@
 <div id="principal">
     <div style="max-width: 40rem;">
-        <app-ficha [titulo]="'RECURSOS HUMANOS'" [subtitulo]="' · CINEMACENTER'" [pais]="' · ARGENTINA'" [imagen]="'icon-cca.png'"></app-ficha>
+        <app-ficha [titulo]="'RECURSOS HUMANOS'" [imagen]="'icon-cca.png'"></app-ficha>
 
-        <div class="block_inf">
-            <p>Colocar contenido aqui</p>
+<div class="block_inf"> 
+<div><p class="detalles">
+    Informamos a las personas que envíen su currículum por correo electrónico que sus datos serán incorporados a una base de datos y que serán tratados con la finalidad de gestionar el proceso de selección de candidatos a ocupar puestos en salas de cine bajo la marca CINEMACENTER.
+</p></div>
+
+        <div class="row-fluid" style="margin-top: 5px; margin-left: 120px;">
+
+           
+
+            <form ngNativeValidate class="form-horizontal">
+                
+                <div class="control-group" style="margin-top: 1px;">
+                
+                    <label class="control-label color" for="nombre"><p> Nombre:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
+                    <div class="controls">
+                        <input class="campos"
+                            
+                            type="text"
+                            name="nombre"
+                            id="nombre"
+                            minlength="5"
+                            maxlength="20"
+                            placeholder="Nombre Completo"
+                            [(ngModel)]="model.nombre"
+                            required
+                        >
+                    </div>
+            
+                
+                </div>
+                
+
+                <div class="control-group" style="margin-top: 1px;" >
+                    <label class="control-label color" for="apellido"><p> Apellido:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
+                    <div class="controls">
+                        <input class="campos"
+                            type="text"
+                            name="apellido"
+                            minlength="5"
+                            maxlength="20"
+                            placeholder="Apellido"
+                
+                            id="apellido"
+                            [(ngModel)]="model.apellido"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="control-group" style="margin-top: 1px;" >
+                    <label class="control-label color" for="genero"><p> Género:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
+                    <div class="controls">
+                        <select class="campos" id="genero"  name="genero" [(ngModel)]="model.genero"  required>
+                            <option value="">Ingrese su género</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                                
+                        </select>    
+                        
+                    </div>
+                </div>
+
+                <div class="control-group" style="margin-top: 1px;" >
+                    <label class="control-label color" for="email"><p> E-mail:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
+                    <div class="controls">
+                        <input class="campos"
+                            type="email"
+                            name="email"
+                            maxlength="30"
+                            placeholder="ejemplo@email.com"
+                            pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+                            id="email"
+                            [(ngModel)]="model.email"
+                            required
+                        >
+                    </div>
+                </div>
+
+
+                <div class="control-group" style="margin-top: 1px;" >
+                    <label class="control-label color" for="dni"><p> DNI:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
+                    <div class="controls">
+                        <input class="campos"
+                            type="text"
+                            name="dni"
+                            minlength="7"
+                            maxlength="8"
+                            placeholder="XXXXXXXX"
+                
+                            id="dni"
+                            [(ngModel)]="model.dni"
+                            required
+                        >
+                    </div>
+                </div>
+
+
+                <div class="control-group" style="margin-top: 1px;" >
+                        <label class="control-label color" for="fecha_nac"><p> Fecha:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
+                    <div class="controls">
+                        <input class="campos"
+                            type="date"
+                            name="fecha_nac"
+                
+                            id="fecha_nac"
+                            [(ngModel)]="model.fecha_nac"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="control-group" style="margin-top: 1px;" >
+                    <label class="control-label color" for="ciudad"><p> Ciudad:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
+                    <div class="controls">
+                        <select id="ciudad" class="campos" name="ciudad" aria-placeholder="Ingrese su ciudad" [(ngModel)]="model.ciudad"  required>
+                            <option value="">Ingrese su ciudad</option>
+                            <option value="San Luis">San Luis</option>
+                            <option value="Mendoza">Mendoza</option>
+                            
+                        </select>
+                         
+                    </div>
+                </div>
+
+                <div class="control-group" style="margin-top: 1px;" >
+                    <label class="control-label color" for="telefono"><p> Telefono:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
+                    <div class="controls">
+                        <input class="campos"
+                            type="tel"
+                            name="telefono"
+                            maxlength="15"
+                            placeholder="Teléfono"
+                
+                            id="telefono"
+                            [(ngModel)]="model.telefono"
+                            required
+                        >
+                    </div>
+                </div>
+                <div class="control-group" style="margin-top: 1px;" >
+                    <label class="control-label color" for="estudios"><p> Estudios/Cursos realizados:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
+                    <div class="controls">
+                        <input class="campos"
+                            type="text"
+                            name="estudios"
+                            maxlength="100"
+                            placeholder="Ingrese estudios realizados"
+                
+                            id="estudios"
+                            [(ngModel)]="model.estudios"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="control-group" style="margin-top: 1px;" >
+                    <label class="control-label color" for="ref_laborales"><p> Referencias laborales:  </p></label>
+                    <div class="controls">
+
+                        <textarea class="campos" required  id="ref_laborales" name="ref_laborales"   class="input_bg" [(ngModel)]="model.ref_laborales"  ></textarea> 
+                    </div>
+                </div>
+
+                <div class="control-group" style="margin-top: 1px;" >
+                    <label class="control-label color" for="ref_personales"><p> Referencias personales:  </p></label>
+                    <div class="controls">
+                        <textarea class="campos" required  id="ref_personales" name="ref_personales"   class="input_bg" [(ngModel)]="model.ref_personales"  ></textarea>
+                        
+                    </div>
+                </div>
+
+                <div class="control-group" style="margin-top: 1px;" >
+                    <label class="control-label color" for="CV"><p> CV:  <br><span class="detalles2"> Datos obligatorios</span></p></label>
+                    <div class="controls">
+                        
+                        <input 
+                            type="file"
+                            name="CV"
+                            id="CV"
+                            [(ngModel)]="model.CV"
+                            required
+                        >
+                    </div>
+
+                </div>
+                <div class="controls button btn-cine boton_rojo botonSubmit">
+                    <button type="submit" class="btn btn-success">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+
         </div>
-    </div>
+        <hr>
 
+        <p class="ultima">Vea nuestras <a>politicas de confidencialidad</a> para mayor detalle</p>
+
+    
+    </div>
+</div>
 </div>

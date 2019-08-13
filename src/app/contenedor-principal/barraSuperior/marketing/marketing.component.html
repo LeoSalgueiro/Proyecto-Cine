@@ -7,9 +7,15 @@
 
                 <section class="seccion1">
                     <p>
-                        <span class ="titulo1">CINEMACENTER</span>  es el lugar ideal donde enfocar acciones promocionales y publicitarias. A través de los cines puede impulsar su producto o servicio en medio de infinidad de alternativas.<br>
+                        <span class ="titulo1"><b>CINEMACENTER</b></span>      es el lugar ideal donde enfocar acciones promocionales y publicitarias. A través de los cines puede impulsar su producto o servicio en medio de infinidad de alternativas.<br><br>
 
-                        Algunas opciones son:<br><br></p>
+                        Algunas opciones son:
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                      
                     <ul class="lista_estrella"> 
                         <li>Su marca puede ser protagonista: Colocando su marca en nuestros envases de Pop Corn estará a mano de todos a nivel nacional.<br></li>
                         <li> Destinar nuestras instalaciones para organizar sus propios eventos: Premieres - lanzamientos - Funciones privadas - Degustaciones - Muestras - Módulos de Información - Convenciones<br></li>
@@ -18,11 +24,12 @@
                         <li> Generar acciones donde sus clientes o empleados obtengan beneficios y descuentos al concurrir a nuestras salas.<br></li>
                         <li> Coordinar sampling de su producto entre nuestros clientes.<br></li>
                     </ul>
+                   
                    <p> ... y muchas alternativas mas donde el único limite es la imaginación!!!<br><br>
 
                     <b>Estas son algunas de las empresas que ya trabajan con nosotros:</b>
                     </p>
-                    <table cellpadding="10">
+                    <table class = "tabla" cellpadding="10">
                         <tr>
                             <td>
                                 <ul>
@@ -100,37 +107,41 @@
                       </ul>
                     <br><br>
 
-                    <form method = "POST" action ="#" class="form1">
+                    <form ngNativeValidate  #formMarketing ="ngForm" class="form1" name = "formMarketing" (ngSubmit)="enviarFormulario(formMarketing)">
                         <table >
                             <tr>
-                                <td>    <span class = "datos1">Nombre:</span></td>  <td><input type="text" placeholder="Nombre" name="nombre" size = "30" class="campos" required/></td>
+                                <td>    <span class = "datos1">Nombre:</span></td>  <td><input type="text" minlength="10" maxlength="25" placeholder="Nombre"  name="nombre" size = "30" class="campos" [(ngModel)] ="formulario.nombre" pattern="[A-Z a-z]+" required></td>
                             </tr>
                             <tr>
-                                <td> <span class = "datos1">Email:</span></td>      <td><input type="email" placeholder="ejemplo@email.com" name="email" size = "30" class="campos" required/></td>
+                                <td> <span class = "datos1">Email:</span></td>      <td><input type="email" maxlength="50" placeholder="ejemplo@email.com" name="email" size = "30" class="campos" [(ngModel)] ="formulario.email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  required></td>
                             </tr>
                             <tr>
-                                <td>  <span class = "datos1">Empresa:</span></td>   <td><input type="text" placeholder="Empresa" name="empresa" size = "30"  class="campos" required/></td>
+                                <td>  <span class = "datos1">Empresa:</span></td>   <td><input type="text" minlength="5" maxlength="20" placeholder="Empresa" name="empresa" size = "30"  class="campos" [(ngModel)] ="formulario.empresa"  pattern="[A-Z a-z]+"   required/></td>
                             </tr>
                             <tr>
-                                <td><span class = "datos1">Telefono:</span></td>    <td><input type="text" placeholder="Telefono" name="telefono" size = "30" class="campos"  required/></td>
+                                <td><span class = "datos1">Telefono:</span></td>    <td><input type="text" minlength="10" maxlength="40" placeholder="Telefono" name="telefono" size = "30" class="campos" [(ngModel)] ="formulario.telefono"  required/></td>
                             </tr>
                             <tr>
-                                <td><span class = "datos1">Ciudad:</span></td><td><input type="text" placeholder="Ciudad" name="ciudad" size = "30" class="campos" required/></td>
+                                <td><span class = "datos1">Ciudad:</span></td><td><input type="text" minlength="5" maxlength="50" placeholder="Ciudad" name="ciudad" size = "30" class="campos" [(ngModel)] ="formulario.ciudad"    pattern="[A-Z a-z]+"  required/></td>
                             </tr>
                             <tr>
-                                <td><span class = "datos1">Consulta:</span></td><td> <textarea  name="consulta" class="textarea1" ></textarea></td>
+                                <td><span class = "datos1">Consulta:</span></td><td> <textarea  name="consulta" minlength="10" maxlength="500" [(ngModel)] ="formulario.consulta"  class="textarea1" required></textarea></td>
                             </tr>
                             <tr>
-                                <td></td><td><button class ="submit" type ="submit" name = "enviar_marketing">ENVIAR A DPTO DE MARKETING</button></td>
+                                <td></td><td><button class="submit" type ="submit" name = "enviar_marketing"  >ENVIAR A DPTO DE MARKETING</button></td>
+                                
                             </tr>
 
                         </table> 
                     </form>
 
+                
+
 
                 </section>
 
             </article>
+            
         </div>
     </div>
 </div>

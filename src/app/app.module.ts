@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +27,17 @@ import { FichaComponent } from './contenedor-principal/ficha/ficha.component';
 import { BarraLateralComponent } from './contenedor-principal/barra-lateral/barra-lateral.component';
 import { FichaPrincipalComponent } from './ficha-principal/ficha-principal.component';
 import { BeneficiosComponent } from './contenedor-principal/beneficios/beneficios.component';
-import { BDComponent } from './bd/bd.component';
+import { NoticiasComponent } from './contenedor-principal/noticias/noticias.component';
+
+import { ControllerApiComponent } from './controller-api/controller-api.component';
+import { APIControllersService } from './APIControllers/apicontrollers.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DescripcionPeliculaComponent } from './contenedor-principal/barraPrincipal/horarios/descripcion-pelicula/descripcion-pelicula.component';
+import { VerHorarioComponent } from './contenedor-principal/barraPrincipal/horarios/ver-horario/ver-horario.component';
+import { VerDetallePeliculaComponent } from './contenedor-principal/barraPrincipal/cartelera/ver-detalle-pelicula/ver-detalle-pelicula.component';
+import { EliminarDatosComponent } from './contenedor-principal/noticias/eliminar-datos/eliminar-datos.component';
+import { UrlSeguridadComponent } from './contenedor-principal/barraPrincipal/cartelera/url-seguridad/url-seguridad.component';
+import { SorteosSemanalesComponent } from './contenedor-principal/sorteos-semanales/sorteos-semanales.component';
 
 @NgModule({
   declarations: [
@@ -53,13 +64,23 @@ import { BDComponent } from './bd/bd.component';
     FichaComponent,
     BarraLateralComponent,
     FichaPrincipalComponent,
-    BeneficiosComponent
+    BeneficiosComponent,
+    NoticiasComponent,
+    ControllerApiComponent,
+    DescripcionPeliculaComponent,
+    VerHorarioComponent,
+    VerDetallePeliculaComponent,
+    EliminarDatosComponent,
+    UrlSeguridadComponent,
+    SorteosSemanalesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [BDComponent],
+    AppRoutingModule, 
+    FormsModule,
+    HttpClientModule
+],
+  providers: [APIControllersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

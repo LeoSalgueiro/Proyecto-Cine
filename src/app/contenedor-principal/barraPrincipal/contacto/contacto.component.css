@@ -63,3 +63,17 @@
     padding: 10px;
     box-sizing: border-box;
 }
+
+#ciudadDiv{
+    margin-bottom: 0px;;
+}
+  input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #989898 inset !important;  
+}
+input:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
+}
+

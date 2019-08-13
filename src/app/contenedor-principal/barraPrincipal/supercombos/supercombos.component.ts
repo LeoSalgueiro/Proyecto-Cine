@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIControllersService } from '../../../APIControllers/apicontrollers.service';
 
 @Component({
   selector: 'app-supercombos',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupercombosComponent implements OnInit {
 
-  constructor() { }
+  private combos:any[];
+
+
+  constructor(private conector:APIControllersService) { }
 
   ngOnInit() {
+    this.conector.ObtenerCombosDisponibles("San Luis").subscribe(res => {this.combos=res})
   }
 
 }

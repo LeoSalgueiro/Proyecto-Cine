@@ -1,9 +1,66 @@
 <app-anuncios></app-anuncios>
 <div id="principal">
     <div style="max-width: 40rem;">
-        <app-ficha-principal [texto_rojo]="'HORARIOS '" [texto_negro]="' · San Luis'"></app-ficha-principal>
+        <app-ficha-principal [texto_rojo]="'HORARIOS '" [texto_negro]="' · San Luis'" [imagen]="'icon-movies.png'"></app-ficha-principal>         
         <div class="block_inf">
-            <p>Texto aquí</p>
-        </div>
-    </div>
-</div>
+                <div class="contenido">
+                    <!--<p>{{transmiten | json}}</p>-->
+                    <div class="columna-izquierda">
+
+                                    <span class ="titulo_parte1">SELECCIONA</span><span class ="titulo_parte2"> TU PELICULA</span><br><br>
+                                    <div  *ngFor="let pelicula of peliculas" >
+                                            <button (click)="peliculaSeleccionada(pelicula.ID_PELICULA)" class="titulo">{{pelicula.NOMBRE}}</button>
+                                            
+                                    </div>
+
+                   </div>
+                  
+               
+                    <div class="columna-derecha">
+
+                            <span class ="titulo_parte1">HORARIOS</span><span class ="titulo_parte2"> DESDE:</span>
+                           
+                           <div *ngFor="let h of horarios">
+                               <app-ver-horario [horarios]="h.HORARIOS"></app-ver-horario>
+                           </div>
+                           
+
+                        
+
+                    </div>
+                   
+                </div>
+                <article  class ="descripcion_pelicula" >
+                        <div class="tarjeta-pelicula" *ngFor="let p of pelicula">
+                                <div class="imagen-p">
+                                <img src="../../../../assets/img/peliculas/{{p.ID_PELICULA}}.jpg">
+                                </div>
+                               <div class="descripcion-p">
+                                   <img src="../../../../assets/img/estrella_roja.png">
+                                   <b class="titulo-pelicula">{{p.NOMBRE}}</b>
+                                   <br>
+                                   <!--<span class="texto-gris">{{pelicula.DESCRIPCION}}</span>-->
+                                   <br>
+                                   <span class="atributo">Género: </span><span class="texto-gris">{{p.GENERO}}</span><br>
+                                   
+                                  <!--<span class="atributo">Director: </span><span class="texto-gris" *ngFor="let dirId of p.getDirectores()">{{pelicula.ID_PELICULA}}</span><br>-->
+                               <!--<span class="atributo">Protagonistas: </span><span class="texto-gris" *ngFor="let protagonista of p.getProtagonistas()">{{protagonista}}, </span><br>-->
+                                   <span class="atributo">Calificación: </span><span class="texto-gris">{{p.CLASIFICACION}}</span><br>
+                                   <span class="atributo">Duración: </span><span class="texto-gris">{{p.DURACION}} min.</span><br>
+                                   <span class="atributo">Reseña: </span><span class="texto-gris">{{p.RESENIA.slice(0,200)}}...</span><br>
+                                   <br>
+                               </div>
+               
+               
+                           </div><!--cierre tarjeta-pelicula-->
+                </article>
+
+               </div>
+
+               
+        
+    </div><!--cierre block info-->
+
+ </div>
+
+ 

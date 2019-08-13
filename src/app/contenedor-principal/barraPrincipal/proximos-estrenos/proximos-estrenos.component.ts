@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIControllersService } from '../../../APIControllers/apicontrollers.service';
 
 @Component({
   selector: 'app-proximos-estrenos',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProximosEstrenosComponent implements OnInit {
 
-  constructor() { }
+  private hoy:Date;
+  private proxEstrenos: any[];
+
+
+  constructor(private conector:APIControllersService) { 
+    this.hoy=new Date();
+  }
 
   ngOnInit() {
+    this.conector.BuscarProximosEstrenos(this.FechaHoy(this.hoy)).subscribe(res =>{this.proxEstrenos = res; });
+  }
+
+  FechaHoy(hoy:Date):String{
+    let fecha:String;
+    
+    fecha=hoy.getFullYear()+"-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
+    console.log(fecha);
+    return fecha;
   }
 
 }

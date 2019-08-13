@@ -1,0 +1,74 @@
+<app-anuncios></app-anuncios>
+<div id="principal">
+    <div style="max-width: 40rem;">
+        <app-ficha-principal [texto_rojo]="'PELICULAS '" [texto_negro]="'EN CARTEL'" [imagen]="'icon-movies.png'"></app-ficha-principal>
+        
+        
+        <!--<tr *ngFor="let valor_actual of arreglo; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{valor_actual.NOMBRE}}</td>
+          </tr>-->
+        
+        <div class="block_inf">
+            
+            <div class="tarjeta-pelicula" *ngFor="let peli of pelicula">
+                <button id="boton-volver" routerLink="/peliculas-en-cartelera" routerLinkActive="active">Volver</button>
+                <br>
+                <b class="titulo-pelicula-negro" style="font-size: 20px;">{{peli.NOMBRE}}</b>
+            
+                <div class="superior-peli" style="margin-top: 15px;">
+                <div class="imagen-p">
+
+                    <img src="../../../../assets/img/peliculas/{{peli.ID_PELICULA}}.jpg" alt="img película {{peli.ID_PELICULA}}" >
+                    <br>
+                    <br>
+                    <div class="detalle-peli">
+                            <img src="../../../../assets/img/estrella_roja.png">
+                            <span class="atributo">Fecha estreno: </span><span class="texto-gris">{{peli.FECHAESTRENO.slice(8,10)}} de {{meses[peli.FECHAESTRENO.slice(6,7)-1]}} de {{peli.FECHAESTRENO.slice(0,4)}}</span><br>
+                            <img src="../../../../assets/img/estrella_roja.png">
+                            <span class="atributo">Género: </span><span class="texto-gris">{{peli.GENERO}}</span><br>
+                            <img src="../../../../assets/img/estrella_roja.png">
+                            <span class="atributo">Protagonistas: </span><span class="texto-gris">{{peli.PROTAGONISTAS}}</span><br>
+                            <img src="../../../../assets/img/estrella_roja.png">
+                            <span class="atributo">Nacionalidad: </span><span class="texto-gris">{{peli.NACIONALIDAD}}</span><br>
+                            <img src="../../../../assets/img/estrella_roja.png">
+                            <span class="atributo">Calificación: </span><span class="texto-gris">{{peli.CLASIFICACION}}</span><br>
+                            <img src="../../../../assets/img/estrella_roja.png">
+                            <span class="atributo">Duración: </span><span class="texto-gris">{{peli.DURACION}} min.</span><br>
+                            <!--<img src="../../../../assets/img/estrella_roja.png">
+                            <span class="atributo">Director: </span><span class="texto-gris">{{peli.DIRECTORES.NOMBRE}}</span><br>-->
+                            </div>    
+                </div>
+ 
+                <div class="descripcion-p">
+                    <b class="titulo-pelicula-rojo">SINOPSIS </b><b class="titulo-pelicula-negro">DE PELICULA</b>
+                    <br>
+                    <span class="texto-gris">{{peli.RESENIA}}</span><br>
+                    <br>
+                    <div class="tabla">
+                        <div class="flecha"></div>
+                        <span class="atributo2">CINEMACENTER SAN LUIS</span>
+                    </div>
+                    <div class="tabla-c">
+                        <br>
+                        <div class="horario_detalle">
+                            <div *ngFor="let h of horarios" style="margin-left: 10px;">
+                            <app-ver-horario [horarios]="h.HORARIOS"></app-ver-horario>
+                            </div>    
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+                </div>
+                
+                <br>
+                <div class="trailer">
+                    <!--{{peli.TRAILER}} REVISAR PERMISOS DE URL EN IFRAME-->
+                    <app-url-seguridad [url]="peli.TRAILER"></app-url-seguridad>
+                </div>
+
+            </div><!--cierre tarjeta-pelicula-->
+        </div>
+    </div>
+</div>

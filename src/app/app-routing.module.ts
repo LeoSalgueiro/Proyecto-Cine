@@ -15,6 +15,10 @@ import { ContactoComponent } from './contenedor-principal/barraPrincipal/contact
 import { RecursosHumanosComponent } from './contenedor-principal/barraSuperior/recursos-humanos/recursos-humanos.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BeneficiosComponent } from './contenedor-principal/beneficios/beneficios.component';
+import { NoticiasComponent } from './contenedor-principal/noticias/noticias.component';
+import { VerDetallePeliculaComponent } from './contenedor-principal/barraPrincipal/cartelera/ver-detalle-pelicula/ver-detalle-pelicula.component';
+import { EliminarDatosComponent } from './contenedor-principal/noticias/eliminar-datos/eliminar-datos.component';
+import { SorteosSemanalesComponent} from './contenedor-principal/sorteos-semanales/sorteos-semanales.component';
 
 const routes: Routes = [
   {path:"inicio", component:InicioComponent},//barra de navegación pequeña
@@ -25,12 +29,16 @@ const routes: Routes = [
   {path:"calificaciones", component:CalificacionesComponent},//barra de navegación pequeña
   {path:"consideraciones-generales", component:ConsideracionesGeneralesComponent},//barra de navegación pequeña
   {path:"peliculas-en-cartelera", component:CarteleraComponent},//barra de navegación principal
+  {path:"peliculas-en-cartelera/:id", component: VerDetallePeliculaComponent},//detalle película
   {path:"horarios", component:HorariosComponent},//barra de navegación principal
   {path:"proximos-estrenos", component:ProximosEstrenosComponent},//barra de navegación principal
   {path:"precios", component:PreciosComponent},//barra de navegación principal
   {path:"supercombos", component:SupercombosComponent},//barra de navegación principal
   {path:"contacto", component:ContactoComponent},//barra de navegación principal
   {path:"beneficios", component:BeneficiosComponent},//banner
+  {path:"noticias", component:NoticiasComponent},//banner
+  {path:"noticias/eliminar-datos", component:EliminarDatosComponent},//banner
+  {path:"sorteos-semanales", component:SorteosSemanalesComponent}, //banner
   { path: '', redirectTo: 'inicio', pathMatch: 'full'},
   { path: '**', component:PageNotFoundComponent}
 ];

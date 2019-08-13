@@ -9,6 +9,7 @@ export class FichaPrincipalComponent implements OnInit {
 @Input() texto_rojo:string;
 @Input() texto_negro:string;
 @Input() texto_light:string;
+@Input() imagen:String;
   constructor() { }
 
   ngOnInit() {

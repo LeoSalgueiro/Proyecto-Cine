@@ -1,5 +1,9 @@
  ul.lista_estrella li {
     margin-bottom: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 18px;
+    font-size: 12px;
+ 
 }
 .lista_estrella li{
     line-height: 20px;
@@ -8,20 +12,35 @@
 .titulo1{
     color: #d80b0b;
     background-color:#F8F8F8;
-    font-family: myriad-pro,"Arial black", Arial;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: -1px;
+    font-size: 13px;
+}
+
+p{
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 18px;
+    font-size: 12px;
+
+    float:left;
+ 
 }
 
 .section1{
 
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-        font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 5px;
+    float:left;
+    width:30rem;
 }
 
 .section2{
 
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-family:" Myriam-Pro-Light","Arial";
+    font-size: 12px;
+    float:left;
+    width:30rem;
 }
 
 .campos{
@@ -31,6 +50,8 @@
         font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
         font-size: 10px;
         color: #FFFFFF;
+
+  
    
 }
 .campos::placeholder{
@@ -70,5 +91,13 @@
 
     .form1{
         position: right;
+
+    }
+
+    .tabla{
+
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+
 
     }

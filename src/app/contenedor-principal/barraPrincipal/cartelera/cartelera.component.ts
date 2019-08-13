@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Cartelera, BDComponent } from 'src/app/bd/bd.component';
+import { Cartelera, Pelicula } from 'src/app/bd/bd.component';
+import { APIControllersService } from '../../../APIControllers/apicontrollers.service';
+import { Subscription, Observable } from 'rxjs';
+import {Router} from '@angular/router';
+
+
 
 @Component({
   selector: 'app-cartelera',
@@ -9,20 +14,28 @@ import { Cartelera, BDComponent } from 'src/app/bd/bd.component';
 export class CarteleraComponent implements OnInit {
   private carteleraActual:Cartelera;
   private hoy:Date;
-  
-  constructor(private bd: BDComponent) {
+  private peliculas:any[];
+
+    constructor(private conector:APIControllersService, private router: Router) {
     this.hoy=new Date();
-    console.log(this.hoy.toDateString());
+    
   }
 
   ngOnInit() {
-    this.carteleraActual=this.bd.obtenerCartelera(this.calcularPeriodo(this.hoy));
+    this.obtenerCartelera();
+    
   }
 
-  calcularPeriodo(hoy:Date):Date{
+  obtenerCartelera(){
+    this.conector.ObtenerCartelera(this.calcularPeriodo(this.hoy)).subscribe(res => {this.peliculas=res;});
+  }
+
+
+  calcularPeriodo(hoy:Date):String{
     let diaSemana:number=hoy.getDay();
     let diasRestantes:number;
     let fechaFin:Date=new Date();
+    let fecha:String;
     if (diaSemana<=3){
       diasRestantes=3-diaSemana;
       //console.log(diaSemana + "restante: "+diasRestantes);
@@ -32,8 +45,12 @@ export class CarteleraComponent implements OnInit {
       //console.log(diaSemana + "restante: "+diasRestantes);
     }
     fechaFin.setDate(hoy.getDate()+diasRestantes);
-    
-    return fechaFin;
+    fecha=fechaFin.getFullYear()+"-"+(fechaFin.getMonth()+1)+"-"+fechaFin.getDate();
+    return fecha;
+  }
+
+  peliculaSeleccionada(pelicula:any){
+    this.router.navigate(['/peliculas-en-cartelera',pelicula.ID_PELICULA]);
   }
 
 }
