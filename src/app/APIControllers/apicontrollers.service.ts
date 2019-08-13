@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import {Persona, Consulta } from 'src/app/bd/bd.component';
 import { formSuscriptor, formPersona } from '../contenedor-principal/noticias/suscriptor.model';
 import { FormParticipante } from '../contenedor-principal/sorteos-semanales/suscriptor.model';
+import {Solicitud} from '../contenedor-principal/barraSuperior/recursos-humanos/solicitud.model';
 
 @Injectable({
   providedIn: 'root'
@@ -60,6 +61,10 @@ private url = (`http://localhost:3000/API`);
    //let empresaJSON = "json="+json;
     return this.conector.post(this.url+'/Empresas/', empresa );
 
+}
+guardarSolicitante(s:Solicitud){
+  console.log(s);
+  return this.conector.post(this.url+'/Participantes/', s );
 }
 
 // PARA VER UNA TRANSMISION PARTICULAR, PELICULA MAS SU HORARIO Y SALA
